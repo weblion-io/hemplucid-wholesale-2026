@@ -1,0 +1,249 @@
+{% style %}
+.atc-drawer--wrapper {
+    position: fixed;
+    z-index: 99998;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* Blurs everything behind this div */
+    -webkit-backdrop-filter: blur(10px); /* Webkit support (Safari) */
+    display: none;
+} 
+.atc-drawer {
+    position: fixed;
+    top: 0;
+    right: -440px;
+    bottom: 0;
+    width: 440px;
+    z-index: 99999;
+    background: white; 
+    overflow-y: scroll;
+    box-shadow: -10px 0 10px -5px rgba(0, 0, 0, 0.5);
+}
+.atc-drawer .atc-drawer__header { 
+    background: #EBE3D6; 
+    color: #002531;
+    text-align: center;
+    font-family: var(--ambit-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    text-transform: uppercase;
+    padding: 1.5rem 1.5rem 1.5rem 2rem;
+
+    display: flex;
+    flex-direction: row;
+    gap: auto;
+    align-items: justify-between;
+}
+.atc-drawer .atc-drawer__content {
+    padding: 0 0 0 1.8rem;
+    margin-top: 0.5rem;
+}
+.atc-drawer .atc-drawer__content h3 {
+    color: #002531;
+    font-family: var(--ambit-font);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 108.333% */
+}
+.atc-drawer .atc-drawer__content product-form { flex-direction: column; }
+.atc-drawer .atc-drawer__content product-form .atc-details { 
+    padding-right: 1.8rem; 
+}
+.atc-drawer .atc-drawer__content product-form .atc-details .rte {
+    margin-bottom: 1.8rem;
+}
+.atc-drawer .atc-drawer__content product-form .atc-details .rte * {
+    color: #002531;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+}
+.atc-drawer .atc-drawer__title { 
+    flex: 1 1 100%;
+    text-align: left;
+}
+.atc-drawer .slick-dots {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+    gap: 0.8rem;
+}
+.atc-drawer .slick-dots li {
+    height: 1rem;
+    width: 1rem;
+    background: #ADADAD;
+    border-radius: 50%;
+}
+.atc-drawer .slick-dots li button { opacity: 0; }
+.atc-drawer .slick-dots li.slick-active { background: #E57E3B; }
+.atc-drawer .atc-image-gallery { margin-bottom: 1.8rem; }
+.atc-drawer fieldset[data-option="Solution"] {
+    display: none;
+}
+.atc-drawer .option-selector__btns {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+.atc-drawer .option-selector__btns label {
+    margin-right: 0px;
+    border-radius: 30px;
+    background: #595378;
+    min-width: unset !important;
+    flex: 1;
+}
+.atc-drawer .option-selector__btns label span {
+    color: #FFF;
+    text-align: center;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+    letter-spacing: 1.038px;
+}
+.atc-drawer button[type="submit"].btn.add-to-cart { min-width: 100%; }
+.atc-drawer form { padding-right: 1.8rem; }
+@media only screen and (max-width: 767px) {
+    .atc-drawer button[type="submit"].btn.add-to-cart { font-size: 16px; }
+}
+{% endstyle %}
+<div class="atc-drawer--wrapper">
+    <div class="atc-drawer">
+        <div class="atc-drawer__header">
+            <div class="atc-drawer__title">{{ section.settings.title }}</div>
+            <div>
+                <a class="atc-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16" fill="none">
+                    <path d="M1.4 15.8184L0 14.2365L5.6 7.90918L0 1.58184L1.4 0L7 6.32734L12.6 0L14 1.58184L8.4 7.90918L14 14.2365L12.6 15.8184L7 9.49102L1.4 15.8184Z" fill="#1C1B1F"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="atc-drawer__content">
+            {% liquid
+            assign product = all_products['functional-gummies-focus-cbg-mushroom']
+            %}
+            
+            <product-form id="{{ product.id }}" class="js-product product-info">
+                <div class="atc-image-gallery">
+                    {% assign images = product.media | where: 'media_type', 'image' %}
+
+                    {% for image in images %}
+                    {{- image | image_url: width: 300 | image_tag }}
+                    {% endfor %}
+                </div>
+                <div class="atc-details">
+                    <h3>{{ product.title }}</h3>
+                    <div class="rte">
+                        <p>{{ product.metafields.custom.atc_drawer_content | replace: '/*\', '<br><br>'}}</p>
+                    </div>
+                    {% render 'variant-picker',
+                        product: product,
+                        current_variant: current_variant,
+                        product_form_id: product_form_id,
+                        block: block,
+                        update_url: true,
+                        size_chart_link: size_chart_link,
+                        media_ratio: 1
+                    %}
+                </div>
+                <form method="post" action="/cart/add" id="product-form-template--18068159070270__mainQuickBuy" accept-charset="UTF-8" class="form js-product-form" enctype="multipart/form-data" data-product-id="6956310200382"><input type="hidden" name="form_type" value="product"><input type="hidden" name="utf8" value="✓">
+                    <input type="hidden" name="id" value="39759651078206" required="" data-dynamic-variant-content="buy-buttons-input-id">
+
+                    <div class="quantity-submit-row input-row ">
+                    
+                        {% comment %}
+                        <label class="label" for="quantityQuickBuy">Quantity</label>
+                        <quantity-wrapper class="buttoned-input">
+                        <a href="#" data-quantity="down" aria-label="Decrease quantity"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="icon feather feather-minus" aria-hidden="true" focusable="false" role="presentation"><path d="M5 12h14"></path></svg></a>
+                        <input aria-label="Quantity" id="quantityQuickBuy" type="number" name="quantity" value="1">
+                        <a href="#" data-quantity="up" aria-label="Increase quantity"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="icon feather feather-plus" aria-hidden="true" focusable="false" role="presentation"><path d="M12 5v14M5 12h14"></path></svg></a>
+                        </quantity-wrapper>
+                        {% endcomment %}
+                    
+                        <div class="quantity-submit-row__submit input-row" data-dynamic-variant-content="buy-buttons-atc">
+                            <div class="js-form-error lightly-spaced-row" role="alert" hidden=""></div><button class="btn btn--large add-to-cart" type="submit" name="add" data-add-to-cart-text="Add to cart">Add to cart</button>
+                        </div>
+                    
+                    </div>
+                <input type="hidden" name="product-id" value="6956310200382"><input type="hidden" name="section-id" value="template--18068159070270__main"></form>
+            </product-form>
+
+        </div>
+    </div>
+</div>
+{% javascript %}
+  $(document).ready(function(){
+    let open = false;
+    $('.atc-close').on('click', function() {
+        $('.atc-drawer').animate({right: '-440px'}, "fast");
+        $('.atc-close').removeClass('active');
+        $('.atc-drawer--wrapper').fadeOut();
+    });
+
+    $('.atc-trigger').on('click', function() {
+        alert('clicked atc in cart');
+        let handle = $(this).data('handle');
+        $('.atc-drawer--wrapper').fadeIn();
+        $('.atc-drawer').animate({right: '0px'}, "fast");
+        $('.atc-close').addClass('active');
+        open = true;
+
+        updateDrawer(handle,open);
+    });
+
+      $('.atc-image-gallery').slick({
+        infinite: false,
+        autoplay: false,
+        arrows: false,
+        dots: true,
+        slidesToShow: 1.5,
+        slidesToScroll: 1
+      });
+  });
+
+  function updateDrawer(handle, open) {
+    alert("Got here, "+handle+", "+open);
+    fetch(window.Shopify.routes.root + 'products/'+handle+'.js')
+    .then(response => response.json())
+    .then(product => {
+
+    });
+  }
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "ATC Drawer",
+  "class": "section-atc-drawer",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Quick Order"
+    }
+  ],
+  "presets": [
+    {
+      "name": "ATC Drawer",
+      "category": "Conversion",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

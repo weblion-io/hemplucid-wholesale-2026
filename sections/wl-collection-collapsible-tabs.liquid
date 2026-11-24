@@ -1,0 +1,197 @@
+{% assign metaobject_list = collection.metafields.custom.collection_faqs %}
+{% if metaobject_list != blank %}
+{% style %}
+{% if section.settings.use_padding %}
+.container .collapsible-tabs {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+@media only screen and (max-width: 767px) {
+  .container .collapsible-tabs {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+{% endif %}
+{% endstyle %}
+<link rel="stylesheet" href="{{ 'collapsible-tabs.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+{% if section.settings.color_scheme != 'default' %}<div class="use-color-scheme use-color-scheme--{{ section.settings.color_scheme }}">{% endif %}
+<div class="container {{ section.settings.custom_classes }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+  <div class="collapsible-tabs">
+    {%- for item in metaobject_list.value -%}
+      <div class="collapsible-tabs__block">
+          {% liquid
+            assign rowIcon = null
+            if section.settings.custom_classes == 'pdp-icons'
+            assign title = item.question | escape | trim | downcase
+            case title
+              when 'product description'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/brain.png?v=1778534011'
+
+              when 'ingredients'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/cannabis.png?v=1778534011'
+
+              when 'for best results'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/thumb_up.png?v=1778534011'
+
+              when 'suggested use'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/medication.png?v=1778534012'
+
+              when 'tips and tricks'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/family_star.png?v=1778534012'
+
+              when 'lucid labs'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/biotech.png?v=1778534011'
+            endcase
+            endif
+          %}
+          <div class="collapsible-tabs__tab">
+            <details-disclosure>
+              <details class="disclosure"{% if section.settings.open_tab %} open{% endif %}>
+                
+                <summary class="disclosure__title">
+                  {{- item.question | escape -}}
+                </summary>
+                <div class="disclosure__panel has-motion">
+                  <div class="disclosure__content rte">
+                    {{- item.answer | metafield_tag -}}
+                  </div>
+                </div>
+              </details>
+            </details-disclosure>
+          </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+{% if section.settings.color_scheme != 'default' %}</div>{% endif %}
+
+{% if section.settings.enable_faq_schema %}
+    {%- capture faq_json -%}
+      {%- for item in metaobject_list.value -%}
+        {%- if item.question != blank and item.answer != blank -%}
+          {%- assign answer_html = item.answer | metafield_tag -%}
+          {%- capture answer_text -%}{% render 'structured-data-text', html: answer_html %}{%- endcapture -%}
+          {
+            "@type": "Question",
+            "name": {{ item.question.value | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ answer_text | json }}
+            }
+          },
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+
+    {%- if faq_json != blank -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ faq_json | remove_last: ',' }}
+      ]
+    }
+  </script>
+    {%- endif -%}
+{% endif %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Collapsible tabs",
+  "class": "section-collapsible-tabs",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom Classes"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collapsible tabs"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_align",
+      "label": "Header Alignment",
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_tab",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "use_padding",
+      "label": "Use Custom Padding",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "label": "Media width",
+      "unit": "px",
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "label": "Media width",
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_faq_schema",
+      "label": "Enable FAQ structured data",
+      "info": "Adds FAQPage data to the page for SEO",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "WL Collapsible tabs",
+      "category": "Collection",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

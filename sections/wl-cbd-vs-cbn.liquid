@@ -1,0 +1,352 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-cbd-vs-cbn {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+#{{ section.id }} .wl-cbd-vs-cbn h2 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-cbd-vs-cbn .wl-subtitle {
+    max-width: 690px;
+    margin: auto;
+    text-align: center;
+}
+#{{ section.id }} .wl-cbd-vs-cbn p {
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-cbd-vs-cbn p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-cbd-vs-cbn p a {
+    color: {{ section.settings.link_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-pyramid {
+    position: relative;
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+}
+#{{ section.id }} .wl-pyramid img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+#{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex .wl-cbd-vs-cbn-card {
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 0 0 calc((100% / {{ section.blocks.size }}) - 16px);
+}
+#{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex .wl-cbd-vs-cbn-card--header {
+    height: 24px;
+    width: 100%;
+}
+#{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex .wl-cbd-vs-cbn-card--body img {
+    width: {{ section.settings.icon_width }}px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 36px;
+}
+#{{ section.id }} .wl-cbd-vs-cbn-card .wl-cbd-vs-cbn-card--body {
+    padding: 16px 32px;
+    height: 100%;
+    display: flex;
+    gap: 32px;
+}   
+#{{ section.id }} .wl-cbd-vs-cbn-bottom-content {
+    margin: auto;
+}
+#{{ section.id }} .wl-cbd-vs-cbn-bottom-content p {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -1.12px;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-cbd-vs-cbn {
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+        gap: 10px;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn h2 {
+        font-size: 28px;
+        line-height: 35px;
+        max-width: 90%;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex {
+        flex-direction: column;
+        gap: 23px;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn p, #{{ section.id }} .wl-cbd-vs-cbn p a {
+        text-align: center;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 1rem auto 0rem;
+        max-width: 85%;
+    }
+    #{{ section.id }} .wl-pyramid { 
+        margin-bottom: 32px; 
+    }
+    #{{ section.id }} .wl-pyramid img {
+        width: 100%;
+        height: auto;
+        max-width: 430px;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex .wl-cbd-vs-cbn-card--header {
+        height: 21px;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn-card .wl-cbd-vs-cbn-card--body {
+        flex-direction: column; 
+        gap: 24px;
+        padding: 23px 32px 42px;
+    } 
+    #{{ section.id }} .wl-cbd-vs-cbn-card .wl-cbd-vs-cbn-card--body p {
+        text-align: left;
+        font-size: 18px;
+        line-height: 26px;
+        letter-spacing: -0.72px;
+        margin: 0;
+        max-width: 100%;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn .wl-cbd-vs-cbn--flex .wl-cbd-vs-cbn-card--body img {
+        margin-bottom: 10px;
+        margin: 0 auto;
+    }
+    #{{ section.id }} .wl-cbd-vs-cbn-bottom-content p {
+        max-width: 90%;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: -0.88px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-cbd-vs-cbn container">
+        <h2>{{ section.settings.title }}</h2>
+        {% unless section.settings.subtitle == blank %}
+        <div class="wl-subtitle">
+            {{ section.settings.subtitle }}
+        </div>
+        {% endunless %}
+    </div>    
+    {% unless section.settings.image == blank %}
+    <div class="wl-pyramid">
+        <img src="{{ section.settings.image | image_url: width: 956 }}" alt="{{ section.settings.title }}" class="hl-desktop"/>
+        <img src="{{ section.settings.image_mo | image_url: width: 430 }}" alt="{{ section.settings.title }}" class="hl-mobile"/>
+    </div>
+    {% endunless %}
+    <div class="wl-cbd-vs-cbn container">
+        <div class="wl-cbd-vs-cbn--flex">
+            {% for block in section.blocks %}
+            <div class="wl-cbd-vs-cbn-card">
+                <div class="wl-cbd-vs-cbn-card--header" style="background: {{ block.settings.header_color }};">
+                </div>
+                <div class="wl-cbd-vs-cbn-card--body" style="background: {{ block.settings.body_color }};">
+                    <img src="{{ block.settings.icon | image_url: width: 128 }}" alt="{{ block.settings.header }}" />
+                    <div class="wl-cbd-vs-cbn-card--content">
+                    {{ block.settings.content }}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% unless section.settings.bottom_content == blank %}
+        <div class="wl-cbd-vs-cbn-bottom-content">
+            {{ section.settings.bottom_content | replace: '~','<br class="hl-desktop">' }}
+        </div>
+        {% endunless %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL CBD vs CDN",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#EAE1D5"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#241F21"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#C83D1B"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 76,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "How to Read the Evidence: A cbd-vs-cbn"
+    },
+    {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "<p>Not all evidence is equal. A single testimonial is not the same as a randomized controlled trial. To help you evaluate what you read here—and anywhere else—we use a three-tier framework:</p>"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mo",
+        "label": "Mobile Image"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "label": "Card Icon Width",
+      "min": 0,
+      "max": 150,
+      "step": 2,
+      "default": 128,
+      "unit": "px"
+    },
+    {
+        "type": "richtext",
+        "id": "bottom_content",
+        "label": "Bottom Content"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Image"
+        },
+        {
+            "type": "color",
+            "id": "header_color",
+            "label": "Header Color",
+            "default": "#BCD868"
+        },
+        {
+            "type": "color",
+            "id": "body_color",
+            "label": "Body Color",
+            "default": "#FCF5ED"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Confirmed through decades of peer-reviewed research and widely accepted within the scientific community. Example: the existence and regulatory function of the <a href='https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system'>endocannabinoid system</a>.</p>"
+        }   
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL CBD vs CDN",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

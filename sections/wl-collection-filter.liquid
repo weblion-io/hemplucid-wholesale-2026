@@ -1,0 +1,166 @@
+{% style %}
+#{{ section.id }} .wl-collection-filter {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+#{{ section.id }} .wl-collection-filter--label {
+    color: {{ section.settings.label_color }};
+    font-size: 16px;
+    margin: 0;
+}
+#{{ section.id }} .wl-collection-filter--wrapper {
+    display: flex;
+    gap: 12px;
+    overflow-x: scroll;
+    scrollbar-width: none; 
+}
+#{{ section.id }} .wl-collection-filter--wrapper::-webkit-scrollbar {
+    display: none;
+}
+#{{ section.id }} .wl-collection-filter--wrapper .wl-filter {
+    border: 1px solid {{ section.settings.border_color }};
+    color: {{ section.settings.font_color }};
+    background: {{ section.settings.filter_color }};
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 14px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+#{{ section.id }} .wl-collection-filter--wrapper .wl-filter.active {
+    background-color: {{ section.settings.active_filter_color }};
+    color: {{ section.settings.active_font_color }};
+}
+{% endstyle %}
+{% liquid
+    assign paths = request.path | split: '/'
+    assign trimmedPath = '/' | append: paths[1] | append: '/' | append: paths[2]
+    assign currentFilter = paths[3]
+%}
+
+{%- comment -%}
+<p>{{ request.origin }}{{ request.path }}</p>
+<p>{{ trimmedPath }}</p>
+{%- endcomment -%}
+<section id="{{section.id}}">
+    <div class="container wl-collection-filter">
+        <p class="wl-collection-filter--label">{{ section.settings.text }}</p>
+        <div class="wl-collection-filter--wrapper">
+          {%- if currentFilter == blank -%}
+            {%- for block in section.blocks -%}
+            {%- assign taggedFilter = '/' | append: block.settings.tag -%}
+            <span class="wl-filter{% if request.path contains  taggedFilter %} active{% endif %}" data-filter="{{ taggedFilter }}">{{ block.settings.text }}</span>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for block in section.blocks -%}
+              {%- if currentFilter == block.settings.tag -%}
+              <span class="wl-filter active" data-filter="close">{{ block.settings.text }}&nbsp;&nbsp;&nbsp;X</span>    
+              {%- endif -%}
+            {%- endfor -%}
+
+            {%- for block in section.blocks -%}
+              {%- unless currentFilter == block.settings.tag -%}
+                {%- assign taggedFilter = '/' | append: block.settings.tag -%}
+                <span class="wl-filter{% if request.path contains  taggedFilter %} active{% endif %}" data-filter="{{ taggedFilter }}">{{ block.settings.text }}</span>
+              {%- endunless -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
+    </div>
+</section>
+<script>
+document.addEventListener('click', function (e) {
+  const baseUrl = '{{ request.origin }}{{ trimmedPath }}';
+  
+  const filterEl = e.target.closest('.wl-filter');
+  if (!filterEl) return;
+  
+  const filterValue = filterEl.getAttribute('data-filter');
+  if (!filterValue) return;
+  const newURL = filterValue === 'close' ? baseUrl : baseUrl + filterValue;
+  window.location.href = newURL;
+});
+</script>
+
+{% schema %}
+{
+  "name": "HL Collection Filter",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show",
+      "label": "Show Collection Filter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Filter Label",
+      "default": "Filter: "
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Filter Font Color",
+        "default": "#000000"
+    },
+    {
+        "type": "color",
+        "id": "active_font_color",
+        "label": "Active Filter Font Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "label_color",
+        "label": "Label Font Color",
+        "default": "#000000"
+    },
+    {
+        "type": "color",
+        "id": "filter_color",
+        "label": "Filter Button Color",
+        "default": "#efefef"
+    },
+    {
+        "type": "color",
+        "id": "border_color",
+        "label": "Filter Border Color",
+        "default": "#000000"
+    },
+    {
+        "type": "color",
+        "id": "active_filter_color",
+        "label": "Active Filter Button Color",
+        "default": "#000000"
+    }  
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Filter",
+      "settings": [
+        {
+        "type": "text",
+        "id": "text",
+        "label": "Filter Text"
+        },
+        {
+        "type": "text",
+        "id": "tag",
+        "label": "Filter Tag"
+        }
+      ]
+    }
+ ],
+  "presets": [
+    {
+      "name": "HL Collection Filter",
+      "category": "Custom"
+    }
+  ]
+}
+
+{% endschema %}

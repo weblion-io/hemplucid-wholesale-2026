@@ -1,0 +1,367 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-rhythm {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+#{{ section.id }} .wl-rhythm h2 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--left p { color: {{ section.settings.font_color }}; }
+#{{ section.id }} .wl-rhythm .wl-rhythm--right p, #{{ section.id }} .wl-rhythm .wl-rhythm--right p a { color: {{ section.settings.card_font_color }}; }
+#{{ section.id }} .wl-rhythm p {
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-rhythm p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--left p a { color: {{ section.settings.link_color }}; }
+#{{ section.id }} .wl-rhythm p a {
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--left {
+    flex: 0 0 75%;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--phases {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 86px;
+    text-align: center;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--phases h3 {
+    text-align: center;
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 32px;
+    letter-spacing: -1.2px;
+    margin: 16px 0 0;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--phases strong {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--heading-font-family-bold);
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -1.52px;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--card {
+    background: {{ section.settings.card_bkg_color }};
+    border-radius: 10px;
+    padding: 0 26px 26px 26px;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--icon {
+    background: {{ section.settings.icon_bkg_color }};
+    padding: 10px 10px 4px 10px;
+    border-radius: 0 0 10px 10px;
+    width: fit-content;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--icon image { 
+    height: 38px;
+    width: 38px;
+}
+#{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--card h4 {
+    margin: 24px 0 11px;
+    font-family: var(--heading-font-family-bold);
+    color: {{ section.settings.card_font_color }};
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-rhythm {
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+        gap: 10px;
+        padding: 0 35px;
+    }
+    #{{ section.id }} .wl-rhythm h2 {
+        font-size: 28px;
+        line-height: 35px;
+        max-width: 90%;
+        margin: auto;
+        margin-bottom: 48px;
+    }
+    #{{ section.id }} .wl-rhythm .wl-rhythm--flex {
+        flex-direction: column;
+        gap: 23px;
+    }
+    #{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--phases {
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 32px;
+    }
+    #{{ section.id }} .wl-rhythm p, #{{ section.id }} .wl-rhythm p a {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    #{{ section.id }} .wl-rhythm .wl-rhythm--flex .wl-rhythm--card {
+        background: {{ section.settings.card_bkg_color }};
+        border-radius: 10px;
+        padding: 0 26px 26px 26px;
+        max-width: 296px;
+        margin: auto;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-rhythm container">
+        <h2>{{ section.settings.title }}</h2>
+        <div class="wl-rhythm--flex">
+            <div class="wl-rhythm--left">
+                <div class="wl-rhythm--phases">
+                    <div class="wl-rhythm--phase-1">
+                        <img src="{{ section.settings.image_1 | image_url: width: 296 }}" alt="{{ section.settings.header_1 | strip_html }}" />
+                        {{ section.settings.header_1 }}
+                    </div>
+                    <div class="wl-rhythm--phase-2">
+                        <img src="{{ section.settings.image_2 | image_url: width: 296 }}" alt="{{ section.settings.header_2 | strip_html }}" />
+                        {{ section.settings.header_2 }}
+                    </div>
+                    <div class="wl-rhythm--phase-3">
+                        <img src="{{ section.settings.image_3 | image_url: width: 296 }}" alt="{{ section.settings.header_3 | strip_html }}" />
+                        {{ section.settings.header_3 }}
+                    </div>
+                </div>
+                <div class="wl-rhythm--content">
+                    {{ section.settings.main_content }}
+                </div>
+            </div>
+            <div class="wl-rhythm--right">
+                <div class="wl-rhythm--card">
+                    <div class="wl-rhythm--icon">
+                        <img src="{{ section.settings.icon | image_url: width: 38 }}" alt="{{ section.settings.card_header }}" />
+                    </div>
+                    <h4>{{ section.settings.card_header }}</h4>
+                    <div class="wl-rhythm--card-body">
+                    {{ section.settings.card_content }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</section>
+
+{% schema %}
+{
+  "name": "HL Circadian Rhythm",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#213258"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#C83D1B"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#EAE1D5"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "How to Read the Evidence: A rhythm"
+    },
+    {
+        "type": "header",
+        "content": "Left Desktop Column"
+    },
+    {
+        "type": "header",
+        "content": "Phase 1"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image"
+    },
+    {
+        "type": "richtext",
+        "id": "header_1",
+        "label": "Header",
+        "default": "<p><strong>Phase 1:</strong> Unwind</p>"
+    },
+    {
+        "type": "header",
+        "content": "Phase 2"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_2",
+        "label": "Image"
+    },
+    {
+        "type": "richtext",
+        "id": "header_2",
+        "label": "Header",
+        "default": "<p><strong>Phase 2:</strong> Drift</p>"
+    },
+    {
+        "type": "header",
+        "content": "Phase 3"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_3",
+        "label": "Image"
+    },
+    {
+        "type": "richtext",
+        "id": "header_3",
+        "label": "Header",
+        "default": "<p><strong>Phase 3:</strong> Recover</p>"
+    },
+    {
+        "type": "header",
+        "content": "Main Content"
+    },
+    {
+        "type": "richtext",
+        "id": "main_content",
+        "label": "Main Content",
+        "default": "<p>Lorem Ipsum</p>"
+    },
+    {
+        "type": "header",
+        "content": "Right Desktop Column"
+    },
+    {
+        "type": "color",
+        "id": "card_bkg_color",
+        "label": "Card Background Color",
+        "default": "#FFFFFF"
+    },
+    {
+        "type": "color",
+        "id": "card_font_color",
+        "label": "Card Font Color",
+        "default": "#241F21"
+    },
+    {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Image"
+    },
+    {
+        "type": "color",
+        "id": "icon_bkg_color",
+        "label": "Icon Background Color",
+        "default": "#FFD700"
+    },
+    {
+        "type": "text",
+        "id": "card_header",
+        "label": "Card Header",
+        "default": "What to note:"
+    },
+    {
+        "type": "richtext",
+        "id": "card_content",
+        "label": "Card Content",
+        "default": "<p>Lorem Ipsum</p>"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Circadian Rhythm",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

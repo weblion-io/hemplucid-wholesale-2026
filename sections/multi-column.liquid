@@ -1,0 +1,465 @@
+{%- liquid
+  if section.settings.media_aspect_ratio == 's'
+    assign custom_media_aspect_ratio = 0
+    for block in section.blocks
+      if block.settings.enable_media
+        assign image = null
+        if block.settings.image
+          assign image = block.settings.image
+        elsif block.settings.video_shopify
+          assign image = block.settings.video_shopify.preview_image
+        endif
+        if image and image.aspect_ratio > custom_media_aspect_ratio
+          assign custom_media_aspect_ratio = image.aspect_ratio
+        endif
+      endif
+    endfor
+
+  elsif section.settings.media_aspect_ratio == 't'
+    assign custom_media_aspect_ratio = 9999999
+    for block in section.blocks
+      if block.settings.enable_media
+        assign image = null
+        if block.settings.image
+          assign image = block.settings.image
+        elsif block.settings.video_shopify
+          assign image = block.settings.video_shopify.preview_image
+        endif
+        if image and image.aspect_ratio < custom_media_aspect_ratio
+          assign custom_media_aspect_ratio = image.aspect_ratio
+        endif
+      endif
+    endfor
+
+  else
+    assign custom_media_aspect_ratio = section.settings.media_aspect_ratio | plus: 0
+  endif
+
+  if section.settings.media_width == 700
+    assign size_cols_desktop = section.blocks.size | at_most: 3
+    if section.blocks.size == 4
+      assign size_cols_desktop = 2
+    endif
+  else
+    assign sizes = section.settings.media_width | append: 'px'
+    assign widths = section.settings.media_width | times: 2 | prepend: ', ' | prepend: section.settings.media_width
+  endif
+-%}
+
+{%- for block in section.blocks -%}
+  {%- if block.settings.video_shopify != blank -%}
+    <link rel="stylesheet" href="{{ 'video.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+    <script src="{{ 'video.js' | asset_url }}" defer></script>
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+{% style %}
+#section-id-{{ section.id }} .flexible-layout--variable-columns .column {
+  min-width: {{ section.settings.desktop_cols }}%;
+  max-width: {{ section.settings.desktop_cols }}%;
+  margin-right: auto;
+}
+{% endstyle %}
+<div id="section-id-{{ section.id }}" class="{% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}">
+  {% style %}
+    #section-id-{{ section.id }} .text-column__image {
+      max-width: {{ section.settings.media_width }}px;
+    }
+  {% endstyle %}
+
+  <div class="container{% unless section.settings.master_class == blank %} {{ section.settings.master_class }}{% endunless %}">
+    {% if section.settings.title != blank %}
+      {% if section.settings.use_h1 %}
+      <h1 class="majortitle fs-46 imp align-center mb-2" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+        {{- section.settings.title | escape | replace: '^','<br>' -}}
+      </h1>
+      {% else %}
+      <h2 class="majortitle h1 fs-46 imp align-center mb-2" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+        {{- section.settings.title | escape | replace: '^','<br>' -}}
+      </h2>
+      {% endif %}
+    {% endif %}
+    {% if section.settings.subtitle != blank %}
+      {% if section.settings.use_h1 %}
+      <h2 class="fs-18 imp align-center" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+        {% if section.settings.subtitle_link != blank %}<a href="{{ section.settings.subtitle_link }}">{% endif %}
+        {{- section.settings.subtitle | escape | replace: '^','<br>' -}}
+        {% if section.settings.subtitle_link != blank %}</a>{% endif %}
+      </h2>
+      {% else %}
+      <h3 class="fs-18 imp align-center" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+        {% if section.settings.subtitle_link != blank %}<a href="{{ section.settings.subtitle_link }}">{% endif %}
+        {{- section.settings.subtitle | escape | replace: '^','<br>' -}}
+        {% if section.settings.subtitle_link != blank %}</a>{% endif %}
+      </h3>
+      {% endif %}
+    {% endif %}
+
+
+    <div class="flexible-layout flexible-layout--variable-columns align-ltr-{{ section.settings.text_alignment }}">
+      {% for block in section.blocks %}
+        {%- liquid
+          assign block_size_mod = 1
+          if section.blocks.size > 5
+            assign break_mod = 5
+            case section.blocks.size
+              when 6, 7, 9
+                assign break_mod = 3
+              when 8, 11, 12
+                assign break_mod = 4
+            endcase
+            assign block_size_mod = forloop.index0 | modulo: break_mod
+          endif
+        -%}
+        {%- if forloop.first == false and block_size_mod == 0 -%}
+          {%- # theme-check-disable UnclosedHTMLElement -%}
+          </div>
+          <div class="flexible-layout flexible-layout--variable-columns align-ltr-{{ section.settings.text_alignment }} spaced-row-above">
+          {%- # theme-check-enable UnclosedHTMLElement -%}
+        {%- endif -%}
+        {%- assign animation_attrs = 'data-cc-animate' -%}
+        {%- if section.blocks.size < 7 -%}
+          {%- assign animation_delay = forloop.index | times: 0.15 | append: 's' -%}
+          {%- assign animation_attrs = animation_attrs | append: ' data-cc-animate-delay="' | append: animation_delay | append: '"' -%}
+        {%- endif -%}
+        <div id="block-id-{{ block.id }}" class="column text-column fade-in-up" {{ block.shopify_attributes }} {%- render 'animation-attrs', attrs: animation_attrs -%}>
+          {% if block.settings.enable_media %}
+            <div class="text-column__image lightly-spaced-row">
+              {%- if block.settings.link != blank -%}<a href="{{ block.settings.link }}">{%- endif -%}
+
+              {%- if block.settings.image != blank or block.settings.video_shopify != blank -%}
+                {%- if block.settings.video_shopify != blank -%}
+                  {%- assign placeholder_image = block.settings.image | default: section.settings.video_shopify.preview_image -%}
+                  <div class="video-section">
+                    <div class="height--adapt" {% if custom_media_aspect_ratio %}style="--aspect-ratio: {{ custom_media_aspect_ratio }}"{% endif %}>
+                      <div class="height__image">
+                        <deferred-media>
+                          <template>
+                            <video-component
+                                class="has-video"
+                                data-video-id="{{ section.id }}-{{ block.id }}"
+                                data-autoplay="true"
+                                data-background="false"
+                                data-natural-width= "true">
+                              {{ block.settings.video_shopify | video_tag: playsinline: true, controls: false, autoplay: true, muted: true, loop: true, poster: '' | replace: '<img ', '<img loading="lazy" hidden ' }}
+                            </video-component>
+                          </template>
+                        </deferred-media>
+                        {%- liquid
+                          if placeholder_image
+                            render 'image' with placeholder_image, class: 'video-played-hidden', sizes: sizes, widths: widths, size_cols_desktop: size_cols_desktop, custom_aspect_ratio: custom_media_aspect_ratio
+                          endif
+                        -%}
+                      </div>
+                    </div>
+                  </div>
+
+                {%- else -%}
+                  {%  if block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | image_url: width: 90 }}" width="90px" height="90px" alt="block.settings.title" class="mobile-icon" />
+                  {% endif %}
+                  {%- render 'image' with block.settings.image, sizes: sizes, widths: widths, size_cols_desktop: size_cols_desktop, custom_aspect_ratio: custom_media_aspect_ratio -%}
+                {%- endif -%}
+              {%- else -%}
+                <div class="placeholder-image">
+                  {{- 'image' | placeholder_svg_tag: 'placeholder-svg' -}}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.link != blank -%}</a>{% endif -%}
+            </div>
+          {% endif %}
+          <div class="multicolumn-content--wrapper">
+          {% if block.settings.title != blank %}
+            <h3 class="text-column__title"{% if block.settings.title_bold %} style="font-weight: 700;"{% endif %}>{{ block.settings.title | escape | replace: '^','<br>' }}</h3>
+          {% endif %}
+
+          {% if block.settings.text != blank %}
+            <div class="text-column__text rte">{{ block.settings.text }}</div>
+          {% endif %}
+
+          {% if block.settings.button_label != blank %}
+            <div class="text-column__button-row text-column__button-row--{{ section.settings.button_style }}">
+              <a class="text-column__button {% if section.settings.button_style != 'link' %}btn btn--{{ section.settings.button_style }}{% else %}small-feature-link{% endif %}" {% if block.settings.use_onclick == true %}onclick="{{ block.settings.onclick }}"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.button_label | escape | replace: '^', '<br class="hl-desktop">' }}</a>
+            </div>
+          {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+  $(document).ready(function(){
+    if ($(window).width() < 768) {
+
+      $('.hemplucid-lovers .flexible-layout').slick({
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              infinite: false,
+              autoplay: false,
+              arrows: false,
+              slidesToShow: 1.5,
+              slidesToScroll: 1
+            }
+          }
+        ]
+      });
+
+    }
+  });
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Multi-column",
+  "class": "section-multi-column",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "master_class",
+      "label": "Master Class",
+      "info": "for developer use only"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Multi-column"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Follow us @Hemlucid"
+    },
+    {
+      "type": "url",
+      "id": "subtitle_link",
+      "label": "Subtitle Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_h1",
+      "label": "Make H1 Tag",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "media_aspect_ratio",
+      "label": "Media shape",
+      "default": "s",
+      "options": [
+        {
+          "value": "s",
+          "label": "Height of shortest media"
+        },
+        {
+          "value": "t",
+          "label": "Height of tallest media"
+        },
+        {
+          "value": "2",
+          "label": "Landscape (2x1)"
+        },
+        {
+          "value": "1.5",
+          "label": "Landscape (6x4)"
+        },
+        {
+          "value": "1.25",
+          "label": "Landscape (5x4)"
+        },
+        {
+          "value": "1",
+          "label": "Square (1x1)"
+        },
+        {
+          "value": "0.8",
+          "label": "Portrait (4x5)"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "media_width",
+      "min": 60,
+      "max": 700,
+      "step": 10,
+      "label": "Media width",
+      "unit": "px",
+      "default": 700
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Button style",
+      "default": "primary",
+      "options": [
+        {
+          "label": "Primary",
+          "value": "primary"
+        },
+        {
+          "label": "Secondary",
+          "value": "secondary"
+        },
+        {
+          "label": "Link",
+          "value": "link"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "desktop_cols",
+      "label": "Number of Columns on Desktop before wrapping",
+      "default": "20",
+      "options": [
+        {
+          "value": "50",
+          "label": "2"
+        },
+        {
+          "value": "33",
+          "label": "3"
+        },
+        {
+          "value": "25",
+          "label": "4"
+        },
+        {
+          "value": "20",
+          "label": "5"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Column",
+      "settings": [
+        {
+          "id": "enable_media",
+          "type": "checkbox",
+          "label": "Enable media",
+          "default": true
+        },
+        {
+          "visible_if": "{{ block.settings.enable_media }}",
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "visible_if": "{{ block.settings.enable_media }}",
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Mobile Icon",
+          "info": "Only works with master class 'how-to-save'"
+        },
+        {
+          "visible_if": "{{ block.settings.enable_media }}",
+          "id": "video_shopify",
+          "type": "video",
+          "label": "Video upload"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Add a title or tagline"
+        },
+        {
+          "type": "checkbox",
+          "id": "title_bold",
+          "label": "Bold Text",
+          "default": false
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_onclick",
+          "label": "Use Onclick Instead of URL",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "onclick",
+          "label": "Onclick Code",
+          "visible_if": "{{ block.settings.use_onclick == true}}"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Multi-column",
+      "category": "Storytelling",
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        },
+        {
+          "type": "text_block"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
