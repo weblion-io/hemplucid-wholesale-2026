@@ -1,0 +1,346 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "wl_gradient_header_bar_CAMYj8": {
+      "type": "wl-gradient-header-bar",
+      "name": "HL Gradient Header",
+      "settings": {
+        "color_1": "#ef4482",
+        "color_2": "#ffd700",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "image": "shopify://shop_images/bulb.png",
+        "title": "Educational Hub"
+      }
+    },
+    "image_with_text_bpPgHC": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_8iqALE": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "The Cannabinoid That Knows When It’s Bedtime."
+          }
+        },
+        "heading_cQA3hr": {
+          "type": "heading",
+          "settings": {
+            "title": "What Is CBN?",
+            "use_h1": true
+          }
+        },
+        "text_jKVR6a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>CBN—cannabinol—is a naturally occurring cannabinoid that has become one of the most discussed plant compounds in the sleep and relaxation space. It is not synthesized directly by the hemp plant. Instead, CBN forms when THC is exposed to oxygen and light over time, gradually converting into a structurally distinct compound with its own unique properties.</p><p>At the concentrations found in hemp-derived products, CBN is non-intoxicating. It will not produce a “high.” What it will do—based on a growing body of early-stage research—is interact with your body’s <a href=\"https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system\" target=\"_blank\">endocannabinoid system</a>in ways that are commonly discussed for nighttime relaxation and sleep maintenance. For a broader understanding of how cannabinoids work, see <a href=\"https://hemplucid.com/pages/what-are-cannabinoids\" target=\"_blank\">What Are Cannabinoids</a>?<br/><br/></p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8iqALE",
+        "heading_cQA3hr",
+        "text_jKVR6a"
+      ],
+      "custom_css": [],
+      "name": "Image with text",
+      "settings": {
+        "cclasses": "lucid-guarantee switch",
+        "image": "shopify://shop_images/what-is-cbn.png",
+        "image_width": 470,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "wl_tabbed_image_and_text_wyaJRa": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#5a5478",
+        "font_color": "#ffffff",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "The “Aged” Cannabinoid: *How CBN Forms",
+        "max_width": 73,
+        "content": "<p>Unlike CBD, which is produced directly by enzymatic reactions within the living hemp plant, CBN is a degradation product. When THC oxidizes—through exposure to air, UV light, or simply time—it loses a hydrogen molecule and converts into CBN. This is why aged cannabis historically carried a reputation for making people sleepy: the THC had partially converted into CBN.</p><p>CBN retains approximately one-tenth the binding affinity of THC at CB1 receptors, which may account for its mild calming effects without the psychoactive intensity of its precursor (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10450062/\" target=\"_blank\">PMC – CUPID Study Protocol</a>). At the levels present in legal hemp products—typically 5–25 mg per serving—CBN is well below the threshold associated with intoxication.<br/><br/>Because CBN emerges from the plant's own aging process rather than a separate production step, a <a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">full spectrum hemp extract with CBN</a> carries it alongside the CBD, minor cannabinoids, and terpenes that were present in the original flower.</p>",
+        "image": "shopify://shop_images/aged-cannabinoid.png",
+        "image_position": "left"
+      }
+    },
+    "wl_cbd_vs_cbn_XfXhGy": {
+      "type": "wl-cbd-vs-cbn",
+      "blocks": {
+        "card_ix4V8a": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/CBD-sequence-w-label_lrg.png",
+            "header_color": "#bcd868",
+            "body_color": "#ffffff",
+            "content": "<p><strong>CBD (Cannabidiol)</strong> is commonly discussed for broad daytime support—calm under pressure, physical comfort, and recovery. Research suggests CBD modulates the stress response primarily through the HPA axis and serotonin receptor pathways. It is not typically characterized as a sedative.</p>"
+          }
+        },
+        "card_LgGjB4": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/CBN-sequence-w-label_lrg.png",
+            "header_color": "#5a5478",
+            "body_color": "#ffffff",
+            "content": "<p><strong>CBN (Cannabinol)</strong> is commonly discussed specifically for nighttime use—sleep onset, sleep continuity, and reduced nighttime awakenings. Its mechanism is distinct: CBN acts as a weak agonist at CB1 receptors, and the endocannabinoid system is involved in regulating circadian rhythmicity, suggesting a direct pathway through which CBN may influence the sleep-wake cycle.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_ix4V8a",
+        "card_LgGjB4"
+      ],
+      "name": "HL CBD vs CDN",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#5a5478",
+        "margin_top": 24,
+        "margin_bottom": 24,
+        "title": "CBN vs. CBD for Sleep: Different Roles, Complementary Effects",
+        "subtitle": "<p>CBD and CBN are both non-intoxicating cannabinoids derived from hemp, but they serve distinct functions in the body:</p>",
+        "image": "shopify://shop_images/cbn-vs-cbd.png",
+        "image_mo": "shopify://shop_images/cbn-vs-cbd.png",
+        "icon_width": 128,
+        "bottom_content": "<p><strong>In practical terms: </strong>CBD helps you manage the day. CBN helps you let it go at night. ~They are not interchangeable—but they are highly complementary.</p>"
+      }
+    },
+    "wl_circadian_rhythm_AUrJnk": {
+      "type": "wl-circadian-rhythm",
+      "name": "HL Circadian Rhythm",
+      "settings": {
+        "color": "#213258",
+        "font_color": "#ffffff",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 24,
+        "margin_bottom": 68,
+        "title": "How CBN Interacts with Your Circadian Rhythm",
+        "image_1": "shopify://shop_images/phase1.png",
+        "header_1": "<h3><strong>Phase 1:</strong> Unwind</h3>",
+        "image_2": "shopify://shop_images/phase2.png",
+        "header_2": "<h3><strong>Phase 2:</strong> Drift</h3>",
+        "image_3": "shopify://shop_images/phase3.png",
+        "header_3": "<h3><strong>Phase 3:</strong> Recover</h3>",
+        "main_content": "<p>Your body’s internal clock—the circadian rhythm—determines when you feel alert and when you feel ready to sleep. The endocannabinoid system plays a documented role in this process: endocannabinoid signaling helps regulate the transition between wakefulness and rest.<br/><br/>A 2024 preclinical study published in Neuropsychopharmacology used polysomnography to measure CBN’s effects on sleep architecture in rodent models. The results showed that CBN increased total sleep time, including both non-rapid eye movement (NREM) and rapid eye movement (REM) phases (<a href=\"https://www.nature.com/articles/s41386-024-02018-7\" target=\"_blank\">Nature – CBN and Sleep Architecture</a>). Researchers noted that the endocannabinoid system’s role in circadian regulation may explain how CBN facilitates the body’s natural transition into sleep—without overriding it.<br/><br/>On the clinical side, a 2023 randomized, double-blind, placebo-controlled trial involving 293 participants found that 20 mg of CBN taken nightly significantly reduced the number of nighttime awakenings and overall sleep disturbance compared to placebo—without increasing daytime fatigue the following morning (<a href=\"https://pubmed.ncbi.nlm.nih.gov/37796540/\" target=\"_blank\">PubMed – CBN and Sleep Quality</a>).<br/><br/></p>",
+        "card_bkg_color": "#ffffff",
+        "card_font_color": "#241f21",
+        "icon": "shopify://shop_images/license.png",
+        "icon_bkg_color": "#ffd700",
+        "card_header": "What to note:",
+        "card_content": "<p>A 2021 narrative review emphasized that much of the earlier human data on CBN and sleep was limited in scope and sample size (<a href=\"https://pubmed.ncbi.nlm.nih.gov/34468204/\" target=\"_blank\">PubMed – CBN: Separating Fact from Fiction</a>). The landscape is improving, with new placebo-controlled trials now published and additional studies underway. We track this research closely on our <a href=\"/pages/hemp-and-cannabinoid-research-the-science-of-wellness\" target=\"_blank\">Research Hub</a>.</p>"
+      }
+    },
+    "wl_two_colum_text_wPMimB": {
+      "type": "wl-two-colum-text",
+      "name": "HL Two Column Text",
+      "settings": {
+        "title": "Support, Don’t Override: The No-Groggy Difference",
+        "left_content": "<p>Many synthetic sleep aids work by suppressing central nervous system activity—which can lead to next-morning grogginess, dependency, and disrupted sleep architecture over time. CBN works differently. Rather than sedating the brain into unconsciousness, CBN appears to support the body’s existing mechanisms for transitioning into and maintaining sleep.</p><p>In the 2023 clinical trial referenced above, participants taking 20 mg CBN reported no significant increase in daytime fatigue compared to placebo. This is a meaningful distinction for anyone who needs to wake up sharp—not sluggish—the next morning.</p>",
+        "right_content": "<p><strong>CBN</strong> appears to support the body’s existing mechanisms for transitioning into and maintaining sleep.</p>",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#213258"
+      }
+    },
+    "wl_hierarchy_UcptpM": {
+      "type": "wl-hierarchy",
+      "blocks": {
+        "card_ayLXi8": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/cannabis_dark_icon_3700c27c-3cf0-4774-88c8-f17049e9864c.png",
+            "header": "CBN",
+            "header_color": "#bcd868",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p><strong>CBN</strong> supports sleep onset and continuity through CB1 receptor activity and circadian rhythm modulation.</p>"
+          }
+        },
+        "card_cFaqiy": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/cannabis_light_icon_b935c245-49d5-4ad2-b3ac-13d285963d4f.png",
+            "header": "CBD",
+            "header_color": "#595378",
+            "header_font_color": "#ffffff",
+            "body_color": "#fcf5ed",
+            "content": "<p><strong>CBD</strong> supports pre-sleep calm by modulating the stress response through the HPA axis, helping quiet the “racing mind” that keeps high-performers awake.</p>"
+          }
+        },
+        "card_eDR4Cx": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/reishi.png",
+            "header": "Reishi",
+            "header_color": "#e57e3b",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p><strong>Reishi (Ganoderma lucidum)</strong> is an adaptogenic mushroom with a long history of traditional use for relaxation and immune support, complementing the cannabinoid profile with a non-cannabinoid calming pathway.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_ayLXi8",
+        "card_cFaqiy",
+        "card_eDR4Cx"
+      ],
+      "name": "HL Hierarchy",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 36,
+        "margin_bottom": 68,
+        "title": "Why We Combine CBN with CBD and Mushrooms",
+        "subtitle": "<p>Cannabinoids rarely work in isolation as effectively as they do in combination. This principle—the entourage effect—is why our <a href=\"https://hemplucid.com/products/functional-gummies-sleep-cbd-cbn-mushroom\" target=\"_blank\">Sleep CBD + CBN + Mushroom Gummies</a> pair CBN with CBD and Reishi mushroom extract:<br/><br/></p>",
+        "icon_width": 68,
+        "bottom_content": "<p>Together, these three ingredients address different dimensions of restless sleep: the nervous system, the endocannabinoid system, and the body’s adaptive stress response.</p>"
+      }
+    },
+    "wl_tabbed_image_and_text_WdQPwM": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "research-transparency",
+        "color": "#5a5478",
+        "font_color": "#ffffff",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "How to Use CBN: Timing and Routine",
+        "max_width": 73,
+        "content": "<p><strong>When: </strong>Take CBN 30–60 minutes before your target bedtime. This allows sufficient time for absorption and onset, particularly with edible formats like gummies.</p><p><strong>How: </strong>Start with the serving size recommended on your product’s label. Our sleep gummies deliver a calibrated dose of CBN alongside CBD and Reishi in each serving. For faster absorption, our <a href=\"https://hemplucid.com/products/cbn-full-spectrum-water-soluble-lavender-mint-sleep\" target=\"_blank\">CBN Water Soluble Tincture</a> uses nano-emulsion technology to improve bioavailability. <a href=\"https://hemplucid.com/blogs/blog/why-is-water-soluble-cbd-so-popular\" target=\"_blank\">Learn why water-soluble formats absorb faster →</a></p><p><strong>Routine stacking: </strong>CBN pairs well with basic sleep hygiene—consistent bedtime, limited screen exposure in the final hour, and a cool, dark room. Think of CBN as one element of a broader wind-down protocol, not a standalone solution.</p>",
+        "image": "shopify://shop_images/timing-and-routine.png",
+        "image_position": "left"
+      }
+    },
+    "wl_tabbed_image_and_text_EzzGVE": {
+      "type": "wl-tabbed-image-and-text",
+      "disabled": true,
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#5a5478",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Safety, Quality, and What to Look For",
+        "max_width": 73,
+        "content": "<p>Not all hemp products are created equal. Because cannabinoid supplements are not regulated with the same rigor as pharmaceuticals, quality varies dramatically across the market. The FDA has noted that many over-the-counter CBD products contain inaccurate labeling—some with less CBD than advertised, and others with detectable THC.</p><p>When evaluating any cannabinoid product, look for third-party Certificates of Analysis (COAs) from an independent laboratory. A COA verifies the cannabinoid content, confirms the absence of harmful contaminants like heavy metals and pesticides, and validates that THC levels remain within legal limits.  <a href=\"https://lucidlabs.hemplucid.com/\" target=\"_blank\">View Hemplucid’s lab results →</a></p><p>Important: If you are pregnant, nursing, taking prescription medications, or managing a diagnosed health condition, consult a healthcare provider before using any cannabinoid product. Cannabinoids may interact with certain medications, particularly those metabolized by cytochrome P450 liver enzymes.</p><p>Cannabinoid science is advancing rapidly. We are committed to updating this page as new peer-reviewed evidence emerges. Explore our <a href=\"https://hemplucid.com/pages/ingredients\" target=\"_blank\">ingredients and sourcing</a> to learn exactly what goes into every Hemplucid product, or visit our <a href=\"https://hemplucid.com/pages/cbd-faq\" target=\"_blank\">CBD FAQ</a> for answers to the most common questions.<br/><br/></p>",
+        "image": "shopify://shop_images/safety-quality.png",
+        "image_position": "right"
+      }
+    },
+    "wl_image_with_text_overlay_n8QFmK": {
+      "type": "wl-image-with-text-overlay",
+      "blocks": {
+        "heading_WDbNHc": {
+          "type": "heading",
+          "settings": {
+            "title": "Free Shipping On Orders Over $89",
+            "heading_max_width": 8,
+            "title_size": 84,
+            "title_size_mobile": 52,
+            "use_h1": false
+          }
+        },
+        "button_VY9AwE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://pages/store",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WDbNHc",
+        "button_VY9AwE"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media only screen and (max-width: 767px) {h2.text-overlay__title.h1 {font-family: var(--ambit-font-light); font-size: 46.526px !important; font-style: normal; font-weight: 200; line-height: 50.632px !important; max-width: 90% !important; margin-bottom: 5% !important; }}"
+      ],
+      "name": "HL Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/free-ship-banner_desktop_1.png",
+        "mobile_image": "shopify://shop_images/free-ship-banner_mobile_1.png",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "wl_transparency_image_text_MQ4KF7": {
+      "type": "wl-transparency-image-text",
+      "name": "HL Transparency Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "content": "<h3>CBN is not a pharmaceutical sleep aid</h3><p>It is a plant-derived cannabinoid with a growing—but still developing—body of evidence suggesting it supports the body’s natural transition into restful sleep. If you are taking prescription medications or managing a diagnosed sleep disorder, consult a healthcare provider before use.<br/><br/><a href=\"https://hemplucid.com/collections/sleep-support\" target=\"_blank\">Shop Sleep Support →</a>  |  <a href=\"https://lucidlabs.hemplucid.com/\" target=\"_blank\">View Lab Results →</a> |  <a href=\"/pages/hemp-and-cannabinoid-research-the-science-of-wellness\" target=\"_blank\">Read the Research →</a></p>",
+        "image": "shopify://shop_images/transparency.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "wl_gradient_header_bar_CAMYj8",
+    "image_with_text_bpPgHC",
+    "wl_tabbed_image_and_text_wyaJRa",
+    "wl_cbd_vs_cbn_XfXhGy",
+    "wl_circadian_rhythm_AUrJnk",
+    "wl_two_colum_text_wPMimB",
+    "wl_hierarchy_UcptpM",
+    "wl_tabbed_image_and_text_WdQPwM",
+    "wl_tabbed_image_and_text_EzzGVE",
+    "wl_image_with_text_overlay_n8QFmK",
+    "wl_transparency_image_text_MQ4KF7"
+  ]
+}

@@ -1,0 +1,326 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "wl_gradient_header_bar_CAMYj8": {
+      "type": "wl-gradient-header-bar",
+      "name": "HL Gradient Header",
+      "settings": {
+        "color_1": "#ef4482",
+        "color_2": "#ffd700",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "image": "shopify://shop_images/bulb.png",
+        "title": "Educational Hub"
+      }
+    },
+    "image_with_text_bpPgHC": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_rfeWaK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Hemp & Cannabinoid Research: The Science of Wellness"
+          }
+        },
+        "heading_cQA3hr": {
+          "type": "heading",
+          "settings": {
+            "title": "Transparency Is the Best Ingredient",
+            "use_h1": true
+          }
+        },
+        "text_jKVR6a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>SCIENTIFIC RESEARCH STUDIES*ON HEMP AND CANNABINOIDS</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rfeWaK",
+        "heading_cQA3hr",
+        "text_jKVR6a"
+      ],
+      "custom_css": [],
+      "name": "Image with text",
+      "settings": {
+        "cclasses": "lucid-guarantee transparency",
+        "image": "shopify://shop_images/transparency_1.png",
+        "image_width": 470,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "wl_tabbed_image_and_text_WdQPwM": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "The Science of HempLucid",
+        "max_width": 73,
+        "content": "<p>We do not ask you to take our word for it. Every ingredient in our products exists because peer-reviewed research indicates it has a meaningful role in human physiology. That standard applies across our <a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">full spectrum hemp research-backed products</a>, where whole-plant extraction preserves the minor cannabinoids and terpenes that appear alongside CBD in the published literature. This page is our commitment to showing you that evidence—clearly, honestly, and without exaggeration. Cannabinoid science is advancing rapidly, but it is not yet complete. Some findings are biologically established across decades of study. Others are emerging from early-stage clinical trials. We believe you deserve to know exactly where the evidence stands—so you can make decisions based on data, not marketing.</p>",
+        "image": "shopify://shop_images/science-of-hemplucid.png",
+        "image_position": "left"
+      }
+    },
+    "wl_tabbed_image_and_text_EzzGVE": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Our Research Philosophy",
+        "max_width": 73,
+        "content": "<p>Hemplucid is not a pharmaceutical company. We do not conduct our own clinical trials or claim that our products treat, cure, or prevent disease. What we do is build our formulations on the foundation of published, peer-reviewed science—and point you directly to the sources.</p><p>That principle extends to delivery format as well: the serving sizes in a Hemplucid <a href=\"https://hemplucid.com/collections/cbd-tinctures\" target=\"_blank\">CBD oil tincture</a> reflect what the literature supports, and our <a href=\"https://hemplucid.com/collections/cbd-mct-oil\" target=\"_blank\">hemp CBD MCT oil</a> pairs cannabinoids with a lipid carrier chosen for the same reason.<br/><br/>Every external study linked on this page opens in a new tab so you can read the original research for yourself. We cite specific sample sizes, study designs, and limitations because precision builds trust. If a study is small or preclinical, we say so.</p>",
+        "image": "shopify://shop_images/research-philosophy.png",
+        "image_position": "right"
+      }
+    },
+    "wl_hierarchy_UcptpM": {
+      "type": "wl-hierarchy",
+      "blocks": {
+        "card_eDR4Cx": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Biologically_Established_1.png",
+            "header": "Biologically*Established",
+            "header_color": "#bcd868",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p>Confirmed through decades of peer-reviewed research and widely accepted within the scientific community. Example: the existence and regulatory function of the <a href=\"https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system\">endocannabinoid system</a>.</p>"
+          }
+        },
+        "card_cFaqiy": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/Clinically_Investigated_1.png",
+            "header": "Clinically*Investigated",
+            "header_color": "#595378",
+            "header_font_color": "#ffffff",
+            "body_color": "#fcf5ed",
+            "content": "<p>Studied in human clinical trials (randomized, placebo-controlled) with published results, but not yet sufficient for regulatory approval or broad medical consensus. Example: CBD’s observed effects on cortisol and subjective stress markers.</p>"
+          }
+        },
+        "card_zdbqpA": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/biotech_1.png",
+            "header": "Emerging /*Preclinical",
+            "header_color": "#e57e3b",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p>Supported by animal models, cell studies, or early consumer data. Promising, but not yet validated in large-scale human trials. Example: CBN’s influence on sleep architecture in rodent models.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_eDR4Cx",
+        "card_cFaqiy",
+        "card_zdbqpA"
+      ],
+      "name": "HL Hierarchy",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 36,
+        "margin_bottom": 68,
+        "title": "How to Read the Evidence: A Hierarchy",
+        "subtitle": "<p>Not all evidence is equal. A single testimonial is not the same as a randomized controlled trial. To help you evaluate what you read here—and anywhere else—we use a three-tier framework:</p>",
+        "image": "shopify://shop_images/pyramid-desktop.png",
+        "image_mo": "shopify://shop_images/pyramid-mobile.png",
+        "icon_width": 68,
+        "bottom_content": ""
+      }
+    },
+    "wl_research_card_QPFyyU": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "Research Pillar 1:",
+        "subtitle": "The Endocannabinoid System",
+        "card_title": "Evidence tier:* Biologically Established",
+        "card_content": "<p>The endocannabinoid system (ECS) is a cell-signaling network that regulates homeostasis across virtually every major organ system. Its core components—CB1 and CB2 receptors, endogenous cannabinoids (anandamide and 2-AG), and the enzymes that synthesize and degrade them—have been characterized in peer-reviewed research since the early 1990s <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5877694/\" title=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5877694/\">(PMC – Cannabinoid Receptors and the ECS)</a>. This same receptor architecture is conserved across mammals—dogs and cats possess CB1 and CB2 receptors as well, which is the physiological basis for our <a href=\"https://hemplucid.com/collections/pets-cbd\" target=\"_blank\">pet cbd oil collection</a>.</p><p>CB1 receptors are concentrated in the central nervous system, where they modulate neurotransmitter release. CB2 receptors reside primarily in immune tissues. Together, they form the biological infrastructure through which both endogenous and plant-derived cannabinoids exert their effects <a href=\"https://www.health.harvard.edu/blog/the-endocannabinoid-system-essential-and-mysterious-202108112569\" target=\"_blank\" title=\"https://www.health.harvard.edu/blog/the-endocannabinoid-system-essential-and-mysterious-202108112569\">(Harvard Health – The ECS)</a>. For a full breakdown, see <a href=\"https://hemplucid.com/pages/what-are-cannabinoids\">What Are Cannabinoids?</a>.</p>",
+        "image": "shopify://shop_images/research-pillar-1.png",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#ffffff",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#bcd868",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": true,
+        "tab_color": "#eae1d5"
+      }
+    },
+    "wl_research_card_H6AVLM": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "Research Pillar 2:",
+        "subtitle": "CBD and the Stress Response",
+        "card_title": "Evidence tier:* Clinically Investigated",
+        "card_content": "<p>A 2021 systematic review identified seven double-blind, placebo-controlled clinical trials examining CBD’s effects on stress, involving a combined total of 232 participants. All seven demonstrated that CBD significantly reduced the stress response and was non-inferior to pharmaceutical comparators when included (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8704602/\" target=\"_blank\">PMC – Enhancing Endocannabinoid Control of Stress with CBD</a>).</p><p>The proposed mechanism: CBD appears to modulate the hypothalamic–pituitary–adrenal (HPA) axis by enhancing endocannabinoid signaling—specifically by increasing levels of anandamide, which in turn helps regulate cortisol output. An early foundational study demonstrated that CBD at 300–600 mg attenuated the normal circadian decline in cortisol, suggesting a direct interaction with adrenal hormone secretion (<a href=\"https://pubmed.ncbi.nlm.nih.gov/8257923/\" target=\"_blank\">PubMed – CBD and Cortisol in Human Volunteers</a>).</p><p><strong>What to note: </strong>Most of these trials used single-dose administrations at 300–600 mg—significantly higher than typical consumer servings. Research at lower doses (25–150 mg) is underway but limited. Hemplucid products are formulated within consumer-appropriate ranges; we do not claim equivalence to clinical dosing. Explore our <a href=\"https://hemplucid.com/collections/stress-support\" target=\"_blank\">stress support collection</a> and <a href=\"https://hemplucid.com/blogs/blog/how-does-cbd-work\" target=\"_blank\">how CBD works</a>for more context.<br/><br/></p>",
+        "image": "shopify://shop_images/CBD-sequence.png",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#ffffff",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#595378",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": false,
+        "tab_color": "#eae1d5"
+      }
+    },
+    "wl_research_card_mj9FXX": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "Research Pillar 3:",
+        "subtitle": "CBD and Sleep",
+        "card_title": "Evidence tier:* Emerging / Preclinical → Early Clinical",
+        "card_content": "<p>CBN (cannabinol) is a THC-derived minor cannabinoid that has generated significant consumer interest for sleep support. The endocannabinoid system is involved in regulating circadian rhythmicity, and CBN acts as a weak agonist at CB1 receptors—approximately one-tenth the potency of THC—which may account for its observed calming properties without significant intoxication (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10450062/\" target=\"_blank\">PMC – CUPID Study Protocol</a>).</p><p>A 2024 preclinical study using polysomnography in rodent models provided the first objective evidence that CBN influences sleep architecture, increasing both NREM and REM sleep time (<a href=\"https://www.nature.com/articles/s41386-024-02018-7\" target=\"_blank\">Nature – Neuropsychopharmacology</a>). On the clinical side, a 2023 randomized, double-blind, placebo-controlled trial (N=293) found that 20 mg of CBN taken nightly reduced nighttime awakenings and overall sleep disturbance compared to placebo, without increasing daytime fatigue (<a href=\"https://pubmed.ncbi.nlm.nih.gov/37796540/\" target=\"_blank\">PubMed – CBN and Sleep Quality</a>).</p><p><strong>What to note: </strong>A 2021 narrative review cautioned that much of the published human data on CBN and sleep is dated and limited in sample size, and that randomized controlled trials using validated polysomnography were, at that time, largely absent (<a href=\"https://pubmed.ncbi.nlm.nih.gov/34468204/\" target=\"_blank\">PubMed – CBN and Sleep: Separating Fact from Fiction</a>). That landscape is now shifting with new trials underway. We track this research closely. <a href=\"https://hemplucid.com/pages/what-is-cbn\" target=\"_blank\">Learn more about CBN →</a> |  <a href=\"https://hemplucid.com/collections/sleep-support\" target=\"_blank\">Shop Sleep Support →</a></p>",
+        "image": "shopify://shop_images/CBN-sequence.png",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#ffffff",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#e57d39",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": false,
+        "tab_color": "#eae1d5"
+      }
+    },
+    "wl_curated_library_pkTMLX": {
+      "type": "wl-curated-library",
+      "name": "HL Curated Library",
+      "settings": {
+        "title": "Curated Research Library",
+        "subtitle": "The following studies are hosted on PubMed, the U.S. National Library of Medicine’s open-access database. Each link opens in a new tab.",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#5a5478",
+        "font_color_1": "#ffd700",
+        "font_color_2": "#ffffff",
+        "link_color": "#ffffff",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "column_1": "<h3><strong>Endocannabinoid System</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5877694/\" target=\"_blank\">Zou & Kumar (2018). “Cannabinoid Receptors and the Endocannabinoid System.”</a></p><p><a href=\"https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2016.00294/full\" target=\"_blank\">Lu & Mackie (2016). “Cannabinoid Receptors in the CNS: Signaling and Roles in Disease.”</a></p><p>**~</p><h3><strong>CBD & Stress Response</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8704602/\" target=\"_blank\">Skelley et al. (2021). “Enhancing Endocannabinoid Control of Stress with Cannabidiol.”</a></p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/8257923/\" target=\"_blank\">Zuardi et al. (1993). “Effect of CBD on Plasma Cortisol in Human Volunteers.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7113209/\" target=\"_blank\">Appiah-Kusi et al. (2020). “Short-term CBD Treatment on Response to Social Stress.”</a></p><p>~</p>",
+        "column_2": "<h3><strong>CBN & Sleep</strong></h3><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/37796540/\" target=\"_blank\">Corroon et al. (2024). “Double-Blind, Placebo-Controlled Study of CBN on Sleep Quality” (N=293).</a></p><p><a href=\"https://www.nature.com/articles/s41386-024-02018-7\" target=\"_blank\">Lavender et al. (2024). “CBN and Its Active Metabolite Influence Sleep Architecture in Rats.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10450062/\" target=\"_blank\">Suraev et al. (2023). “CUPID Study Protocol: CBN Effects on Sleep in Insomnia Disorder.”</a></p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/34468204/\" target=\"_blank\">Corroon (2021). “CBN and Sleep: Separating Fact from Fiction.”</a></p><p><strong>*~</strong></p><h3><strong>Cannabinoid Pharmacology (General)</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11050509/\" target=\"_blank\">Formato et al. (2024). “Phytocannabinoids: Exploring Pharmacological Profiles.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3165957/\" target=\"_blank\">De Petrocellis et al. (2011). “Effects of Cannabinoids on TRP Channels.”</a></p>"
+      }
+    },
+    "wl_tabbed_image_and_text_wyaJRa": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#5a5478",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Our Transparency Commitment",
+        "max_width": 73,
+        "content": "<p>Cannabinoid research is evolving. New clinical trials are being published regularly, and our understanding of how these compounds interact with human physiology deepens each year. We are active participants in this process—monitoring the literature, updating our formulations, and revising this page as the evidence base grows.</p><p>We also subject every batch of every product to independent, third-party laboratory testing. The resulting Certificates of Analysis (COAs) are available to you at any time. <a href=\"https://lucidlabs.hemplucid.com/\" target=\"_blank\" title=\"https://lucidlabs.hemplucid.com/\">View our lab results →</a> </p><p>If you have questions about specific studies, ingredients, or formulations, our team is available at <a href=\"https://hemplucid.com/pages/contact\" title=\"https://hemplucid.com/pages/contact\">hemplucid.com/contact</a>. We would rather answer a hard question honestly than offer an easy answer that overpromises.</p>",
+        "image": "shopify://shop_images/transparency-commitment.png",
+        "image_position": "right"
+      }
+    },
+    "wl_image_with_text_overlay_n8QFmK": {
+      "type": "wl-image-with-text-overlay",
+      "blocks": {
+        "heading_WDbNHc": {
+          "type": "heading",
+          "settings": {
+            "title": "Free Shipping On Orders Over $89",
+            "heading_max_width": 8,
+            "title_size": 84,
+            "title_size_mobile": 52,
+            "use_h1": false
+          }
+        },
+        "button_VY9AwE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://pages/store",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WDbNHc",
+        "button_VY9AwE"
+      ],
+      "custom_css": [],
+      "name": "HL Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/free-ship-banner_desktop.png",
+        "mobile_image": "shopify://shop_images/free-ship-banner_mobile.png",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "wl_gradient_header_bar_CAMYj8",
+    "image_with_text_bpPgHC",
+    "wl_tabbed_image_and_text_WdQPwM",
+    "wl_tabbed_image_and_text_EzzGVE",
+    "wl_hierarchy_UcptpM",
+    "wl_research_card_QPFyyU",
+    "wl_research_card_H6AVLM",
+    "wl_research_card_mj9FXX",
+    "wl_curated_library_pkTMLX",
+    "wl_tabbed_image_and_text_wyaJRa",
+    "wl_image_with_text_overlay_n8QFmK"
+  ]
+}

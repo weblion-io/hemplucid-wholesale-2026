@@ -1,0 +1,17 @@
+{%- comment -%}
+  templates/product.atc-data.liquid
+  Data feed for the Quick Order drawer: fetched as /products/{handle}?view=atc-data
+  Supplies variant metafields that /products/{handle}.js does not include.
+{%- endcomment -%}
+{%- layout none -%}
+{
+  "tags": {{ product.tags | json }},
+  "variants": {
+    {%- for v in product.variants -%}
+      "{{ v.id }}": {
+        "label": {{ v.metafields.custom.label.value | append: '' | strip | json }},
+        "per_serving": {{ v.metafields.custom.per_serving.value | append: '' | strip | json }}
+      }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  }
+}

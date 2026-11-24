@@ -1,0 +1,341 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "wl_gradient_header_bar_CAMYj8": {
+      "type": "wl-gradient-header-bar",
+      "name": "HL Gradient Header",
+      "settings": {
+        "color_1": "#ef4482",
+        "color_2": "#ffd700",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "image": "shopify://shop_images/bulb.png",
+        "title": "Educational Hub"
+      }
+    },
+    "image_with_text_bpPgHC": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading_rfeWaK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "The Lucid Guarantee"
+          }
+        },
+        "heading_cQA3hr": {
+          "type": "heading",
+          "settings": {
+            "title": "Tested for Those Who Read the Fine Print.",
+            "use_h1": true
+          }
+        },
+        "text_jKVR6a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>The hemp industry has a trust problem. Because cannabinoid supplements are not held to the same regulatory standards as pharmaceuticals, label accuracy, contaminant screening, and potency verification vary wildly from brand to brand. The FDA has documented cases of products containing less CBD than advertised, undisclosed THC, or detectable levels of heavy metals and pesticides. </p><p>We built Hemplucid to be the exception. Every product we sell is subjected to independent, third-party laboratory testing before it reaches your hands. Not a spot check. Not a sample. Every batch, every time. That standard applies to every formula we make, including our <a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">lab tested full spectrum CBD</a> and our <a href=\"https://hemplucid.com/collections/pets-cbd\" target=\"_blank\">lab-tested pet CBD products</a>. And we give you the tools to verify it yourself.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_rfeWaK",
+        "heading_cQA3hr",
+        "text_jKVR6a"
+      ],
+      "name": "Image with text",
+      "settings": {
+        "cclasses": "lucid-guarantee switch",
+        "image": "shopify://shop_images/tested.png",
+        "image_width": 470,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "wl_lucid_id_NCLytW": {
+      "type": "wl-lucid-id",
+      "blocks": {
+        "card_MkdpWM": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/scan.png",
+            "header": "Step 1: Scan",
+            "header_color": "#bcd868",
+            "header_font_color": "#241f21",
+            "body": "Use your phone’s camera to scan the QR code on your bottle, or enter the lot number manually in the search bar below.",
+            "body_color": "#fcf5ed",
+            "body_font_color": "#241f21",
+            "author": "Darth Vader"
+          }
+        },
+        "card_6h7KM7": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/verify.png",
+            "header": "Step 2: Verify",
+            "header_color": "#595378",
+            "header_font_color": "#ffffff",
+            "body": "Your product’s full Certificate of Analysis (COA) loads instantly—showing potency, purity, and safety results for your specific batch.",
+            "body_color": "#fcf5ed",
+            "body_font_color": "#241f21",
+            "author": "Darth Vader"
+          }
+        },
+        "card_CgCDKq": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/trust.png",
+            "header": "Step 3: Trust",
+            "header_color": "#e57e3b",
+            "header_font_color": "#241f21",
+            "body": "Review the data yourself. Every COA is issued by an independent, ISO-accredited laboratory—not by Hemplucid.",
+            "body_color": "#fcf5ed",
+            "body_font_color": "#241f21",
+            "author": "Darth Vader"
+          }
+        }
+      },
+      "block_order": [
+        "card_MkdpWM",
+        "card_6h7KM7",
+        "card_CgCDKq"
+      ],
+      "name": "HL Lucid Id",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "LucidID: From Soil to Shelf in One Scan",
+        "content": "Every Hemplucid product carries a LucidID—an intelligent identifier that connects your specific bottle to its exact batch lab report. Think of it as a passport for your product: it tells you what’s inside, what’s been tested, and what the results were.",
+        "image": "shopify://shop_images/lucidid.png"
+      }
+    },
+    "wl_lot_search_K4X8nf": {
+      "type": "wl-lot-search",
+      "name": "HL Lot Search",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_132.png",
+        "mo_image": "shopify://shop_images/Rectangle_125.png",
+        "bkg_color": "#000000",
+        "font_color": "#ffffff",
+        "title": "Lot Search",
+        "link_text": "Search Your Batch Now",
+        "link": "https://lucidlabs.hemplucid.com"
+      }
+    },
+    "wl_qt_overlook_LqwPJe": {
+      "type": "wl-qt-overlook",
+      "blocks": {
+        "card_gtC3zV": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/potency_cropped.png",
+            "header": "Potency: Certificate of Analysis Accuracy",
+            "content": "What the label says should match what’s in the bottle. Our third-party lab quantifies the exact milligram concentration of CBD, CBN, CBG, CBC, and THC in every batch. If a product says 1,000 mg of CBD, the COA confirms it—within the lab’s validated margin of analytical precision. No rounding, no estimates.",
+            "font_color": "#241f21",
+            "bkg_color": "#ffffff",
+            "tab_color": "#bbd868"
+          }
+        },
+        "card_RPDJQR": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/purity_cropped.png",
+            "header": "Purity: Certificate of Analysis Contaminant Screening",
+            "content": "Every batch is screened for more than 500 pesticides and herbicides, residual solvents from the extraction process, and heavy metals including lead, arsenic, mercury, and cadmium. Our acceptable thresholds align with or exceed the limits established by the U.S. Pharmacopeia (USP) and state regulatory frameworks. The goal is simple: nothing in the bottle that shouldn’t be there.",
+            "font_color": "#241f21",
+            "bkg_color": "#ffffff",
+            "tab_color": "#5a5478"
+          }
+        },
+        "card_4FQmrq": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/microbial_cropped.png",
+            "header": "Microbial Safety: Certificate of Analysis Pathogen Testing",
+            "content": "Hemp-derived products can be susceptible to microbial contamination during cultivation and processing. Our protocol tests for total aerobic microbial count, total yeast and mold count, and the absence of specific pathogens including E. coli and Salmonella. Products must return negative results for all targeted pathogens before release.",
+            "font_color": "#241f21",
+            "bkg_color": "#ffffff",
+            "tab_color": "#e57d39"
+          }
+        },
+        "image_jdpjX9": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/heavy-metals.png",
+            "header": "Heavy Metals",
+            "font_color": "#241f21"
+          }
+        },
+        "image_R3iHdy": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Pesticide-Free.png",
+            "header": "Pesticide-Free",
+            "font_color": "#241f21"
+          }
+        },
+        "image_6KRVGr": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Microbe-Free.png",
+            "header": "Microbe-Free",
+            "font_color": "#241f21"
+          }
+        },
+        "image_pzxC4t": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/Potency_Verified.png",
+            "header": "Potency Verified",
+            "font_color": "#241f21"
+          }
+        }
+      },
+      "block_order": [
+        "card_gtC3zV",
+        "card_RPDJQR",
+        "card_4FQmrq",
+        "image_jdpjX9",
+        "image_R3iHdy",
+        "image_6KRVGr",
+        "image_pzxC4t"
+      ],
+      "name": "HL Q&T Overlook",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "We Rule Out What Others Overlook",
+        "content": "Some brands test for the minimum. We test to lead. Our full-panel testing protocol goes beyond basic cannabinoid potency to screen for contaminants that many competitors never check for."
+      }
+    },
+    "wl_tabbed_image_and_text_WdQPwM": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#5a5478",
+        "font_color": "#ffffff",
+        "link_color": "#ffffff",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "USDA Organic Integrity",
+        "max_width": 73,
+        "content": "<p>Several Hemplucid products carry <a href=\"https://www.usda.gov/farming-and-ranching/organic-farming\">USDA Organic certification</a>—a designation that applies not just to the final extract, but to the entire supply chain. USDA Organic standards govern the soil the hemp is grown in, the cultivation practices used, and the processing methods applied during extraction. This means no synthetic fertilizers, no prohibited pesticides, and no genetically modified organisms at any stage. Our <a href=\"https://hemplucid.com/collections/organic-cbd\">organic CBD collection</a> reflects this commitment.</p><p>Organic certification does not replace third-party testing—it complements it. We test our organic products with the same full-panel protocol described above, because certification verifies process, and testing verifies outcome. You need both.</p>",
+        "image": "shopify://shop_images/Group_75.png",
+        "image_position": "left"
+      }
+    },
+    "wl_tabbed_image_and_text_EzzGVE": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#5a5478",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "How to Read a Certificate of Analysis",
+        "max_width": 73,
+        "content": "<p>A COA is a document issued by a third-party laboratory summarizing the test results for a specific product batch. If you’ve never read one before, here are the key terms to look for: </p><p><strong>Analyte:</strong> The substance being measured—for example, CBD, THC, lead, or a specific pesticide. </p><p><strong>LOQ (Limit of Quantification):</strong> The lowest concentration the lab can accurately measure. If a result reads “&lt; LOQ,” it means the substance was either absent or present below the lab’s detection threshold. </p><p><strong>ND (Not Detected):</strong> The substance was not found at any measurable level. This is the result you want to see for contaminants. </p><p><strong>Pass / Fail:</strong> A summary judgment based on whether the measured value falls within acceptable limits. All Hemplucid products must receive a “Pass” on every tested parameter before release. </p><p>If a COA raises questions you can’t resolve on your own, <a href=\"https://hemplucid.com/pages/contact\" title=\"contact our team\">contact our team</a>. We will walk you through it.<br/><br/></p>",
+        "image": "shopify://shop_images/lab.png",
+        "image_position": "right"
+      }
+    },
+    "wl_image_with_text_overlay_n8QFmK": {
+      "type": "wl-image-with-text-overlay",
+      "blocks": {
+        "heading_WDbNHc": {
+          "type": "heading",
+          "settings": {
+            "title": "Free Shipping On Orders Over $89",
+            "heading_max_width": 8,
+            "title_size": 84,
+            "title_size_mobile": 52,
+            "use_h1": false
+          }
+        },
+        "button_VY9AwE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://pages/store",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WDbNHc",
+        "button_VY9AwE"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 767px) {h2.text-overlay__title.h1 {font-family: var(--ambit-font-light); font-size: 46.526px !important; font-style: normal; font-weight: 200; line-height: 50.632px !important; max-width: 90% !important; margin-bottom: 5% !important; }}"
+      ],
+      "name": "HL Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/free-ship-banner_desktop_1.png",
+        "mobile_image": "shopify://shop_images/free-ship-banner_mobile_1.png",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "wl_transparency_image_text_izhkVn": {
+      "type": "wl-transparency-image-text",
+      "name": "HL Transparency Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "margin_top": 48,
+        "margin_bottom": 56,
+        "content": "<p>Transparency is not a marketing strategy. It is the operating principle behind every decision we make—from <a href=\"https://hemplucid.com/pages/ingredients\">sourcing and ingredients</a> to <a href=\"/pages/hemp-and-cannabinoid-research-the-science-of-wellness\">the research we follow</a>. The Lucid Guarantee means that if you can’t verify it, we haven’t earned your trust. And we intend to earn it with every batch.</p>",
+        "image": "shopify://shop_images/transparency.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "wl_gradient_header_bar_CAMYj8",
+    "image_with_text_bpPgHC",
+    "wl_lucid_id_NCLytW",
+    "wl_lot_search_K4X8nf",
+    "wl_qt_overlook_LqwPJe",
+    "wl_tabbed_image_and_text_WdQPwM",
+    "wl_tabbed_image_and_text_EzzGVE",
+    "wl_image_with_text_overlay_n8QFmK",
+    "wl_transparency_image_text_izhkVn"
+  ]
+}

@@ -1,0 +1,372 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "wl_gradient_header_bar_CAMYj8": {
+      "type": "wl-gradient-header-bar",
+      "name": "HL Gradient Header",
+      "settings": {
+        "color_1": "#ef4482",
+        "color_2": "#ffd700",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "image": "shopify://shop_images/bulb.png",
+        "title": "Educational Hub"
+      }
+    },
+    "image_with_text_bpPgHC": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cQA3hr": {
+          "type": "heading",
+          "settings": {
+            "title": "Ingredients with Purpose",
+            "use_h1": true
+          }
+        },
+        "text_jKVR6a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Every ingredient in a Hemplucid formula exists for a specific, documented reason. Nothing is added for appearance, nothing for filler, and nothing because it’s inexpensive. <br/><br/>We select each component based on three criteria: does it serve a biological function, is it supported by published research, and can we verify its purity through <a href=\"/pages/quality-and-testing-the-lucid-guarantee\" target=\"_blank\">independent laboratory testing</a>?<br/><br/>This page explains what’s in our products, why it’s there, and how each ingredient contributes to the formula’s overall performance.</p><p>Formula-specific panels live on the product pages themselves, so the exact <a href=\"https://hemplucid.com/collections/cbd-tinctures\" target=\"_blank\">CBD tincture ingredients</a> in each bottle—extract type, carrier oil, potency—can be reviewed before you buy.</p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cQA3hr",
+        "text_jKVR6a"
+      ],
+      "custom_css": [],
+      "name": "Image with text",
+      "settings": {
+        "cclasses": "lucid-guarantee switch",
+        "image": "shopify://shop_images/ingredients-hero.png",
+        "image_width": 470,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "wl_tabbed_image_and_text_EzzGVE": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Sourced for Absorption. Combined for Potency.",
+        "max_width": 94,
+        "content": "<p>We formulate with whole-plant, <a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">full-spectrum hemp extracts</a> rather than isolated single compounds. The reason is biological: cannabinoids, terpenes, and flavonoids appear to work more effectively together than in isolation—a phenomenon researchers refer to as the entourage effect. A full-spectrum extract preserves the plant’s natural chemical diversity, delivering a broader range of active compounds in every serving.<br/><br/>Where individual cannabinoid isolates strip the plant down to one molecule, our approach retains the supporting cast—minor cannabinoids like CBG and CBC, aromatic terpenes, and plant-derived flavonoids—that research suggests may enhance overall efficacy. For a deeper look at how these compounds interact, see <a href=\"https://hemplucid.com/pages/what-are-cannabinoids\" target=\"_blank\">What Are Cannabinoids?</a></p>",
+        "image": "shopify://shop_images/sourced-for-absorption.png",
+        "image_position": "left"
+      }
+    },
+    "wl_tabbed_image_and_text_FECw6m": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Core Carrier: Organic MCT Oil",
+        "max_width": 58,
+        "content": "<p>Cannabinoids are lipophilic—they dissolve in fats, not water. On their own, oral CBD has been estimated to have a bioavailability of just 13–19%. That means without a proper carrier, most of what you ingest never reaches systemic circulation.<br/><br/>Medium-chain triglycerides (MCTs), derived from organic coconut oil, serve as the delivery vehicle in our oil-based tinctures. MCTs are rapidly digested and absorbed compared to longer-chain fats, facilitating faster transport of cannabinoids into the bloodstream. Published research confirms that lipid-based formulations—including those using MCT—significantly improve the oral delivery of CBD compared to lipid-free preparations (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10892205/\" target=\"_blank\">PMC – Strategies to Improve CBD Bioavailability</a>). MCT oil also demonstrates superior terpene preservation during storage, helping maintain the full-spectrum profile over the product’s shelf life. Explore our <a href=\"https://hemplucid.com/products/organic-cbd-full-spectrum-mct-oil\" target=\"_blank\">CBD MCT Oil tinctures →</a></p>",
+        "image": "shopify://shop_images/Core_Carrier.png",
+        "image_position": "left"
+      }
+    },
+    "wl_hierarchy_UcptpM": {
+      "type": "wl-hierarchy",
+      "blocks": {
+        "card_eDR4Cx": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/1_icon_small_b9d675e8-1d87-4335-a00d-72e6ebd37234.png",
+            "header": "Cannabinoids",
+            "header_color": "#bcd868",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p><strong>CBD (Cannabidiol): </strong>The primary non-intoxicating cannabinoid in hemp. Commonly discussed for its potential role in supporting calm and physical comfort. <a href=\"https://hemplucid.com/blogs/blog/how-does-cbd-work\" target=\"_blank\">Learn how CBD works →</a></p><p><strong>CBN (Cannabinol):</strong> A minor cannabinoid formed as THC ages. Commonly discussed for its association with relaxation and restful sleep.<a href=\"https://hemplucid.com/pages/what-is-cbn\" target=\"_blank\">Learn more about CBN →</a></p><p><strong>CBG (Cannabigerol):</strong> Known as the “mother cannabinoid”—the biosynthetic precursor to CBD, THC, and CBC. Commonly discussed for focus and digestive comfort.</p><p><strong>CBC (Cannabichromene): </strong>A non-intoxicating cannabinoid that interacts with TRP channel receptors rather than CB1/CB2 directly. Commonly discussed for its contribution to the entourage effect.</p>"
+          }
+        },
+        "card_cFaqiy": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/2_icon_small_b7be1836-5ee9-42e8-aa9c-d7ccb8b56eda.png",
+            "header": "Terpenes",
+            "header_color": "#595378",
+            "header_font_color": "#ffffff",
+            "body_color": "#fcf5ed",
+            "content": "<p>Terpenes are aromatic compounds found across the plant kingdom—not unique to hemp. In full-spectrum extracts, they contribute to flavor, aroma, and may modulate how cannabinoids interact with the body. Key terpenes preserved in our extracts include:</p><p><strong>Myrcene: </strong>The most abundant terpene in cannabis. Also found in hops, lemongrass, and mangoes. Commonly discussed for its calming and muscle-relaxing properties.</p><p><strong>Limonene: </strong>Found in citrus peels. Commonly discussed for mood elevation and stress relief.</p><p><strong>Pinene: </strong>Found in pine needles and rosemary. Commonly discussed for alertness and respiratory support.<br/>For more on terpene science, visit our <a href=\"https://hemplucid.com/blogs/blog/benefits-of-terpenes\" target=\"_blank\">benefits of terpenes guide</a>.</p>"
+          }
+        },
+        "card_zdbqpA": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/3_icon_small_9cff19d8-73b4-4bf5-805b-9937bdbcb4ee.png",
+            "header": "Flavonoids",
+            "header_color": "#e57e3b",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p>Flavonoids are polyphenolic compounds with documented antioxidant properties. Hemp-specific flavonoids—sometimes called d—are present in small quantities in whole-plant extracts and are retained in our full-spectrum formulations.</p><p>This same cannabinoid, terpene, and flavonoid profile carries into our animal formulas, where the <a href=\"https://hemplucid.com/collections/pets-cbd\" target=\"_blank\">pet cbd oil ingredients</a> are held to identical sourcing standards at concentrations calibrated for smaller body weights.</p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_eDR4Cx",
+        "card_cFaqiy",
+        "card_zdbqpA"
+      ],
+      "name": "HL Hierarchy",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 36,
+        "margin_bottom": 68,
+        "title": "The Full-Spectrum Synergy Team",
+        "subtitle": "<p>Each full-spectrum Hemplucid product contains a naturally occurring profile of cannabinoids, terpenes, and flavonoids. Here are the principal active groups:</p>",
+        "image": "shopify://shop_images/terpenes-cammabinoids-flavinoids_1.png",
+        "image_mo": "shopify://shop_images/terpenes-cammabinoids-flavinoids_1.png",
+        "icon_width": 32,
+        "bottom_content": ""
+      }
+    },
+    "wl_curated_library_pkTMLX": {
+      "type": "wl-curated-library",
+      "disabled": true,
+      "name": "HL Curated Library",
+      "settings": {
+        "title": "Curated Research Library",
+        "subtitle": "The following studies are hosted on PubMed, the U.S. National Library of Medicine’s open-access database. Each link opens in a new tab.",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#5a5478",
+        "font_color_1": "#ffd700",
+        "font_color_2": "#ffffff",
+        "link_color": "#ffffff",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "column_1": "<h3><strong>Endocannabinoid System</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5877694/\" target=\"_blank\">Zou & Kumar (2018). “Cannabinoid Receptors and the Endocannabinoid System.”</a></p><p><a href=\"https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2016.00294/full\" target=\"_blank\">Lu & Mackie (2016). “Cannabinoid Receptors in the CNS: Signaling and Roles in Disease.”</a></p><p>**~</p><h3><strong>CBD & Stress Response</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8704602/\" target=\"_blank\">Skelley et al. (2021). “Enhancing Endocannabinoid Control of Stress with Cannabidiol.”</a></p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/8257923/\" target=\"_blank\">Zuardi et al. (1993). “Effect of CBD on Plasma Cortisol in Human Volunteers.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7113209/\" target=\"_blank\">Appiah-Kusi et al. (2020). “Short-term CBD Treatment on Response to Social Stress.”</a></p><p>~</p>",
+        "column_2": "<h3><strong>CBN & Sleep</strong></h3><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/37796540/\" target=\"_blank\">Corroon et al. (2024). “Double-Blind, Placebo-Controlled Study of CBN on Sleep Quality” (N=293).</a></p><p><a href=\"https://www.nature.com/articles/s41386-024-02018-7\" target=\"_blank\">Lavender et al. (2024). “CBN and Its Active Metabolite Influence Sleep Architecture in Rats.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10450062/\" target=\"_blank\">Suraev et al. (2023). “CUPID Study Protocol: CBN Effects on Sleep in Insomnia Disorder.”</a></p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/34468204/\" target=\"_blank\">Corroon (2021). “CBN and Sleep: Separating Fact from Fiction.”</a></p><p><strong>*~</strong></p><h3><strong>Cannabinoid Pharmacology (General)</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11050509/\" target=\"_blank\">Formato et al. (2024). “Phytocannabinoids: Exploring Pharmacological Profiles.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3165957/\" target=\"_blank\">De Petrocellis et al. (2011). “Effects of Cannabinoids on TRP Channels.”</a></p>"
+      }
+    },
+    "wl_tabbed_image_and_text_wyaJRa": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "functional",
+        "color": "#5a5478",
+        "font_color": "#ffffff",
+        "link_color": "#ffffff",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Functional Ingredients: Mushrooms and Botanicals",
+        "max_width": 94,
+        "content": "<p>Our functional gummy line pairs cannabinoids with adaptogenic mushroom extracts—each selected for a specific use case:</p><p><strong>Reishi (Ganoderma lucidum): </strong> An adaptogenic mushroom with a long history of traditional use. Paired with CBD and CBN in our <a href=\"https://hemplucid.com/products/functional-gummies-sleep-cbd-cbn-mushroom\" target=\"_blank\">Sleep gummies →</a> to support nighttime calm.</p><p><strong>Lion’s Mane (Hericium erinaceus):</strong> Commonly discussed for cognitive support and focus. Featured in our <a href=\"https://hemplucid.com/products/functional-gummies-focus-cbg-mushroom\" target=\"_blank\">Focus CBG + Mushroom gummies</a>.</p><p><strong>Cordyceps (Cordyceps militaris):</strong>Traditionally associated with energy and endurance. Included in functional blends designed for daytime vitality.</p><p>Each mushroom extract is sourced from fruiting bodies—not mycelium grown on grain—to ensure the highest concentration of active beta-glucans and other bioactive compounds.</p>",
+        "image": "shopify://shop_images/functional_ingredients.png",
+        "image_position": "left"
+      }
+    },
+    "wl_icon_grid_rECfxV": {
+      "type": "wl-icon-grid",
+      "blocks": {
+        "image_tGKNY3": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/1_articifial-sweetners.png",
+            "header": "Artificial *Sweetners",
+            "content": "",
+            "font_color": "#241f21"
+          }
+        },
+        "image_3NdMbj": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/1_artificial-flavor.png",
+            "header": "Artificial *Flavors",
+            "content": "",
+            "font_color": "#241f21"
+          }
+        },
+        "image_YWECPN": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/1_artificial-colors.png",
+            "header": "Artificial *Colors",
+            "content": "",
+            "font_color": "#241f21"
+          }
+        },
+        "image_TiQGPT": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/1_synthetic-fillers.png",
+            "header": "synthetic fillers or *bulking agents",
+            "content": "",
+            "font_color": "#241f21"
+          }
+        },
+        "image_b9yEp6": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/1_harmful-solvents.png",
+            "header": "harmful extraction *solvents",
+            "content": "",
+            "font_color": "#241f21"
+          }
+        },
+        "image_axqqm8": {
+          "type": "image",
+          "settings": {
+            "icon": "shopify://shop_images/1_gmos.png",
+            "header": "genetically modified *organisms (GMOs)",
+            "content": "",
+            "font_color": "#241f21"
+          }
+        }
+      },
+      "block_order": [
+        "image_tGKNY3",
+        "image_3NdMbj",
+        "image_YWECPN",
+        "image_TiQGPT",
+        "image_b9yEp6",
+        "image_axqqm8"
+      ],
+      "name": "HL Icon Grid",
+      "settings": {
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "The No-Go List: What We Never Use",
+        "content": "A clean formula is defined as much by what’s absent as by what’s present. Every Hemplucid product is formulated without:",
+        "narrow": false,
+        "footer": "If an ingredient doesn’t serve your body, it doesn’t belong in the bottle.",
+        "show_tab": true,
+        "tab_color": "#595378"
+      }
+    },
+    "wl_tabbed_image_and_text_WdQPwM": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "USDA Organic Handler Certification",
+        "max_width": 73,
+        "content": "<p>HempLucid has held <a href=\"https://www.usda.gov/topics/organic\" target=\"_blank\">USDA Organic </a>Handler certification since 2020. This certification applies to our handling, processing, and packaging operations and requires compliance with the National Organic Program’s standards—including strict controls on prohibited substances, facility sanitation, and record-keeping.</p><p>For our <a href=\"https://hemplucid.com/collections/organic-cbd\" target=\"_blank\">organic product line</a>, this means: the hemp is cultivated in certified organic soil without synthetic fertilizers or prohibited pesticides, extraction methods comply with organic handling requirements, and the finished product is verified through our <a href=\"/pages/quality-and-testing-the-lucid-guarantee\" target=\"_blank\">third-party testing protocol</a>.</p><p>Organic certification verifies the process. Laboratory testing verifies the outcome. We maintain both.<br/><br/></p>",
+        "image": "shopify://shop_images/usda-organic-large.png",
+        "image_position": "right"
+      }
+    },
+    "wl_image_with_text_overlay_n8QFmK": {
+      "type": "wl-image-with-text-overlay",
+      "blocks": {
+        "heading_WDbNHc": {
+          "type": "heading",
+          "settings": {
+            "title": "Free Shipping On Orders Over $89",
+            "heading_max_width": 8,
+            "title_size": 84,
+            "title_size_mobile": 52,
+            "use_h1": false
+          }
+        },
+        "button_VY9AwE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://pages/store",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WDbNHc",
+        "button_VY9AwE"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "@media only screen and (max-width: 767px) {h2.text-overlay__title.h1 {font-family: var(--ambit-font-light); font-size: 46.526px !important; font-style: normal; font-weight: 200; line-height: 50.632px !important; max-width: 90% !important; margin-bottom: 5% !important; }}"
+      ],
+      "name": "HL Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/free-ship-banner_desktop_1.png",
+        "mobile_image": "shopify://shop_images/free-ship-banner_mobile_1.png",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "wl_transparency_image_text_MQ4KF7": {
+      "type": "wl-transparency-image-text",
+      "name": "HL Transparency Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "content": "<h3>Every ingredient earns its place through function, not marketing.</h3><p>To understand the peer-reviewed research behind our core compounds, visit our Research Hub. To verify what’s in your specific bottle, use LucidLabs.</p>",
+        "image": "shopify://shop_images/Group_67.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "wl_gradient_header_bar_CAMYj8",
+    "image_with_text_bpPgHC",
+    "wl_tabbed_image_and_text_EzzGVE",
+    "wl_tabbed_image_and_text_FECw6m",
+    "wl_hierarchy_UcptpM",
+    "wl_curated_library_pkTMLX",
+    "wl_tabbed_image_and_text_wyaJRa",
+    "wl_icon_grid_rECfxV",
+    "wl_tabbed_image_and_text_WdQPwM",
+    "wl_image_with_text_overlay_n8QFmK",
+    "wl_transparency_image_text_MQ4KF7"
+  ]
+}

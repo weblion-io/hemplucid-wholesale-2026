@@ -1,0 +1,1091 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "heading": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Got a Question?<br>We’re Here to Answer",
+            "heading_max_width": 15,
+            "title_size": 52,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At HempLucid, we’re committed to providing reliable, quality information to help you make informed decisions about your health. In our FAQ list below, you will find valuable answers to some of the most common questions we receive and some links to helpful resources. You will also find details about different HempLucid programs such as rewards points, subscriptions, and more. <br/><br/>If you can’t find your answer below, please feel free to contact us.</p>",
+            "enlarge_text": true
+          }
+        },
+        "button_YQkMaV": {
+          "type": "button",
+          "settings": {
+            "button_label": "Email us",
+            "button_link": "shopify://pages/contact",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button_YQkMaV"
+      ],
+      "settings": {
+        "custom_class": "",
+        "image": "shopify://shop_images/cbd-capsules-collection.png",
+        "mobile_image": "shopify://shop_images/cbd-capsules-collection_mobile.png",
+        "height": "fixed",
+        "height_desktop": 420,
+        "height_mobile": 300,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center left",
+        "mobile_overlay_under": true,
+        "mobile_text_bkg_color": "#86EAE6",
+        "mobile_text_color": "#010101",
+        "overlay_style": "shadow"
+      }
+    },
+    "main": {
+      "type": "faq-header",
+      "settings": {
+        "title": "FAQ",
+        "use_h1": false,
+        "text": "",
+        "show_search": true,
+        "show_index": true,
+        "index_heading": "How can we help?"
+      }
+    },
+    "faq-content-1": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "Does HempLucid offer free shipping?",
+            "answer": "<p>You can select a free shipping option on any domestic order with a subtotal of $89 or more (subtotal must be $89+ after any discounts or coupons have been applied to qualify). HempLucid does not offer free shipping on international or expedited orders.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question-2": {
+          "type": "question",
+          "settings": {
+            "title": "Does HempLucid ship internationally?",
+            "answer": "<p>We currently ship internationally to the United Kingdom and Spain. For more information on international shipments, please see our <a href=\"https://hemplucid.com/policies/shipping-policy\" title=\"HempLucid Shipping Policy\">shipping policy</a>.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_p8Yqry": {
+          "type": "question",
+          "settings": {
+            "title": "How do I become a HempLucid reseller?",
+            "answer": "<p>You can become a wholesaler or dropshipper of our products if you are a store owner or have your own website from which you can sell products.<br/><br/><a href=\"https://wholesale.hemplucid.com/pages/become-a-wholesaler\" title=\"Become a HempLucid Reseller\">Apply to become a HempLucid reseller.</a></p><p><a href=\"https://hemplucid.com/pages/become-a-dropshipper\" title=\"Become a HempLucid Dropshipper\">Apply to become a HempLucid dropshipper</a></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_4kAfyg": {
+          "type": "question",
+          "settings": {
+            "title": "Does HempLucid have an affiliate program?",
+            "answer": "<p>We do! If you’re interested in becoming a HempLucid affiliate, please <a href=\"https://hemplucid.com/pages/brand-ambassador-program\" title=\"Apply to become a HempLucid affiliate\">apply here</a>.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_ygCe6x": {
+          "type": "question",
+          "settings": {
+            "title": "Do HempLucid products contain THC? Will I fail a drug test?",
+            "answer": "<p><strong>Full-Spectrum CBD Products:</strong>HempLucid's full-spectrum CBD products contain trace amounts of THC (less than 0.3%), and many users find that our<a href=\"https://hemplucid.com/collections/edible-cbd\"><span style=\"text-decoration:underline\">best full spectrum cbd gummies</span></a>provide a convenient way to experience the complete entourage effect. Please note: it is possible to test positive on a drug test when consuming even trace amounts of THC.<br/><br/><strong>THC-Free CBD Products:</strong>Our THC-free CBD (broad-spectrum and isolate) products are tested at several intervals of the manufacturing process to ensure undetectable levels of THC. In rare cases, it may be possible to trigger a false positive on a drug test when using THC-free products due to other cannabinoid metabolites.<br/><br/>And while we ensure our broad-spectrum products test at less than 0.001% THC, it’s worth noting that any quality hemp-derived extracts have the potential to trigger a false positive on a drug test, in rare cases. This is true of any THC-free or broad-spectrum hemp products on the market.<br/><br/><a href=\"/blogs/blog/how-does-cbd-work\" title=\"Does CBD get your high?\">For more info, read this blog post about CBD and drug tests.</a></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_pyQqcC": {
+          "type": "question",
+          "settings": {
+            "title": "What’s the difference between the Water Soluble, MCT, and Hemp Seed Oil products?",
+            "answer": "<p><strong>Full-Spectrum CBD Products:</strong>HempLucid's full-spectrum CBD products contain trace amounts of THC (less than 0.3%), and many users find that our<a href=\"https://hemplucid.com/collections/edible-cbd\"><span style=\"text-decoration:underline\">best full spectrum cbd gummies</span></a>provide a convenient way to experience the complete entourage effect. Please note: it is possible to test positive on a drug test when consuming even trace amounts of THC.<br/><br/><strong>THC-Free CBD Products:</strong>Our THC-free CBD (broad-spectrum and isolate) products are tested at several intervals of the manufacturing process to ensure undetectable levels of THC. In rare cases, it may be possible to trigger a false positive on a drug test when using THC-free products due to other cannabinoid metabolites.<br/><br/>And while we ensure our broad-spectrum products test at less than 0.001% THC, it’s worth noting that any quality hemp-derived extracts have the potential to trigger a false positive on a drug test, in rare cases. This is true of any THC-free or broad-spectrum hemp products on the market.<br/><br/><a href=\"/blogs/blog/how-does-cbd-work\" title=\"Does CBD get your high?\">For more info, read this blog post about CBD and drug tests.</a></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_QJBzM3": {
+          "type": "question",
+          "settings": {
+            "title": "There is a spot/ring in my CBD — is this normal?",
+            "answer": "<p>If you notice a darker coloration near the top of your Water Soluble tincture, don’t worry! Your CBD hasn’t gone bad; that’s just natural separation.<br/><br/>To keep your tinctures properly mixed, we recommend giving them a good shake before each use. Some bottles may require a bit of extra vigor!<br/><br/>HempLucid products are made with natural ingredients, and because of that, hemp extracts will begin to separate from their carrier media over time. This is more noticeable in water-soluble tinctures because of the difference in the density between the hemp extract and organic vegetable glycerin.<br/><br/>If you notice a black spot in your MCT or Hemp Seed Oil tincture, don’t use it! We cannot guarantee the safety or freshness of any products past their best-by date (18 months after manufacture).</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_iJwcXf": {
+          "type": "question",
+          "settings": {
+            "title": "Does HempLucid provide third-party test results?",
+            "answer": "<p>Yes. All of our products are tested at multiple intervals throughout growth, extraction, and formulation. We provide third-party lab test results (called a Certificate of Analysis) for our concentrated extracts and finished product batches. These test results list cannabinoid profiles.<br/><br/>Find <a href=\"https://lucidlabs.hemplucid.com/\" title=\"View Certificates of Analysis for HempLucid Products\">test results</a> for HempLucid products.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_Y9pYXy": {
+          "type": "question",
+          "settings": {
+            "title": "Which extraction method does HempLucid use?",
+            "answer": "<p>For our full-spectrum products, we use a supercritical CO2 extraction method to produce a clean, solvent-free hemp extract. Our products undergo the process of winterization and decarboxylation where ethanol is used (none will be found in our final product) to remove the fats and waxes your body cannot break down.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_ppRcHB": {
+          "type": "question",
+          "settings": {
+            "title": "Are HempLucid products organic?",
+            "answer": "<p>Our premium hemp genetic is grown on Certified Organic US farmland. We are one of the 5% of CBD companies that are USDA Organic Certified. We have secured USDA Organic Certification for several of our products and will continue to pursue Organic Certification wherever possible. Our<a href=\"https://hemplucid.com/collections/cbd-tinctures\"><span style=\"text-decoration:underline\">organic cbd tinctures</span></a>are among the products that have earned this certification.<br/><br/>We do have some products that are not USDA Organic Certified but are made with organic ingredients.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_RXT9pD": {
+          "type": "question",
+          "settings": {
+            "title": "When does my product expire?",
+            "answer": "<p>The best-by date of our CBD products is 18 months from the date of formulation. Best-by dates are marked on the bottom of the box, jar, or bottle.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_PeBUdb": {
+          "type": "question",
+          "settings": {
+            "title": "How should I store HempLucid products?",
+            "answer": "<p>We recommend storing our products in a cool, dry location, out of open sunlight. The typical medicine cabinet or pantry should be fine.<br/><br/>Our Hemp Seed Oil tinctures and Pets - Chicken Flavor should be refrigerated after opening.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question-1",
+        "question-2",
+        "question_p8Yqry",
+        "question_4kAfyg",
+        "question_ygCe6x",
+        "question_pyQqcC",
+        "question_QJBzM3",
+        "question_iJwcXf",
+        "question_Y9pYXy",
+        "question_ppRcHB",
+        "question_RXT9pD",
+        "question_PeBUdb"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "General",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "faq-content-2": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question-1": {
+          "type": "question",
+          "settings": {
+            "title": "What is the 100% Money-Back Guarantee?",
+            "answer": "<p>At HempLucid, we stand behind our products 100%. If, for any reason, you are unsatisfied with your product, you may contact us for an exchange of equal or lesser value within 30 days of purchase. We can also process a full refund, less shipping costs, within 30 days of the initial purchase date.<br/><br/>All products purchased through the HempLucid website (excluding items that were on sale) carry a 30-day customer satisfaction guarantee.<br/><br/>See our <a href=\"https://hemplucid.com/policies/refund-policy\" title=\"View the HempLucid Refund Policy\">Refund Policy</a> for more information.<br/><br/></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question-1"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "100% Money Back Guarantee",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "collapsible_tabs_BiwnEG": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_EFwCbL": {
+          "type": "question",
+          "settings": {
+            "title": "What is CBD?",
+            "answer": "<p>CBD (short for cannabidiol) is a naturally occurring, non-intoxicating cannabinoid found in the hemp plant. However, CBD isn’t the only hemp-derived compound worth noting. Several secondary cannabinoids and flavorful terpenes work in synergy alongside CBD in our full-spectrum hemp products.<br/><br/>To learn more, read this <a href=\"https://hemplucid.com/pages/what-is-cbd\" title=\"Learn more about CBD\">guide to CBD</a>.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_ydcDcP": {
+          "type": "question",
+          "settings": {
+            "title": "What are the benefits of CBD?",
+            "answer": "<p>CBD helps to balance the various systems of the body. It is said to promote relaxation, homeostasis, and an overall sense of calm by working with the endocannabinoid system, which you can learn more about on <a href=\"https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system\" title=\"Read about CBD and the endocannabinoid system in our blog\">our blog</a>. It may also help reduce inflammation.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_9raebi": {
+          "type": "question",
+          "settings": {
+            "title": "What are the benefits of CBN?",
+            "answer": "<p>Cannabinol (CBN) is said to promote sleep, stimulate appetite, and foster bone growth. CBN provides anti-inflammatory and analgesic effects. Understanding <a href=\"https://hemplucid.com/blogs/blog/everything-you-should-know-about-cbn\"><span style=\"text-decoration:underline\">what is CBN in edibles </span></a>can help you determine whether a CBN-infused product is right for your sleep routine.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_VjBqYW": {
+          "type": "question",
+          "settings": {
+            "title": "What are cannabinoids?",
+            "answer": "<p>Cannabinoids are compounds found in cannabis (both hemp and marijuana) plants.<br/><br/>Of these, CBD and THC are the most abundant and therefore the most studied cannabinoids. However, there are well over 100 trace compounds in cannabis with potential benefits we have yet to explore.<br/><br/>Incredibly, our bodies are naturally wired with receptors that interact with the cannabinoids found in cannabis.<br/><br/>Read about <a href=\"https://hemplucid.com/pages/what-is-cbd\" title=\"What is CBD?\">the cannabinoids</a> found in HempLucid products.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_39PBP8": {
+          "type": "question",
+          "settings": {
+            "title": "What are terpenes?",
+            "answer": "<p>Terpenes (pronounced tur-peens) and flavonoids give cannabis its unique smell and flavor. These aromatic compounds are also found in fruit, spices, and other plants to produce scents ranging from sweet citrus to more pungent odors. Beyond simply producing smells, terpenes also work in synergy with cannabinoids to contribute to the entourage effect within the body’s endocannabinoid system.<br/><br/>Read about <a href=\"https://hemplucid.com/blogs/blog/benefits-of-terpenes\" title=\"Benefits of Terpenes\">the terpenes</a> found in HempLucid products.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_ntdmTG": {
+          "type": "question",
+          "settings": {
+            "title": "How does CBD work and what is the endocannabinoid system?",
+            "answer": "<p>The benefits associated with CBD and other hemp-derived compounds can be experienced thanks to a widespread network of cannabinoid receptors known as the endocannabinoid system, or ECS. The role of the ECS is to maintain a physiological balance, homeostasis, in processes throughout the body.<br/><br/>The endocannabinoid system is located in the mammalian brain and throughout the central and peripheral nervous systems. It consists of neuromodulatory lipids and their receptors. There are two main types of receptors in the ECS: CB1 and CB2. CB1 receptors are primarily located in the central nervous system and brains of mammals, and CB2 receptors are generally found in the peripheral nervous system.<br/><br/>When you add CBD to your daily routine, alongside a healthy diet and exercise, you’re supporting the many functions of your endocannabinoid system.<br/><br/>To learn more, <a href=\"/blogs/blog/what-is-the-endocannabinoid-system\" title=\"What does the endocannabinoid system do?\">watch this video</a> about the endocannabinoid system.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_WGMij3": {
+          "type": "question",
+          "settings": {
+            "title": "How much CBD should I take?",
+            "answer": "<p>There’s no one-size-fits-all when it comes to CBD. Everyone is different and will respond to hemp extracts in different ways. Finding your ideal strength and serving might require some adjustment over time and may even differ day-to-day depending on how you partake, whether you’ve eaten, and your unique metabolism.<br/><br/>We encourage users to follow the serving size on the product packaging and adjust as needed. More detailed information on things like Best Results, Suggested Use, and Tips & Tricks can be found on each product page.<br/><br/>If you’re just starting out, you might start with a lower amount and increase as needed. If you’ve used cannabinoids before, you might know that a greater strength is best for you. The goal is always a feeling of balance, whatever that means for you.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_F7VMac": {
+          "type": "question",
+          "settings": {
+            "title": "How much CBD should I give to my pet?",
+            "answer": "<p>Because our pets also have an endocannabinoid system, we developed a line of hemp-derived CBD just for them. Our four-legged companions come in all shapes and sizes, so while we can offer general guidelines, it’s best to start low. From there, adjust as needed to find the ideal serving for your pet.<br/><br/>We encourage users to follow the serving size on the product packaging and adjust as needed. More detailed information on things like Best Results, Suggested Use, and Tips & Tricks can be found on each product page.<br/><br/>Typical suggested servings start at 1mg to 5mg of CBD per 10lbs of body weight.<br/><br/>Shop HempLucid's line of <a href=\"https://hemplucid.com/collections/pets-cbd\" title=\"Shop CBD for Pets\">CBD oil for pets</a>.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_4XLmxY": {
+          "type": "question",
+          "settings": {
+            "title": "What should I expect when taking CBD?",
+            "answer": "<p>Everyone is unique and may have a slightly different experience when taking CBD. For most people, CBD as a daily supplement can provide a general sense of balance and well-being by supporting the endocannabinoid system. This is often described as a feeling of calm, relaxation, and relief from everyday stresses.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_KcTUCM": {
+          "type": "question",
+          "settings": {
+            "title": "Will CBD get me high?",
+            "answer": "<p>No. HempLucid products are derived from a hemp genetic that contains less than 0.3% THC, the cannabinoid that causes the high associated with marijuana. Our CBD products are non-intoxicating.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_MPefWJ": {
+          "type": "question",
+          "settings": {
+            "title": "What’s the difference between CBD and THC?",
+            "answer": "<p>CBD (cannabidiol) and THC (tetrahydrocannabinol) are the two most abundant cannabinoids found in cannabis plants. However, each of these compounds interacts with the body in different ways.<br/><br/>CBD is non-intoxicating and supports the function of the endocannabinoid system by working alongside other phytocannabinoids (from a plant) and endogenous cannabinoids (produced by the body).<br/><br/>THC has a strong binding affinity with receptors in the ECS and is responsible for the high associated with marijuana. However, in the trace amounts found in hemp, THC is more subtle. Rather than causing a euphoric high, traces of THC complement the entourage effect experienced when consuming full-spectrum hemp extracts.<br/><br/>Watch <a href=\"/pages/what-is-cbd\" title=\"What's the difference between hemp and marijuana?\">this video</a> about the difference between hemp products and marijuana.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_zgit4U": {
+          "type": "question",
+          "settings": {
+            "title": "What is full-spectrum CBD?",
+            "answer": "<p>In our products, the term “full-spectrum” refers to an extract that contains all the compounds found in our premium hemp genetics. This includes CBD, several secondary cannabinoids (including trace amounts of THC), and a robust terpene profile. HempLucid’s full-spectrum CBD is the only way to experience the complete synergy offered by the hemp plant, also known as the entourage effect.<br/><br/><a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" title=\"Shop  full-spectrum CBD products\">Shop HempLucid's line of full-spectrum CBD products</a>.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_37N8bL": {
+          "type": "question",
+          "settings": {
+            "title": "What is broad-spectrum CBD?",
+            "answer": "<p>Broad-spectrum extracts offer the benefits of CBD, secondary cannabinoids, and flavorful terpenes with non-detectable levels of THC. Selecting the right extract type depends on your individual needs, and you can <a href=\"https://hemplucid.com/blogs/blog/comparing-cbd-isolate-full-spectrum-and-broad-spectrum-cbd-which-is-right-for-you\"><span style=\"text-decoration:underline\">learn about cbd isolate vs full spectrum</span></a> to compare all three options side by side.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_DntyqF": {
+          "type": "question",
+          "settings": {
+            "title": "What is CBD isolate?",
+            "answer": "<p>CBD isolate, as the name implies, is just that: isolated CBD. We understand the trace amounts of THC found in our whole-plant extracts aren’t compatible with everyone’s lifestyle. Our THC-free line of products offers the benefits of CBD without secondary cannabinoids or other hemp compounds. Fortunately, even isolated CBD can support the endocannabinoid system in balancing processes throughout the body.<br/><br/>In our CBD isolate products, we re-introduce terpenes to encourage the entourage effect while keeping the products THC-free.<br/><br/>Shop HempLucid's line of <a href=\"https://hemplucid.com/collections/thc-free-cbd\" title=\"Shop THC-Free CBD\">CBD Isolate</a> products.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_EFwCbL",
+        "question_ydcDcP",
+        "question_9raebi",
+        "question_VjBqYW",
+        "question_39PBP8",
+        "question_ntdmTG",
+        "question_WGMij3",
+        "question_F7VMac",
+        "question_4XLmxY",
+        "question_KcTUCM",
+        "question_MPefWJ",
+        "question_zgit4U",
+        "question_37N8bL",
+        "question_DntyqF"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "CBD",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "collapsible_tabs_byx9H3": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_kYCVNj": {
+          "type": "question",
+          "settings": {
+            "title": "What is Delta 8?",
+            "answer": "<p>Delta 8 tetrahydrocannabinol (THC) is very closely related to Delta 9 THC, but the minor difference in chemical composition also removes some of the psychoactive properties. Delta 8 is mildly sedative but doesn’t produce the same kind of high as delta 9.<br/><br/>For more detailed info, check out our <a href=\"/collections/delta-8\">blog post</a> on Delta 8.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_wnMMBM": {
+          "type": "question",
+          "settings": {
+            "title": "Can Delta 8 Tetrahydrocannabinol (THC) cause a positive drug test?",
+            "answer": "<p>Potentially, yes.<br/><br/>It is possible that Delta 8 THC can cause a positive drug test result. Unfortunately, most drug tests don’t differentiate between Delta 8 (hemp-derived) THC and Delta 9 (marijuana-derived) THC.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_zw8UEE": {
+          "type": "question",
+          "settings": {
+            "title": "Should I take Delta 8 THC if I’m expected to take regular drug tests?",
+            "answer": "<p>The safest option is to not take Delta 8 THC when you know you are going to be drug tested. Of course, we encourage you to closely monitor the legal status of Delta 8 in your state to make sure you comply with current laws and regulations.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_68NnWh": {
+          "type": "question",
+          "settings": {
+            "title": "Can taking THC and CBD together increase my risk of a positive drug test?",
+            "answer": "<p>Yes.<br/><br/>While broad-spectrum and isolate CBD products are considered THC-free, full-spectrum CBD oil contains less than 0.3% THC. Many people find that combining CBD with THC on a regular basis encourages the entourage effect, where cannabinoids synergistically work together. However, taking THC and CBD together may increase your risk of a positive drug test.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_TLqP4e": {
+          "type": "question",
+          "settings": {
+            "title": "What can I do if I am worried about taking Delta 8 THC and getting a positive drug test?",
+            "answer": "<p>We have a few main suggestions when it comes to navigating THC use and drug tests:<br/><br/>1. Understand the risks of consuming CBD and THC. While there are many potential benefits, it is important to be aware of local regulations, rules, and laws as they relate to THC.<br/><br/>2. Advocate for better drug tests at work, at schools, and within other institutions and organizations. Current drug testing doesn’t do a great job of detecting specific cannabinoids or differentiating between dangerous levels and not-so-dangerous levels. Better testing would allow more people to experience the potential benefits without having so much stigma or risk attached.<br/><br/>3. Help to educate your coworkers, friends, and family members. When appropriate, and in states where Delta 8 is legal, you may want to disclose your Delta 8 use to supervisors or friends in an effort to be transparent and proactive. For example, explaining to a manager that you take low levels of Delta 8 to stay productive may help to destigmatize use at work and allow you to work more efficiently without the fear or risk of being “caught.”</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_rXCerD": {
+          "type": "question",
+          "settings": {
+            "title": "What are the benefits of Delta 8?",
+            "answer": "<p>Check out our <a href=\"/collections/delta-8\" title=\"What is Delta 8 THC?\">blog post</a> on Delta 8.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_kYCVNj",
+        "question_wnMMBM",
+        "question_zw8UEE",
+        "question_68NnWh",
+        "question_TLqP4e",
+        "question_rXCerD"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "Delta 8 THC",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "collapsible_tabs_f3XHca": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "content_LNfVhj": {
+          "type": "content",
+          "settings": {
+            "content": "<p>View our loyalty program details <a href=\"https://www.hemplucid.com/apps/loyalty\" title=\"https://www.hemplucid.com/apps/loyalty\">here</a>.</p>"
+          }
+        },
+        "question_mz9tpC": {
+          "type": "question",
+          "settings": {
+            "title": "How do I sign up for the loyalty program?",
+            "answer": "<p>If you have a customer account, you're already signed up! If you don't already have a customer account, you can sign up during checkout or by going to <a href=\"https://hemplucid.com/account/register\" target=\"_blank\" title=\"Create an account and start earning today\">hemplucid.com/account/register</a>.<br/><br/>If you have issues signing up, please contact our customer service team!</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_KnwVm4": {
+          "type": "question",
+          "settings": {
+            "title": "Where can I see my loyalty balance?",
+            "answer": "<p>You can check your store credit balance by going to <a href=\"https://www.hemplucid.com/apps/loyalty\" title=\"https://www.hemplucid.com/apps/loyalty\">hemplucid.com/apps/loyalty</a>. You must be signed in to see your balance and loyalty history.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_BkKeWq": {
+          "type": "question",
+          "settings": {
+            "title": "Can I redeem my loyalty balance on subscription products?",
+            "answer": "<p>Yes! Rewards are applied as Store Credits which can be used any on purchases whether one-time orders, subscription orders, or hybrid orders.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_FDYaPH": {
+          "type": "question",
+          "settings": {
+            "title": "Can I combine loyalty rewards with other discount codes?",
+            "answer": "<p>Yes. Loyalty rewards are like cash and can be combined with discount codes.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_yxiUcU": {
+          "type": "question",
+          "settings": {
+            "title": "How do I redeem my rewards?",
+            "answer": "<p>Rewards are given as Store Credit, so applying them is as easy as clicking the checkbox on the 'Apply store credit' field at checkout.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_LNfVhj",
+        "question_mz9tpC",
+        "question_KnwVm4",
+        "question_BkKeWq",
+        "question_FDYaPH",
+        "question_yxiUcU"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "Loyalty",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "collapsible_tabs_kTDKdr": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_ixgxiM": {
+          "type": "question",
+          "settings": {
+            "title": "How can I refer a friend?",
+            "answer": "<p>You can refer a friend via email or text message. Go to the <a href=\"/apps/loyalty#appstleLoyaltyPageV2ReferralSection\" title=\"Refer A Friend and Get $15\">Refer A Friend page to get started.</a></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_WwzpBb": {
+          "type": "question",
+          "settings": {
+            "title": "Where can I check on the status of my referrals?",
+            "answer": "<p>Checking the status of your referrals is easy. Just log in and head to our <a href=\"/apps/loyalty#appstleLoyaltyPageV2ReferralSection\">Refer A Friend page</a> and scroll to the 'Transaction History' section.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_8VzAzr": {
+          "type": "question",
+          "settings": {
+            "title": "How do I redeem my rewards from completed referrals?",
+            "answer": "<p>Every time a referral is completed, you'll receive a $15 store credit. You can check your rewards balance by going to <a href=\"https://www.hemplucid.com/apps/loyalty\" title=\"https://www.hemplucid.com/apps/loyalty\">hemplucid.com/apps/loyalty</a>. You can redeem your rewards points for discounts at checkout.<br/><br/><strong>NOTE: You must be signed in to see your loyalty points.</strong></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_ixgxiM",
+        "question_WwzpBb",
+        "question_8VzAzr"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "Referral Program",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "collapsible_tabs_tgYJcW": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "content_qzMHfT": {
+          "type": "content",
+          "settings": {
+            "content": "<p>View our subscriptions program details <a href=\"https://hemplucid.com/pages/subscriptions\">here</a>.<br/><br/></p>"
+          }
+        },
+        "question_7Wej3U": {
+          "type": "question",
+          "settings": {
+            "title": "Can I earn and use loyalty points on subscription orders?",
+            "answer": "<p>Can I earn and use loyalty rewards on subscription orders?</p><p>You will earn rewards with every subscription order. You can redeem loyalty rewards on your <strong>first</strong> subscription order.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_8z3Dxm": {
+          "type": "question",
+          "settings": {
+            "title": "Do discounts or other promos apply to subscription orders?",
+            "answer": "<p>No, unfortunately, discounts for recurring orders can’t be combined with other promos.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_mfKnbY": {
+          "type": "question",
+          "settings": {
+            "title": "Is shipping free?",
+            "answer": "<p>Yes! Well, mostly. First orders over $89 ship free, and <strong>all</strong> recurring orders (regardless of value) will ship free via USPS.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_cJqd7E": {
+          "type": "question",
+          "settings": {
+            "title": "Can I upgrade my shipping method?",
+            "answer": "<p>No, recurring orders will default to the USPS standard shipping.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_We7aW9": {
+          "type": "question",
+          "settings": {
+            "title": "When will my subscription order be shipped?",
+            "answer": "<p>That depends on you! Once you choose your subscription plan, you get to choose how often you want it to be sent to you. Your first order will be processed within one business day of placing it. After that, the frequency of your recurring orders and when they’re shipped will be based on your plan.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_EenUcP": {
+          "type": "question",
+          "settings": {
+            "title": "How long does shipping take?",
+            "answer": "<p>Recurring orders are shipped via USPS, and the shipping time varies depending on the distance it’s traveling from our warehouse. Typically, delivery time is 2 to 4 business days, but it could take up to 7 business days in rare cases.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_Bgyhhe": {
+          "type": "question",
+          "settings": {
+            "title": "When will my card be charged?",
+            "answer": "<p>Cards will be charged at midnight the day the order is processed. We will be sure to send an email reminder to help keep you up to date on everything surrounding your subscription.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_3KWJRG": {
+          "type": "question",
+          "settings": {
+            "title": "Can I cancel anytime?",
+            "answer": "<p>Yes. We’ll miss you though. Sign in to your HempLucid account and go into 'Subscription Management'. Locate the subscription you'd like to cancel and either </p><ol><li>Click the 'More Actions' dropdown and select 'Cancel Subscription'</li><li>Click 'See more details' and click 'Cancel Subscription'</li></ol>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_3PtQAy": {
+          "type": "question",
+          "settings": {
+            "title": "How can I update my payment method?",
+            "answer": "<p>Sign in to your HempLucid account and make the change. You’ve got the power! Sign in to your HempLucid account and click on 'Manage Subscriptions'. Once there, click on the subscription you'd like to update and navigate to the 'Payment Details' section. Click the pencil icon to be taken to your payment options. If your payment method already exists, simply select it and click 'Save'. If you need to add a new payment method, or update details on a current method, click the 'Update payment method' button. In the popup, click 'Send Email'. This will send you an email with directions on how to update or create a new payment method.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_TiRxDY": {
+          "type": "question",
+          "settings": {
+            "title": "Can I send my subscription order to an alternate address?",
+            "answer": "<p>Yes! Send it wherever you need to. Just change it in your HempLucid account by going into “Manage Subscriptions” and clicking on “Shipping Addresses.” From there, you can update or change your shipping address to have your next recurring order shipped wherever you need it to go.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_qzMHfT",
+        "question_7Wej3U",
+        "question_8z3Dxm",
+        "question_mfKnbY",
+        "question_cJqd7E",
+        "question_We7aW9",
+        "question_EenUcP",
+        "question_Bgyhhe",
+        "question_3KWJRG",
+        "question_3PtQAy",
+        "question_TiRxDY"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "Subscriptions",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "collapsible_tabs_6UKmhM": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "content_UGxbmj": {
+          "type": "content",
+          "settings": {
+            "content": "<p>View our discount program details <a href=\"https://hemplucid.com/pages/savings\">here</a>.</p>"
+          }
+        },
+        "question_harw63": {
+          "type": "question",
+          "settings": {
+            "title": "Will I get a new code each time I place an order?",
+            "answer": "<p>Yes, each code is only good for one use. This means that with each new order, you will need to go through the verification process to receive a new code.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_fN3Ki7": {
+          "type": "question",
+          "settings": {
+            "title": "How long does it take for me to get verified?",
+            "answer": "<p>Generally, it takes less than a minute to be verified through Verifypass, our verification program.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_rw78FV": {
+          "type": "question",
+          "settings": {
+            "title": "How long is the discount code good for?",
+            "answer": "<p>All discount codes are single-use. They are valid until they are used.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_rDNDWP": {
+          "type": "question",
+          "settings": {
+            "title": "How many discount codes can I get, and is there a time limit?",
+            "answer": "<p>Customers can generate one code every 7 days.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_rc3K7X": {
+          "type": "question",
+          "settings": {
+            "title": "Do I qualify?",
+            "answer": "<p>The best thing to do is to read about each category to learn the necessary qualifications. Does it sound like you? It never hurts to apply and find out if you qualify.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_XmgQCY": {
+          "type": "question",
+          "settings": {
+            "title": "Can I combine discount codes?",
+            "answer": "<p>No, we do not currently allow you to “stack” discount codes. This means you can’t combine the discount code you receive with special promotions, sitewide sales, subscription services, or loyalty program points.<br/><br/>Luckily, our savings program is often the best deal going on!</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_B8hbj6": {
+          "type": "question",
+          "settings": {
+            "title": "Why do I have to use Verifypass?",
+            "answer": "<p>Verifypass allows us to seamlessly offer discounts to qualified individuals while also keeping your information secure and private. It also allows our qualified customers to receive a discount code in real time without needing to call or email our customer service team. Verifypass is a way to make sure our savings program continues to serve a special community.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_F7wDTr": {
+          "type": "question",
+          "settings": {
+            "title": "What type of documents do I need to submit to Verifypass?",
+            "answer": "<p>The documents required for the verification process depend on what program you are applying for.<br/><br/><span style=\"text-decoration:underline\">For Military:</span>• DD-214<br/><br/>• Official ID from Veterans Affairs<br/><br/>• Veteran's driver's license (not all states offer this)<br/><br/>• G.I. Bill documents<br/><br/>• Promotion certificate or award certificate<br/><br/><span style=\"text-decoration:underline\">For First Responders</span>• Official ID card<br/><br/>• Official badge<br/><br/>• Pay stub<br/><br/>• Promotion or award certificate<br/><br/><span style=\"text-decoration:underline\">For Medical Professionals</span>• Medical license or board certification<br/><br/>• Pay stub from hospital (or healthcare employer)<br/><br/>• BLS card or BLS certification<br/><br/>• Signed letter of status from healthcare employer<br/><br/><span style=\"text-decoration:underline\">For Teachers</span>• Official ID card or badge<br/><br/>• Teacher's license or state certification<br/><br/>• Credential used to gain access to their campus<br/><br/><span style=\"text-decoration:underline\">For Students</span>• Student ID<br/><br/><span style=\"text-decoration:underline\">For Disadvantaged</span>• Varies<br/><br/><span style=\"text-decoration:underline\">For Seniors</span>• Varies<br/><br/>In general, no matter what discount program you are applying for, it is recommended to keep two forms of identification (ID) handy. The forms of ID required will likely be what you have used to apply for discounts in other places.<br/><br/></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_LbYMyD": {
+          "type": "question",
+          "settings": {
+            "title": "Will I qualify for the same discount on all products each time?",
+            "answer": "<p>Yes. However, HempLucid reserves the right to change or discontinue this savings program at any time and without notice, including limiting the number of discount codes per customer or the eligible products.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_GEyT6w": {
+          "type": "question",
+          "settings": {
+            "title": "If I am retired (medical/first responder/military), do I still qualify?",
+            "answer": "<p>Currently, retired law enforcement, firefighters, and military qualify for discounts. Retired teachers do not qualify for discounts.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_UGxbmj",
+        "question_harw63",
+        "question_fN3Ki7",
+        "question_rw78FV",
+        "question_rDNDWP",
+        "question_rc3K7X",
+        "question_XmgQCY",
+        "question_B8hbj6",
+        "question_F7wDTr",
+        "question_LbYMyD",
+        "question_GEyT6w"
+      ],
+      "settings": {
+        "custom_classes": "",
+        "title": "Discount Program",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": false
+      }
+    },
+    "contact": {
+      "type": "rich-text",
+      "blocks": {
+        "icon": {
+          "type": "icon",
+          "settings": {
+            "icon": "chat_bubble",
+            "icon_color": "rgba(0,0,0,0)"
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "title": "Get in touch",
+            "use_h1": false
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Have questions about your order, or a general enquiry?</p>",
+            "enlarge_text": true
+          }
+        },
+        "button": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact us",
+            "button_link": "shopify://pages/contact",
+            "button_style": "primary"
+          }
+        }
+      },
+      "block_order": [
+        "icon",
+        "heading",
+        "text",
+        "button"
+      ],
+      "settings": {
+        "height": "medium",
+        "text_alignment": "center",
+        "full_width": false,
+        "color_scheme": "default"
+      }
+    }
+  },
+  "order": [
+    "heading",
+    "main",
+    "faq-content-1",
+    "faq-content-2",
+    "collapsible_tabs_BiwnEG",
+    "collapsible_tabs_byx9H3",
+    "collapsible_tabs_f3XHca",
+    "collapsible_tabs_kTDKdr",
+    "collapsible_tabs_tgYJcW",
+    "collapsible_tabs_6UKmhM",
+    "contact"
+  ]
+}

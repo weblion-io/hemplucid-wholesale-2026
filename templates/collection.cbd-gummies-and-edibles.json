@@ -1,0 +1,644 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_DF3QNK": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_tBHxeK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "★★★★★ 5,000+ Five Star Rating"
+          }
+        },
+        "heading_WTtwWC": {
+          "type": "heading",
+          "settings": {
+            "title": "CBD Gummies",
+            "heading_max_width": 15,
+            "title_size": 72,
+            "title_size_mobile": 46,
+            "use_h1": false
+          }
+        },
+        "text_gzaQhk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Discover a delicious, convenient way to experience the benefits of hemp wellness. From full-spectrum CBD gummies to specialized cannabinoid and mushroom-infused formulas, HempLucid's edible collection is crafted to support relaxation, sleep, focus, and everyday balance—one bite at a time.</p>",
+            "enlarge_text": true
+          }
+        },
+        "icons_Cfdqfb": {
+          "type": "icons",
+          "disabled": true,
+          "settings": {
+            "icon_1": "shopify://shop_images/Leaf_Icon_1.png",
+            "icon_2": "shopify://shop_images/CBG_Icon_1.png",
+            "icon_3": "shopify://shop_images/Lions_Mane_Icon_1.png",
+            "icon_4": "shopify://shop_images/Botanicals_Icon_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_tBHxeK",
+        "heading_WTtwWC",
+        "text_gzaQhk",
+        "icons_Cfdqfb"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "",
+        "image": "shopify://shop_images/ChatGPT_Image_Jun_17_2026_04_06_18_PM.png",
+        "mobile_image": "shopify://shop_images/gummies-mobile.png",
+        "height": "fixed",
+        "height_desktop": 320,
+        "height_mobile": 360,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center left",
+        "mobile_overlay_under": true,
+        "mobile_text_bkg_color": "{{ collection.metafields.custom.mobile_background_color.value }}",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [
+        ".page-header--with-upper-spacing {display: none;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_image_behind_heading": true,
+        "heading_image_height": "medium",
+        "overlay_style": "shadow",
+        "coll_desc_pos": "above",
+        "coll_num_per_page_int": 24,
+        "grid": 4,
+        "show_vendor": false,
+        "show_total": false,
+        "enable_filtering": false,
+        "collapse_tag_sidebar_by_default": true,
+        "collapse_filters_method": "all",
+        "show_filter_counts": true,
+        "filter_two_columns": false,
+        "button_grid_filter_name": "Size,Taille,Größe",
+        "auto_apply_hide_unavailable": false,
+        "enable_sticky_filter": true,
+        "show_sort": false,
+        "sort_show_featured": false,
+        "sort_show_best": true,
+        "sort_show_alpha": true,
+        "sort_show_price": true,
+        "sort_show_date": false,
+        "related_collections": [],
+        "related_collections_style": "buttons",
+        "rel_coll_gall_aspect_ratio": "1",
+        "image_position": "center center",
+        "rel_coll_gall_enable_margin": true,
+        "rel_coll_gall_full_width": false,
+        "rel_coll_gall_overlay_style": "shadow",
+        "rel_coll_gall_text_alignment": "center center",
+        "rel_coll_grid_mobile": "2"
+      }
+    },
+    "testimonials_k6pPFK": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_zzYHgW": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
+            "author": "Author's name",
+            "image_caption": "",
+            "link": ""
+          }
+        },
+        "testimonial_xipQG4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "“Doesn’t make me feel intoxicated but helps me sleep and relax when needed! Helps with pain also! 10/10”",
+            "author": "Brittany H. Verified Buyer",
+            "image": "shopify://shop_images/d9-thc-gummies-pina-colada-front.webp",
+            "image_caption": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_zzYHgW",
+        "testimonial_xipQG4"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "What Customers Are Saying",
+        "layout": "image-right",
+        "text_caps": false,
+        "quote_text_size": 30,
+        "quote_text_size_mobile": 20,
+        "image_shape": "square",
+        "color_scheme": "2",
+        "use_custom_star_rating_color": false,
+        "star_rating_color": "#e9a80a",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_all": true,
+        "show_all_link": "shopify://pages/customer-reviews"
+      }
+    },
+    "image_with_text_overlay_ipxnEk": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_68dhcp": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Wellness, One Bite Away"
+          }
+        },
+        "heading_erXanJ": {
+          "type": "heading",
+          "settings": {
+            "title": "Delicious Daily CBD",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_UAiPgR": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_68dhcp",
+        "heading_erXanJ",
+        "text_UAiPgR"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "special-section-header",
+        "image": "shopify://shop_images/Cannabis_Banner_3.jpg",
+        "mobile_image": "shopify://shop_images/powered-by-plants.png",
+        "height": "fixed",
+        "height_desktop": 320,
+        "height_mobile": 320,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "mobile_text_bkg_color": "#595378",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "key_features_eA8hEF": {
+      "type": "key-features",
+      "blocks": {
+        "feature_QhnUwi": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Focused_Student_Mask.png",
+            "bg_color": "#595378",
+            "bg_gradient": "",
+            "text_color": "#ffffff",
+            "heading": "CBG And CBD For Focus",
+            "text": "<p>We talk a lot about CBD here at HempLucid, and for good reason. In addition to helping us <a href=\"https://hemplucid.com/collections/stress-support\" title=\"Stress Support\">FIGHT STRESS</a> and find <a href=\"https://hemplucid.com/collections/sleep-support\" title=\"Sleep Support\">DEEPER SLEEP</a> (without next-day grogginess), CBD can help induce a state of relaxed calm that helps us feel sharp, clear, and “in the zone.” As the major non-intoxicating compound in cannabis and hemp, CBD is an all-natural all-star when it comes to helping us access better <a href=\"https://pubmed.ncbi.nlm.nih.gov/33551817/\" title=\"Mental Clarity and Focus\">MENTAL CLARITY AND FOCUS</a>.  </p><p><br/>Then there’s CBG, another cannabinoid that’s attracting a lot of attention. Like CBD, CBG isn’t intoxicating, and it supports our health with anxiety-reducing, anti-inflammatory, and neuroprotective qualities. As <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9666035/\" title=\"Pharmacological Aspects and Biological Effects of Cannabigerol and Its Synthetic Derivatives\">THIS EARLY STUDY</a> suggests, it’s an all-natural compound we’ll be hearing much, much more about in the years to come.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "1",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        },
+        "feature_nyPMHr": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Chaga_Mushroom_in_a_Mask3.png",
+            "bg_color": "#ffd700",
+            "bg_gradient": "",
+            "text_color": "#002531",
+            "heading": "Mushrooms For Focus",
+            "text": "<p>As powerful as CBD and CBG are, they’re not the only compounds we lean on here at HempLucid. Since the earliest days of Chinese medicine, humans have known that adaptogens and functional mushrooms such as chaga have the potential to help us manage stress and achieve deeper focus without intoxication. And here at HempLucid, one of the mushrooms we lean most on is Lion’s Mane.  </p><p><br/>In addition to promising data suggesting that Lion’s Mane can enhance the activities of neurotransmitters, Lion's Mane compounds have been shown to potentially <a href=\"https://pubmed.ncbi.nlm.nih.gov/24266378/\" title=\"Neurotrophic properties of the Lion's mane medicinal mushroom\">INCREASE THE LEVELS OF NERVE GROWTH FACTOR</a> (NGF) in the brain. NGF is a protein that plays an important role in the health of nerve cells, which is vital for cognitive function, memory, and concentration.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "2",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        },
+        "feature_XFPeiV": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/LionsMane_Mushroom_Mask2.png",
+            "bg_color": "#bcd868",
+            "bg_gradient": "",
+            "text_color": "#002531",
+            "heading": "Plant-Powered Proprietary Focus Blend",
+            "text": "<p>Here at HempLucid, we think life is <a href=\"https://hemplucid.com/pages/about\" title=\"About\">BETTER WITHOUT CHEMICALS AND SYNTHETIC DRUGS</a> in our systems. That’s a major reason our <a href=\"https://hemplucid.com/products/functional-gummies-focus-cbg-mushroom\" title=\"Focus Mushroom Gummies - Grape\">MUSHROOM FOCUS GUMMIES</a> rely on Lion’s Mane, CBD and CBG, and brain-boosting botanicals such as green coffee beans, L-Tyrosine, and L-Theanine, two amino acids that are supportive of brain function and relaxation. Taken in conjunction, this “power trio” has been shown to have <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6880365/\" title=\"Effects of acute caffeine, theanine and tyrosine supplementation on mental and physical performance in athletes\">BRAIN-BOOSTING BENEFITS</a>.  </p><p><br/>In addition to being convenient (and just plain delicious), our Focus Gummies are formulated to be highly bioavailable. In essence, this means that an especially high percentage of their functional compounds make it into the bloodstream to have the most impact and effect. That’s one reason many people experience positive effects with just half a gummy a day. That said, because of the robust safety profiles of all ingredients, it’s perfectly safe to take up to two Focus Gummies a day for maximum support.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "3",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        }
+      },
+      "block_order": [
+        "feature_QhnUwi",
+        "feature_nyPMHr",
+        "feature_XFPeiV"
+      ],
+      "disabled": true,
+      "name": "Key features",
+      "settings": {
+        "heading": "",
+        "image_max_width": 360,
+        "media_aspect_ratio": "1",
+        "image_position": "left",
+        "segment_position": "under-text"
+      }
+    },
+    "wl_image_text_cta_za6tW4": {
+      "type": "wl-image-text-cta",
+      "blocks": {
+        "image_ipYjV6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cbg-and-cbd.png",
+            "bkg_color": "#595378",
+            "font_color": "#ffffff",
+            "tagline": "",
+            "title": "What Are CBD Gummies?",
+            "content": "<p>CBD gummies are soft, chewy candies infused with <strong>cannabidiol (CBD)</strong>—a <a href=\"https://www.health.harvard.edu/blog/cannabidiol-cbd-what-we-know-and-what-we-dont-2018082414476\">non-intoxicating cannabinoid</a> extracted straight from the hemp plant. Unlike THC, CBD won't get you high and isn't addictive, making it a tasty, easy-to-dose alternative to tinctures or oils for wellness support like stress relief, better sleep, and relaxation. Pop one in your mouth and you're good to go—no droppers, no guesswork, just delicious daily wellness that works.</p><p><strong>Perfect for on-the-go routines</strong>, CBD gummies deliver consistent doses in every bite. Whether you're new to CBD or a seasoned tribe member, gummies offer a discreet, convenient way to support your wellness goals. Learn more about <a href=\"https://hemplucid.com/pages/what-is-cbd\">what is cbd</a> and how it works with your body.</p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "image_Cam9hg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_17_2026_04_24_09_PM.png",
+            "bkg_color": "#ffd700",
+            "font_color": "#010101",
+            "tagline": "",
+            "title": "How CBD Gummies Work",
+            "content": "<p>CBD gummies interact with your body's <strong>endocannabinoid system (ECS)</strong>, which <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5549367/\">helps maintain balance</a> by preventing the breakdown of natural endocannabinoids. This may promote relaxation, reduce anxiety and stress, and improve sleep quality—all without the high. Effects typically kick in within 30-90 minutes as they're digested, delivering steady, long-lasting support throughout your day or night. Want to dive deeper? <a href=\"https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system\">Learn about the endocannabinoid system</a> and how it regulates your wellness.<br/><br/></p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "image_GP3xtF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/plant-powered-focus-blend.png",
+            "bkg_color": "#bcd868",
+            "font_color": "#010101",
+            "tagline": "",
+            "title": "CBD Gummies VS Delta 9 THC Gummies",
+            "content": "<p>While both products are gummy-based cannabinoid supplements, they are designed for different experiences. HempLucid's <strong>Full-Spectrum CBD Gummy Cubes</strong> contain 25mg of CBD per gummy and are formulated for everyday wellness support, featuring organic hemp extract and clean ingredients without artificial dyes, sweeteners, or corn syrup. </p><p>In contrast, our <strong>Delta-9 THC + CBD Gummies</strong> combine 5-10mg of Delta-9 THC with 10-50mg of CBD, creating a more noticeable cannabinoid experience that may promote deeper relaxation and a mild psychoactive effect. HempLucid positions these gummies for consumers seeking an extra level of support beyond CBD alone, with effects typically felt more quickly than traditional CBD gummies. </p><p>For customers who want the wellness benefits of hemp without a significant THC experience, the Full-Spectrum CBD Gummy Cubes are the better fit. Those looking for a stronger relaxation experience that includes the effects of THC may prefer the CBD + Delta-9 THC Gummies. </p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_ipYjV6",
+        "image_Cam9hg",
+        "image_GP3xtF"
+      ],
+      "name": "HL Image Text CTA",
+      "settings": {
+        "custom_class": "collection-points",
+        "title": "",
+        "bkg_color": "#595378",
+        "font_color": "#ffffff"
+      }
+    },
+    "image_with_text_overlay_P8rPVc": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_8zD6gR": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Taste. Relax. Repeat."
+          }
+        },
+        "heading_wXjwYh": {
+          "type": "heading",
+          "settings": {
+            "title": "The HempLucid Difference",
+            "heading_max_width": 15,
+            "title_size": 80,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "subheading_tJRy9N": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Enjoy the benefits of CBD in every flavorful bite."
+          }
+        },
+        "text_YbVVLD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Our Focus Gummies Support Your Brain And Body For Peak Presence And Performance.</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8zD6gR",
+        "heading_wXjwYh",
+        "subheading_tJRy9N",
+        "text_YbVVLD"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "special-section-header smaller",
+        "image": "shopify://shop_images/Mountains_background_banner.jpg",
+        "height": "fixed",
+        "height_desktop": 360,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "mobile_text_bkg_color": "#595378",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "multi_column_eMmiLW": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_nQ9aDQ": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Leaf_Icon_a1af8eca-92cf-4159-839f-6217ae652a9c.svg",
+            "title": "CBD",
+            "title_bold": false,
+            "text": "<p>This cannabinoid supports a natural state of balance.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_rLYab7": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/CBG_Icon_35acdec9-6bae-4a11-969b-2b140a975d74.svg",
+            "title": "CBG",
+            "title_bold": false,
+            "text": "<p>This cannabinoid helps soothe stress and protect brain function.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_8RaFzt": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Lions_Mane_Icon_d8838568-456e-4107-b559-471fe4565342.svg",
+            "title": "Lion's Mane",
+            "title_bold": false,
+            "text": "<p>This adaptogenic mushroom supports cognitive function, memory, and concentration.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_MV6KLR": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Botanicals_Icon_bbc7f2da-128d-4171-b977-2bfb253fb9f1.svg",
+            "title": "Botanicals",
+            "title_bold": false,
+            "text": "<p>Our proprietary blend includes ingredients to help you find clarity and focus.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_nQ9aDQ",
+        "text_block_rLYab7",
+        "text_block_8RaFzt",
+        "text_block_MV6KLR"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-size: 32px;}"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "master_class": "industry-icons bigger-title",
+        "title": "Combining Nature's Best Focus Supports",
+        "subtitle": "",
+        "subtitle_link": "",
+        "use_h1": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "2",
+        "desktop_cols": "20"
+      }
+    },
+    "faq_header_KKNjFf": {
+      "type": "faq-header",
+      "name": "FAQ header",
+      "settings": {
+        "title": "FAQS",
+        "use_h1": false,
+        "text": "<p>Still have questions about CBD edibles? Explore answers about gummies, capsules, dosing, ingredients, and what to expect so you can find the edible CBD product that best fits your wellness goals.</p>",
+        "show_search": false,
+        "show_index": false,
+        "index_heading": "Have More Questions?"
+      }
+    },
+    "collapsible_tabs_i7rBwx": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_bmJh66": {
+          "type": "question",
+          "settings": {
+            "title": "Are CBD gummies legal?",
+            "answer": "<p>Hemp-derived CBD gummies with less than 0.3% THC are federally legal in the US, though state laws vary.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_qmDymB": {
+          "type": "question",
+          "settings": {
+            "title": "What benefits do they offer?",
+            "answer": "<p>Stress relief, relaxation, sleep support, stress reduction, focus support<br/><br/></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_KDgMmq": {
+          "type": "question",
+          "settings": {
+            "title": "How much should I take?",
+            "answer": "<p>Start with half a gummy and adjust based on your needs. Be sure to allow 30 minutes to 2 hours for affects to kick in.<br/></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_g4RbU6": {
+          "type": "question",
+          "settings": {
+            "title": "How long do CBD gummies take to work?",
+            "answer": "<p>Effects kick in within 30 minutes to 2 hours after you pop one, lasting a solid 4 to 6 hours. Your <strong>whole plant CBD gummies </strong>from HempLucid deliver steady, reliable support—perfect for stress relief, sleep, or just chilling out during your day.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_n3jn6r": {
+          "type": "question",
+          "settings": {
+            "title": "Does CBD Show Up on Drug Tests?",
+            "answer": "<p>It can. Full spectrum products contain trace THC that is detectable on certain drug tests, so if you're facing a test soon, it's prudent to pause use or choose a THC-free isolate — and check the rules of your testing authority first.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_gPAgYA": {
+          "type": "question",
+          "settings": {
+            "title": "How Should I Store Water Soluble CBD?",
+            "answer": "<p>Yes, many people use CBD gummies as part of their daily wellness routine to help promote a sense of calm and relaxation. Our <a href=\"/products/functional-gummies-stress-cbd-herb-mushroom\" title=\"Stress Mushroom THC Gummies - Watermelon\">Stress Mushroom THC Gummies</a> contain naturally occurring cannabinoids and terpenes, along with mushrooms like Reishi and Ashwaghanda, that work together to support balance and everyday stress management, while those seeking a more pronounced relaxation experience may prefer our <a href=\"/products/delta-9-thc-cbd-gummies-strawberry-lemonade\" title=\"Delta 9 THC 10mg + CBD 10mg Gummies 10 pack - Strawberry Lemonade\"><strong>Delta-9 THC Gummies</strong></a>, which combine CBD and THC.<br/><br/></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_CgJr3q": {
+          "type": "question",
+          "settings": {
+            "title": "Are your CBD gummies third-party tested?",
+            "answer": "<p>Yes, all HempLucid products are third-party tested. You can find results from those tests at <a href=\"https://lucidlabs.hemplucid.com\" title=\"https://lucidlabs.hemplucid.com\">lucidlabs.hemplucid.com</a></p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_PJ747B": {
+          "type": "question",
+          "settings": {
+            "title": "What are the benefits of CBD gummies?",
+            "answer": "<p><strong>Stress & Anxiety Relief:</strong> CBD interacts with ECS and GABA receptors for natural calm—perfect for daytime or evening use</p><p><strong>Better Sleep Quality:</strong> Combined with CBN or melatonin to quiet racing thoughts and relax muscles—try our <a href=\"https://hemplucid.com/collections/hemp-gummies-for-sleep\">hemp gummies for sleep</a></p><p><strong>Daily Wellness Support:</strong> Trusted by those seeking natural balance and relaxation</p><p><strong>Mood & Focus Boost:</strong> Mental clarity, even-keeled feelings, mild energizing effects in lower doses for daily wellness</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_bmJh66",
+        "question_qmDymB",
+        "question_KDgMmq",
+        "question_g4RbU6",
+        "question_n3jn6r",
+        "question_gPAgYA",
+        "question_CgJr3q",
+        "question_PJ747B"
+      ],
+      "name": "Collapsible tabs",
+      "settings": {
+        "custom_classes": "",
+        "title": "",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": true
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_DF3QNK",
+    "main",
+    "testimonials_k6pPFK",
+    "image_with_text_overlay_ipxnEk",
+    "key_features_eA8hEF",
+    "wl_image_text_cta_za6tW4",
+    "image_with_text_overlay_P8rPVc",
+    "multi_column_eMmiLW",
+    "faq_header_KKNjFf",
+    "collapsible_tabs_i7rBwx"
+  ]
+}

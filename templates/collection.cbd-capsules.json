@@ -1,0 +1,645 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_DF3QNK": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_tBHxeK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "★★★★★ 5,000+ Five Star Rating"
+          }
+        },
+        "heading_WTtwWC": {
+          "type": "heading",
+          "settings": {
+            "title": "CBD Capsules",
+            "heading_max_width": 15,
+            "title_size": 72,
+            "title_size_mobile": 46,
+            "use_h1": true
+          }
+        },
+        "text_gzaQhk": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you’ve been craving the power of cannabinoids in a convenient and shelf-stable package, we’ve got good news for you! Our full- spectrum CBD softgel capsules deliver all the efficacy of these plant-based compounds in their most portable form yet. When combined with our game-changing functional mushroom extracts, herbs, and nootropics, they have the potential to turn everything you thought about cannabinoid medicines on their head.</p>",
+            "enlarge_text": true
+          }
+        },
+        "icons_Cfdqfb": {
+          "type": "icons",
+          "disabled": true,
+          "settings": {
+            "icon_1": "shopify://shop_images/Leaf_Icon_1.png",
+            "icon_2": "shopify://shop_images/CBG_Icon_1.png",
+            "icon_3": "shopify://shop_images/Lions_Mane_Icon_1.png",
+            "icon_4": "shopify://shop_images/Botanicals_Icon_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_tBHxeK",
+        "heading_WTtwWC",
+        "text_gzaQhk",
+        "icons_Cfdqfb"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "",
+        "image": "shopify://shop_images/cbd-capsules-collection.png",
+        "mobile_image": "shopify://shop_images/cbd-capsules-collection_mobile.png",
+        "height": "fixed",
+        "height_desktop": 300,
+        "height_mobile": 360,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center left",
+        "mobile_overlay_under": true,
+        "mobile_text_bkg_color": "#76E4DF",
+        "mobile_text_color": "#012033",
+        "overlay_style": "shadow"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [
+        ".page-header--with-upper-spacing {display: none;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_image_behind_heading": true,
+        "heading_image_height": "medium",
+        "overlay_style": "shadow",
+        "coll_desc_pos": "above",
+        "coll_num_per_page_int": 24,
+        "grid": 4,
+        "show_vendor": false,
+        "show_total": false,
+        "enable_filtering": false,
+        "collapse_tag_sidebar_by_default": true,
+        "collapse_filters_method": "all",
+        "show_filter_counts": true,
+        "filter_two_columns": false,
+        "button_grid_filter_name": "Size,Taille,Größe",
+        "auto_apply_hide_unavailable": false,
+        "enable_sticky_filter": true,
+        "show_sort": false,
+        "sort_show_featured": false,
+        "sort_show_best": true,
+        "sort_show_alpha": true,
+        "sort_show_price": true,
+        "sort_show_date": false,
+        "related_collections": [],
+        "related_collections_style": "buttons",
+        "rel_coll_gall_aspect_ratio": "1",
+        "image_position": "center center",
+        "rel_coll_gall_enable_margin": true,
+        "rel_coll_gall_full_width": false,
+        "rel_coll_gall_overlay_style": "shadow",
+        "rel_coll_gall_text_alignment": "center center",
+        "rel_coll_grid_mobile": "2"
+      }
+    },
+    "testimonials_k6pPFK": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_zzYHgW": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
+            "author": "Author's name",
+            "image_caption": "",
+            "link": ""
+          }
+        },
+        "testimonial_xipQG4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "“I went from taking the cbd liquid at night to these capsules. This has given me a restful sleep through the night and has enabled me to stop taking Lorazepam. I LOVE these and use them daily.”",
+            "author": "Deborah P. Verified Buyer",
+            "image": "shopify://shop_images/HempLucidFull-SpectrumCBDTHC25mgSoft-GelCapsulesDisplay.webp",
+            "image_caption": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_zzYHgW",
+        "testimonial_xipQG4"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "What Customers Are Saying",
+        "layout": "image-right",
+        "text_caps": false,
+        "quote_text_size": 30,
+        "quote_text_size_mobile": 20,
+        "image_shape": "square",
+        "color_scheme": "2",
+        "use_custom_star_rating_color": false,
+        "star_rating_color": "#e9a80a",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_all": true,
+        "show_all_link": "shopify://pages/customer-reviews"
+      }
+    },
+    "image_with_text_overlay_ipxnEk": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_68dhcp": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "designed to work smarter, not harder"
+          }
+        },
+        "heading_erXanJ": {
+          "type": "heading",
+          "settings": {
+            "title": "The Power of CBD",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_UAiPgR": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_68dhcp",
+        "heading_erXanJ",
+        "text_UAiPgR"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "special-section-header",
+        "image": "shopify://shop_images/Cannabis_Banner_3.jpg",
+        "mobile_image": "shopify://shop_images/powered-by-plants.png",
+        "height": "fixed",
+        "height_desktop": 320,
+        "height_mobile": 320,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "mobile_text_bkg_color": "#595378",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "key_features_eA8hEF": {
+      "type": "key-features",
+      "blocks": {
+        "feature_QhnUwi": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Focused_Student_Mask.png",
+            "bg_color": "#595378",
+            "bg_gradient": "",
+            "text_color": "#ffffff",
+            "heading": "CBG And CBD For Focus",
+            "text": "<p>We talk a lot about CBD here at HempLucid, and for good reason. In addition to helping us <a href=\"https://hemplucid.com/collections/stress-support\" title=\"Stress Support\">FIGHT STRESS</a> and find <a href=\"https://hemplucid.com/collections/sleep-support\" title=\"Sleep Support\">DEEPER SLEEP</a> (without next-day grogginess), CBD can help induce a state of relaxed calm that helps us feel sharp, clear, and “in the zone.” As the major non-intoxicating compound in cannabis and hemp, CBD is an all-natural all-star when it comes to helping us access better <a href=\"https://pubmed.ncbi.nlm.nih.gov/33551817/\" title=\"Mental Clarity and Focus\">MENTAL CLARITY AND FOCUS</a>.  </p><p><br/>Then there’s CBG, another cannabinoid that’s attracting a lot of attention. Like CBD, CBG isn’t intoxicating, and it supports our health with anxiety-reducing, anti-inflammatory, and neuroprotective qualities. As <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9666035/\" title=\"Pharmacological Aspects and Biological Effects of Cannabigerol and Its Synthetic Derivatives\">THIS EARLY STUDY</a> suggests, it’s an all-natural compound we’ll be hearing much, much more about in the years to come.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "1",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        },
+        "feature_nyPMHr": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Chaga_Mushroom_in_a_Mask3.png",
+            "bg_color": "#ffd700",
+            "bg_gradient": "",
+            "text_color": "#002531",
+            "heading": "Mushrooms For Focus",
+            "text": "<p>As powerful as CBD and CBG are, they’re not the only compounds we lean on here at HempLucid. Since the earliest days of Chinese medicine, humans have known that adaptogens and functional mushrooms such as chaga have the potential to help us manage stress and achieve deeper focus without intoxication. And here at HempLucid, one of the mushrooms we lean most on is Lion’s Mane.  </p><p><br/>In addition to promising data suggesting that Lion’s Mane can enhance the activities of neurotransmitters, Lion's Mane compounds have been shown to potentially <a href=\"https://pubmed.ncbi.nlm.nih.gov/24266378/\" title=\"Neurotrophic properties of the Lion's mane medicinal mushroom\">INCREASE THE LEVELS OF NERVE GROWTH FACTOR</a> (NGF) in the brain. NGF is a protein that plays an important role in the health of nerve cells, which is vital for cognitive function, memory, and concentration.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "2",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        },
+        "feature_XFPeiV": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/LionsMane_Mushroom_Mask2.png",
+            "bg_color": "#bcd868",
+            "bg_gradient": "",
+            "text_color": "#002531",
+            "heading": "Plant-Powered Proprietary Focus Blend",
+            "text": "<p>Here at HempLucid, we think life is <a href=\"https://hemplucid.com/pages/about\" title=\"About\">BETTER WITHOUT CHEMICALS AND SYNTHETIC DRUGS</a> in our systems. That’s a major reason our <a href=\"https://hemplucid.com/products/functional-gummies-focus-cbg-mushroom\" title=\"Focus Mushroom Gummies - Grape\">MUSHROOM FOCUS GUMMIES</a> rely on Lion’s Mane, CBD and CBG, and brain-boosting botanicals such as green coffee beans, L-Tyrosine, and L-Theanine, two amino acids that are supportive of brain function and relaxation. Taken in conjunction, this “power trio” has been shown to have <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6880365/\" title=\"Effects of acute caffeine, theanine and tyrosine supplementation on mental and physical performance in athletes\">BRAIN-BOOSTING BENEFITS</a>.  </p><p><br/>In addition to being convenient (and just plain delicious), our Focus Gummies are formulated to be highly bioavailable. In essence, this means that an especially high percentage of their functional compounds make it into the bloodstream to have the most impact and effect. That’s one reason many people experience positive effects with just half a gummy a day. That said, because of the robust safety profiles of all ingredients, it’s perfectly safe to take up to two Focus Gummies a day for maximum support.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "3",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        }
+      },
+      "block_order": [
+        "feature_QhnUwi",
+        "feature_nyPMHr",
+        "feature_XFPeiV"
+      ],
+      "disabled": true,
+      "name": "Key features",
+      "settings": {
+        "heading": "",
+        "image_max_width": 360,
+        "media_aspect_ratio": "1",
+        "image_position": "left",
+        "segment_position": "under-text"
+      }
+    },
+    "wl_image_text_cta_za6tW4": {
+      "type": "wl-image-text-cta",
+      "blocks": {
+        "image_ipYjV6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/cbg-and-cbd.png",
+            "bkg_color": "#595378",
+            "font_color": "#ffffff",
+            "tagline": "",
+            "title": "You Deserve the Best: CBD Softgel Capsules",
+            "content": "<p>If you’ve taken a moment to visit our <a href=\"https://hemplucid.com/blogs/blog\">cannabis and hemp blog</a>, you probably know that CBD is a cannabinoid, members of a family of natural compounds that have been shown to impart some truly exciting potential medical benefits. Like its cousins THC and <a href=\"https://hemplucid.com/collections/delta-8\">Delta-8 THC</a>, CBD interfaces with our bodies through a vital and complex regulatory network called the endocannabinoid system (ECS). Increasingly recognized as one of our body’s crucial systems, the ECS helps control such functions as sleep, memory, immune health, and more.</p><p>CBD is often associated with a mild cerebral lift. Over and above this, CBD has been shown to help us <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4604171/\">manage stress</a> and tackle <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7023045/#:~:text=Clinical%20studies%20have%20confirmed%20that,of%20immune%20cells%20%5B66%5D.\">minor aches and strains</a>.<br/><br/>Want to go deeper? We invite you to learn more about the ECS and its function<a href=\"https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system\">here</a>.<br/><br/></p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "image_Cam9hg": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ChatGPT_Image_Jun_17_2026_03_44_04_PM.png",
+            "bkg_color": "#ffd700",
+            "font_color": "#010101",
+            "tagline": "",
+            "title": "HempLucid’s Full-Spectrum CBD",
+            "content": "<p>Whether you prefer <a href=\"https://hemplucid.com/collections/cbd-tinctures\">CBD oil</a>, <a href=\"https://hemplucid.com/collections/edible-cbd\">CBD gummies</a>, or our flagship <a href=\"https://hemplucid.com/collections/water-soluble-cbd\">water soluble CBD </a>line, there’s no end of formats by which to access these game-changing cannabinoids.</p><p>So, why choose CBD softgel capsules?<br/><br/>At HempLucid, we saw a need for a convenient and shelf-stable version of our cannabinoid products, whether in capsule form or as <a href=\"https://hemplucid.com/collections/hemp-gummies-for-sleep\"><span style=\"text-decoration:underline\">cbn gummies</span></a> for nighttime support.</p><p>For those of us who prefer an intuitive and easy-to-dose format with no hempy aftertaste, our CBD capsules are the perfect tool for the job. Full-spectrum cannabinoids are what make hemp extract the <a href=\"https://hemplucid.com/blogs/blog/best-cbd-oil-for-pain\"><span style=\"text-decoration:underline\">best CBD oil for pain relief</span></a>, and our capsules deliver them in a precise, pre-measured dose.<br/><br/>We’re committed to creating the purest, highest cannabinoid products available. Our medicinal hemp strain is grown to USDA organic standards from clones cultivated and proven over the past decade, and we’re incredibly proud to have maintained USDA Organic Handler’s certification since 2020.</p>",
+            "cta_text": "",
+            "cta_link": ""
+          }
+        },
+        "image_GP3xtF": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/plant-powered-focus-blend.png",
+            "bkg_color": "#bcd868",
+            "font_color": "#010101",
+            "tagline": "",
+            "title": "Plant-Powered^ Proprietary Focus Blend",
+            "content": "<p>Here at HempLucid, we think life is <a href=\"https://hemplucid.com/pages/about\" target=\"_blank\">BETTER WITHOUT CHEMICALS AND SYNTHETIC DRUGS</a> in our systems. That’s a major reason our <a href=\"https://hemplucid.com/products/functional-gummies-focus-cbg-mushroom\" target=\"_blank\">MUSHROOM FOCUS GUMMIES</a> rely on Lion’s Mane, CBD and CBG, and brain-boosting botanicals such as green coffee beans, L-Tyrosine, and L-Theanine, two amino acids that are supportive of brain function and relaxation. Taken in conjunction, this “power trio” has been shown to have <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6880365/\" target=\"_blank\">BRAIN-BOOSTING BENEFITS</a>. </p><p><br/>In addition to being convenient (and just plain delicious), our Focus Gummies are formulated to be highly bioavailable. In essence, this means that an especially high percentage of their functional compounds make it into the bloodstream to have the most impact and effect. That’s one reason many people experience positive effects with just half a gummy a day. That said, because of the robust safety profiles of all ingredients, it’s perfectly safe to take up to two Focus Gummies a day for maximum support.<br/><br/></p>",
+            "cta_text": "Read More",
+            "cta_link": "#"
+          }
+        }
+      },
+      "block_order": [
+        "image_ipYjV6",
+        "image_Cam9hg",
+        "image_GP3xtF"
+      ],
+      "name": "HL Image Text CTA",
+      "settings": {
+        "custom_class": "collection-points",
+        "title": "",
+        "bkg_color": "#595378",
+        "font_color": "#ffffff"
+      }
+    },
+    "image_with_text_overlay_P8rPVc": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_8zD6gR": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Wellness made easy, one capsule at a time."
+          }
+        },
+        "heading_wXjwYh": {
+          "type": "heading",
+          "settings": {
+            "title": "The HempLucid Difference",
+            "heading_max_width": 15,
+            "title_size": 80,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "subheading_tJRy9N": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Simple, convenient, and precisely dosed—CBD capsules make it easy to support your wellness routine every day."
+          }
+        },
+        "text_YbVVLD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Our Focus Gummies Support Your Brain And Body For Peak Presence And Performance.</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8zD6gR",
+        "heading_wXjwYh",
+        "subheading_tJRy9N",
+        "text_YbVVLD"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "special-section-header smaller",
+        "image": "shopify://shop_images/Mountains_background_banner.jpg",
+        "height": "fixed",
+        "height_desktop": 360,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "mobile_text_bkg_color": "#595378",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "multi_column_eMmiLW": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_nQ9aDQ": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Leaf_Icon_a1af8eca-92cf-4159-839f-6217ae652a9c.svg",
+            "title": "CBD",
+            "title_bold": false,
+            "text": "<p>This cannabinoid supports a natural state of balance.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_rLYab7": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/CBG_Icon_35acdec9-6bae-4a11-969b-2b140a975d74.svg",
+            "title": "CBG",
+            "title_bold": false,
+            "text": "<p>This cannabinoid helps soothe stress and protect brain function.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_8RaFzt": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Lions_Mane_Icon_d8838568-456e-4107-b559-471fe4565342.svg",
+            "title": "Lion's Mane",
+            "title_bold": false,
+            "text": "<p>This adaptogenic mushroom supports cognitive function, memory, and concentration.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_MV6KLR": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Botanicals_Icon_bbc7f2da-128d-4171-b977-2bfb253fb9f1.svg",
+            "title": "Botanicals",
+            "title_bold": false,
+            "text": "<p>Our proprietary blend includes ingredients to help you find clarity and focus.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_nQ9aDQ",
+        "text_block_rLYab7",
+        "text_block_8RaFzt",
+        "text_block_MV6KLR"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-size: 32px;}"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "master_class": "industry-icons bigger-title",
+        "title": "Combining Nature's Best Focus Supports",
+        "subtitle": "",
+        "subtitle_link": "",
+        "use_h1": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "2",
+        "desktop_cols": "20"
+      }
+    },
+    "faq_header_KKNjFf": {
+      "type": "faq-header",
+      "name": "FAQ header",
+      "settings": {
+        "title": "FAQS",
+        "use_h1": false,
+        "text": "<p>Have questions about CBD capsules? Explore answers to common questions about dosing, benefits, ingredients, and how capsules can fit seamlessly into your daily wellness routine.</p>",
+        "show_search": false,
+        "show_index": false,
+        "index_heading": "Have More Questions?"
+      }
+    },
+    "collapsible_tabs_i7rBwx": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_bmJh66": {
+          "type": "question",
+          "settings": {
+            "title": "What is the difference between CBN and CBD?",
+            "answer": "<p>While both CBD and CBN are cannabinoids, they impart different effects. CBD imparts a subtle calm and focus, while CBN is more often associated with sleepiness. While CBN appears to exhibit some pain-fighting properties, CBD is a better choice for fighting routine aches and inflammation.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_qmDymB": {
+          "type": "question",
+          "settings": {
+            "title": "What are the benefits of CBD and CBN capsules?",
+            "answer": "<p>CBD has been shown to potentially help us manage stress and anxiety, as well as addressing routine aches and strains. CBN is associated with helping us find deeper restorative sleep. When taken in capsule form, both deliver consistent, sustainable effects.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_KDgMmq": {
+          "type": "question",
+          "settings": {
+            "title": "Is CBD or CBN better for sleep?",
+            "answer": "<p>Both CBD and CBN have been shown to potentially help us find deeper, more restorative sleep, and there’s no reason you can’t combine the two. Many clinicians point to the “<a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3165946/\">entourage effect</a>,” a phenomenon in which cannabinoids act in partnership to elicit stronger effects.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_g4RbU6": {
+          "type": "question",
+          "settings": {
+            "title": "Will I experience any psychoactive effects after consumption?",
+            "answer": "<p>Our capsules are specially formulated to provide you with all of the goodness of CBD without the psychoactive effects. Derived from a hemp genetic containing less than 0.3% THC, our products are non-intoxicating so you can shop our range with confidence. To reduce the chance of any psychoactive effects as much as possible, look for our broad-spectrum or isolate products as these test at less than 0.001% THC.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_n3jn6r": {
+          "type": "question",
+          "settings": {
+            "title": "What dose should I take?",
+            "answer": "<p>If you are new to CBD products, we recommend starting with one capsule per day of the smallest dose. With 25mg per serving and 30 servings in each pack, our lowest-strength <strong>CBD gel capsules have 750mg </strong>in total. If you are not feeling any effects after regular consumption, you can slowly start to increase the dosage or move onto capsules that are 50mg in strength. If you are unsure of the best strength for you, don’t hesitate to reach out to our customer experience team for support.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_gPAgYA": {
+          "type": "question",
+          "settings": {
+            "title": "Can I consume your capsules alongside other CBD-based products?",
+            "answer": "<p>This is entirely dependent on your needs and tolerance levels. We would recommend starting with the capsules alone to measure effectiveness and monitor for any side effects. Then, if you feel like you need a boost, you can either increase the dosage of your capsules or consume our tincture, oil, or gummies alongside. Check out our Lion's Mane mushroom gummies, known for their potential to enhance cognitive function and support brain health.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_CgJr3q": {
+          "type": "question",
+          "settings": {
+            "title": "How soon will I start to feel the effects?",
+            "answer": "<p>Due to the consumption nature of our capsules, they will take some time to work through your digestive system. Most of our customers start to feel the benefit within an hour but it will depend on your metabolic rate. For faster-acting results, consume your capsule on an empty stomach, prior to food and drinks. For slower-acting results, look to consume after food.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_mCJwqm": {
+          "type": "question",
+          "settings": {
+            "title": "What if I don’t feel any effects from your capsules?",
+            "answer": "<p>If you are struggling to feel any effects from our capsules, even after increasing the dosage then you can take advantage of our 100% money back guarantee. This customer satisfaction guarantee allows you to exchange your product or request a refund within 30 days of the initial purchase date. So if you are nearing the 30th day and are not fully satisfied with the benefits, then get in touch with our team.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_bmJh66",
+        "question_qmDymB",
+        "question_KDgMmq",
+        "question_g4RbU6",
+        "question_n3jn6r",
+        "question_gPAgYA",
+        "question_CgJr3q",
+        "question_mCJwqm"
+      ],
+      "name": "Collapsible tabs",
+      "settings": {
+        "custom_classes": "",
+        "title": "",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": true
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_DF3QNK",
+    "main",
+    "testimonials_k6pPFK",
+    "image_with_text_overlay_ipxnEk",
+    "key_features_eA8hEF",
+    "wl_image_text_cta_za6tW4",
+    "image_with_text_overlay_P8rPVc",
+    "multi_column_eMmiLW",
+    "faq_header_KKNjFf",
+    "collapsible_tabs_i7rBwx"
+  ]
+}

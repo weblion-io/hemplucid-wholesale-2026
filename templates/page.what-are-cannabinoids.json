@@ -1,0 +1,358 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "wl_gradient_header_bar_CAMYj8": {
+      "type": "wl-gradient-header-bar",
+      "name": "HL Gradient Header",
+      "settings": {
+        "color_1": "#ef4482",
+        "color_2": "#ffd700",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "image": "shopify://shop_images/bulb.png",
+        "title": "Educational Hub"
+      }
+    },
+    "image_with_text_bpPgHC": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_cQA3hr": {
+          "type": "heading",
+          "settings": {
+            "title": "What Are Cannabinoids?",
+            "use_h1": true
+          }
+        },
+        "text_jKVR6a": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your body already speaks the language of cannabinoids. Long before the first hemp extract hit a store shelf, your cells were producing their own versions of these compounds—and relying on them to regulate everything from sleep to immune response. Understanding how this system works is the first step toward making informed decisions about hemp-derived products. </p><p><br/>In the simplest terms, cannabinoids are biological messengers. They are a diverse class of chemical compounds that interact with a specialized network of receptors found throughout the human body. Some cannabinoids are made by plants, some by your own biology, and some in a laboratory. What unites them is a shared ability to communicate with the same cellular infrastructure.<br/><br/></p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_cQA3hr",
+        "text_jKVR6a"
+      ],
+      "custom_css": [],
+      "name": "Image with text",
+      "settings": {
+        "cclasses": "lucid-guarantee switch",
+        "image": "shopify://shop_images/what-r-canna.png",
+        "image_width": 470,
+        "image_link": "",
+        "image_position": "right",
+        "text_alignment": "left",
+        "color_scheme": "default"
+      }
+    },
+    "wl_hierarchy_UcptpM": {
+      "type": "wl-hierarchy",
+      "blocks": {
+        "card_eDR4Cx": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/1_icon_6df569df-c1d1-4f65-af36-5c634220567e.png",
+            "header": "Phytocannabinoids~(Plant-Derived)",
+            "header_color": "#bcd868",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p>Phytocannabinoids are produced naturally in the cannabis plant, primarily in the resinous glands of the flower. Researchers have identified over 100 distinct phytocannabinoids to date (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11050509/\" target=\"_blank\">PubMed – Phytocannabinoid Profiles</a>). The most widely recognized include CBD (cannabidiol), CBN (cannabinol), CBG (cannabigerol), and CBC (cannabichromene). These compounds are non-intoxicating at standard serving sizes and are the primary active ingredients in hemp-derived products. They can be delivered in several forms, including<a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">full-spectrum whole-plant extracts</a>, broad-spectrum formulations, and isolates—each with a different cannabinoid profile. <a href=\"https://hemplucid.com/blogs/blog/comparing-cbd-isolate-full-spectrum-and-broad-spectrum-cbd-which-is-right-for-you\" target=\"_blank\">Learn the differences between isolate, full-spectrum, and broad-spectrum CBD →</a></p>"
+          }
+        },
+        "card_cFaqiy": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/2_icon_25a5945a-3d58-43c1-b843-f35add41932f.png",
+            "header": "Endocannabinoids~(Body-Made)",
+            "header_color": "#595378",
+            "header_font_color": "#ffffff",
+            "body_color": "#fcf5ed",
+            "content": "<p>Your body manufactures its own cannabinoids on demand. The two most studied are anandamide—named after the Sanskrit word for “bliss”—and 2-arachidonoylglycerol (2-AG). These endocannabinoids are produced as needed and broken down quickly after performing their signaling role (<a href=\"https://www.health.harvard.edu/blog/the-endocannabinoid-system-essential-and-mysterious-202108112569\" target=\"_blank\">Harvard Health – The Endocannabinoid System</a>). They are the reason your body is already equipped to interact with plant-derived cannabinoids.<br/><br/></p>"
+          }
+        },
+        "card_zdbqpA": {
+          "type": "card",
+          "settings": {
+            "icon": "shopify://shop_images/3_icon_8b281163-ea8c-4f0c-a012-6e8caea475fb.png",
+            "header": "Synthetic Cannabinoids~(Lab-Derived)",
+            "header_color": "#e57e3b",
+            "header_font_color": "#241f21",
+            "body_color": "#fcf5ed",
+            "content": "<p>Synthetic cannabinoids are engineered in laboratories, originally as research tools to help scientists study the endocannabinoid system. Some have been developed into FDA-approved pharmaceuticals. However, illicit synthetic cannabinoids can be unpredictable and significantly more potent than their natural counterparts (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8637936/\" target=\"_blank\">PMC – Molecular Mechanism and Cannabinoid Pharmacology</a>). Hemplucid products use only naturally derived phytocannabinoids from hemp—never synthetic compounds.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "card_eDR4Cx",
+        "card_cFaqiy",
+        "card_zdbqpA"
+      ],
+      "name": "HL Hierarchy",
+      "settings": {
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "margin_top": 36,
+        "margin_bottom": 68,
+        "title": "Three Categories of Cannabinoids",
+        "subtitle": "",
+        "image": "shopify://shop_images/Group_71.png",
+        "image_mo": "shopify://shop_images/Group_71.png",
+        "icon_width": 32,
+        "bottom_content": ""
+      }
+    },
+    "wl_curated_library_pkTMLX": {
+      "type": "wl-curated-library",
+      "disabled": true,
+      "name": "HL Curated Library",
+      "settings": {
+        "title": "Curated Research Library",
+        "subtitle": "The following studies are hosted on PubMed, the U.S. National Library of Medicine’s open-access database. Each link opens in a new tab.",
+        "margin_top": 48,
+        "margin_bottom": 68,
+        "color": "#5a5478",
+        "font_color_1": "#ffd700",
+        "font_color_2": "#ffffff",
+        "link_color": "#ffffff",
+        "show_tab": true,
+        "tab_color": "#ffffff",
+        "column_1": "<h3><strong>Endocannabinoid System</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5877694/\" target=\"_blank\">Zou & Kumar (2018). “Cannabinoid Receptors and the Endocannabinoid System.”</a></p><p><a href=\"https://www.frontiersin.org/journals/cellular-neuroscience/articles/10.3389/fncel.2016.00294/full\" target=\"_blank\">Lu & Mackie (2016). “Cannabinoid Receptors in the CNS: Signaling and Roles in Disease.”</a></p><p>**~</p><h3><strong>CBD & Stress Response</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8704602/\" target=\"_blank\">Skelley et al. (2021). “Enhancing Endocannabinoid Control of Stress with Cannabidiol.”</a></p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/8257923/\" target=\"_blank\">Zuardi et al. (1993). “Effect of CBD on Plasma Cortisol in Human Volunteers.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7113209/\" target=\"_blank\">Appiah-Kusi et al. (2020). “Short-term CBD Treatment on Response to Social Stress.”</a></p><p>~</p>",
+        "column_2": "<h3><strong>CBN & Sleep</strong></h3><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/37796540/\" target=\"_blank\">Corroon et al. (2024). “Double-Blind, Placebo-Controlled Study of CBN on Sleep Quality” (N=293).</a></p><p><a href=\"https://www.nature.com/articles/s41386-024-02018-7\" target=\"_blank\">Lavender et al. (2024). “CBN and Its Active Metabolite Influence Sleep Architecture in Rats.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10450062/\" target=\"_blank\">Suraev et al. (2023). “CUPID Study Protocol: CBN Effects on Sleep in Insomnia Disorder.”</a></p><p><a href=\"https://pubmed.ncbi.nlm.nih.gov/34468204/\" target=\"_blank\">Corroon (2021). “CBN and Sleep: Separating Fact from Fiction.”</a></p><p><strong>*~</strong></p><h3><strong>Cannabinoid Pharmacology (General)</strong></h3><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11050509/\" target=\"_blank\">Formato et al. (2024). “Phytocannabinoids: Exploring Pharmacological Profiles.”</a></p><p><a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3165957/\" target=\"_blank\">De Petrocellis et al. (2011). “Effects of Cannabinoids on TRP Channels.”</a></p>"
+      }
+    },
+    "wl_tabbed_image_and_text_wyaJRa": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "How Cannabinoids Work:*The Endocannabinoid System",
+        "max_width": 73,
+        "content": "<p>Cannabinoids do their work through the <a href=\"https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system\" target=\"_blank\">endocannabinoid system (ECS)</a>, a regulatory network that exists in virtually every organ and tissue of the body. The ECS plays a key role in maintaining homeostasis—the internal balance your body needs to function properly.<br/><br/>The system operates through two primary receptor types. CB1 receptors are concentrated in the brain and central nervous system, where they help modulate neurotransmitter activity related to mood, memory, appetite, and pain perception. CB2 receptors are found primarily in immune tissues and peripheral organs, where they are commonly discussed for their role in immune response and inflammatory processes (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC5877694/\" target=\"_blank\">PMC – Cannabinoid Receptors and the ECS</a>).<br/><br/>When a cannabinoid—whether made by your body or derived from hemp—binds to one of these receptors, it delivers a signal. Think of it as a lock-and-key mechanism: the receptor is the lock, the cannabinoid is the key, and the resulting action helps nudge a biological process back toward equilibrium.<br/></p><p>Because cannabinoids are fat-soluble and each one fits these receptor locks a little differently, <a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">full spectrum hemp</a> extracts absorb more readily when paired with a lipid carrier like <a href=\"https://hemplucid.com/collections/cbd-mct-oil\" target=\"_blank\">CBD MCT oil</a>, and this same receptor network is shared across mammals—which is why cannabinoids are also studied for <a href=\"https://hemplucid.com/collections/pets-cbd\" target=\"_blank\">pets</a>.</p><p><br/></p>",
+        "image": "shopify://shop_images/Group_69.png",
+        "image_position": "right"
+      }
+    },
+    "wl_research_card_QPFyyU": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "",
+        "subtitle": "Common Hemp Cannabinoids at a Glance",
+        "card_title": "Cannabidiol",
+        "card_content": "<p>CBD is the most abundant non-intoxicating cannabinoid in hemp. It does not produce a “high.” In 2018, the FDA approved Epidiolex®, a purified CBD formulation, for the treatment of certain severe seizure disorders—the first plant-derived cannabinoid medication to receive federal approval (<a href=\"https://www.fda.gov/news-events/public-health-focus/fda-regulation-cannabis-and-cannabis-derived-products-including-cannabidiol-cbd\" target=\"_blank\">FDA – Cannabis-Derived Products</a>). Beyond that clinical context, CBD is commonly discussed for its potential role in supporting calm, physical comfort, and recovery. <a href=\"https://hemplucid.com/blogs/blog/how-does-cbd-work\" target=\"_blank\">Learn how CBD interacts with the body →</a></p>",
+        "image": "shopify://shop_images/CBD-sequence-w-label.png",
+        "margin_top": 48,
+        "margin_bottom": 16,
+        "color": "#eae1d5",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#bcd868",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": true,
+        "tab_color": "#ffffff"
+      }
+    },
+    "wl_research_card_H6AVLM": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "card_title": "Cannabidiol",
+        "card_content": "<p>CBN forms naturally as THC ages and breaks down through exposure to oxygen and light. It is mildly psychoactive at very high doses but is non-intoxicating at the levels typically found in hemp products. CBN is commonly discussed for its association with <a href=\"https://hemplucid.com/collections/sleep-support\" target=\"_blank\">nighttime relaxation and restful sleep</a>, and preliminary research has explored its potential role in physical comfort when combined with CBD (<a href=\"https://www.webmd.com/pain-management/cbd-cbn-what-is-difference\" target=\"_blank\">WebMD – CBD vs CBN</a>). <a href=\"https://hemplucid.com/pages/what-is-cbn\" target=\"_blank\">Learn more about CBN →</a></p>",
+        "image": "shopify://shop_images/CBN-sequence-w-label.png",
+        "margin_top": 16,
+        "margin_bottom": 16,
+        "color": "#eae1d5",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#595378",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": false,
+        "tab_color": "#eae1d5"
+      }
+    },
+    "wl_research_card_mj9FXX": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "card_title": "Cannabigerol",
+        "card_content": "<p>Often called the “mother cannabinoid,” CBG is the chemical precursor from which the hemp plant produces CBD, THC, and CBC. It is present in very low concentrations in mature plants, making it less common in finished products. CBG is non-intoxicating and is commonly discussed for its potential to support <a href=\"https://hemplucid.com/collections/focus-support\" target=\"_blank\">focus</a>, digestive comfort, and a balanced mood. Early-stage research has also explored its neuroprotective properties (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11597810/\" target=\"_blank\">PMC – CBG Molecular Mechanisms</a>). For a CBG-forward option, explore our <a href=\"https://hemplucid.com/products/functional-gummies-focus-cbg-mushroom\" target=\"_blank\">Focus CBG + Mushroom gummies</a>.<br/><br/></p>",
+        "image": "shopify://shop_images/CBG-sequence-w-label.png",
+        "margin_top": 16,
+        "margin_bottom": 16,
+        "color": "#eae1d5",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#e57d39",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": false,
+        "tab_color": "#eae1d5"
+      }
+    },
+    "wl_research_card_M9QbJ6": {
+      "type": "wl-research-card",
+      "name": "HL Research Card",
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "card_title": "Cannabichromene",
+        "card_content": "<p>CBC is a lesser-known cannabinoid that does not bind strongly with CB1 or CB2 receptors. Instead, research suggests it interacts with other receptor pathways, such as TRPV1 and TRPA1, which are involved in how the body perceives temperature and discomfort (<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC3165957/\" target=\"_blank\">PMC – Cannabinoids and TRP Channels</a>). CBC is commonly discussed for its potential contributions to the entourage effect—the idea that cannabinoids may work more effectively together than in isolation. This is one reason many users prefer<a href=\"https://hemplucid.com/collections/full-spectrum-whole-plant-cbd\" target=\"_blank\">full-spectrum formulations</a>that preserve the plant’s natural cannabinoid diversity.<br/><br/></p>",
+        "image": "shopify://shop_images/CBC-sequence-w-label.png",
+        "margin_top": 16,
+        "margin_bottom": 68,
+        "color": "#eae1d5",
+        "bkg_color": "#ffffff",
+        "font_color_1": "#ef4681",
+        "font_color_2": "#241f21",
+        "link_color": "#C83D1B",
+        "border_color": "#dddddd",
+        "show_tab": false,
+        "tab_color": "#eae1d5"
+      }
+    },
+    "wl_tabbed_image_and_text_WdQPwM": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "research-transparency",
+        "color": "#5a5478",
+        "font_color": "#ffffff",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#eae1d5",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Research Transparency:*What We Know vs. What We Don’t",
+        "max_width": 73,
+        "content": "<p>We believe transparency builds trust. Here is an honest look at the current state of cannabinoid science.<br/><br/><strong>What the evidence supports:</strong> The endocannabinoid system is real, well-documented, and central to human physiology. CB1 and CB2 receptors have been identified and studied in peer-reviewed research for over three decades. CBD has demonstrated sufficient efficacy for the FDA to approve it as a prescription medication for specific seizure disorders. And early research into CBN, CBG, and CBC shows promising biological activity.</p><p><strong>What remains unclear:</strong> Most cannabinoid research beyond CBD is still in preclinical stages—meaning it has been studied in cells or animal models, not in large-scale human clinical trials. We do not yet have FDA-approved applications for CBN, CBG, or CBC. Long-term effects of daily cannabinoid supplementation are still being studied. And optimal dosing remains highly individual. </p><p>Because dosing varies so much from person to person, formats that allow incremental adjustment—such as <a href=\"https://hemplucid.com/collections/cbd-tinctures\" target=\"_blank\">cannabinoid tinctures</a> measured drop by drop—make it easier to start low and increase gradually while tracking how you respond.</p><p></p><p>We share this not to discourage exploration, but because you deserve the same information a researcher would have. If a company tells you a cannabinoid “cures” or “treats” a condition without citing FDA-approved clinical evidence, proceed with caution.<br/><br/></p>",
+        "image": "shopify://shop_images/Group_90.png",
+        "image_position": "left"
+      }
+    },
+    "wl_tabbed_image_and_text_EzzGVE": {
+      "type": "wl-tabbed-image-and-text",
+      "name": "HL Tabbed Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#eae1d5",
+        "font_color": "#241f21",
+        "link_color": "#C83D1B",
+        "show_tab": true,
+        "tab_color": "#5a5478",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "title": "Safety, Quality, and What to Look For",
+        "max_width": 73,
+        "content": "<p>Not all hemp products are created equal. Because cannabinoid supplements are not regulated with the same rigor as pharmaceuticals, quality varies dramatically across the market. The FDA has noted that many over-the-counter CBD products contain inaccurate labeling—some with less CBD than advertised, and others with detectable THC.</p><p>When evaluating any cannabinoid product, look for third-party Certificates of Analysis (COAs) from an independent laboratory. A COA verifies the cannabinoid content, confirms the absence of harmful contaminants like heavy metals and pesticides, and validates that THC levels remain within legal limits.  <a href=\"https://lucidlabs.hemplucid.com/\" target=\"_blank\">View Hemplucid’s lab results →</a></p><p>Important: If you are pregnant, nursing, taking prescription medications, or managing a diagnosed health condition, consult a healthcare provider before using any cannabinoid product. Cannabinoids may interact with certain medications, particularly those metabolized by cytochrome P450 liver enzymes.</p><p>Cannabinoid science is advancing rapidly. We are committed to updating this page as new peer-reviewed evidence emerges. Explore our <a href=\"https://hemplucid.com/pages/ingredients\" target=\"_blank\">ingredients and sourcing</a> to learn exactly what goes into every Hemplucid product, or visit our <a href=\"https://hemplucid.com/pages/cbd-faq\" target=\"_blank\">CBD FAQ</a> for answers to the most common questions.<br/><br/></p>",
+        "image": "shopify://shop_images/safety-quality.png",
+        "image_position": "right"
+      }
+    },
+    "wl_image_with_text_overlay_n8QFmK": {
+      "type": "wl-image-with-text-overlay",
+      "blocks": {
+        "heading_WDbNHc": {
+          "type": "heading",
+          "settings": {
+            "title": "Free Shipping On Orders Over $89",
+            "heading_max_width": 8,
+            "title_size": 84,
+            "title_size_mobile": 52,
+            "use_h1": false
+          }
+        },
+        "button_VY9AwE": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://pages/store",
+            "button_style": "secondary"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WDbNHc",
+        "button_VY9AwE"
+      ],
+      "custom_css": [
+        "@media only screen and (max-width: 767px) {h2.text-overlay__title.h1 {font-family: var(--ambit-font-light); font-size: 46.526px !important; font-style: normal; font-weight: 200; line-height: 50.632px !important; max-width: 90% !important; margin-bottom: 5% !important; }}"
+      ],
+      "name": "HL Image with text overlay",
+      "settings": {
+        "image": "shopify://shop_images/free-ship-banner_desktop_1.png",
+        "mobile_image": "shopify://shop_images/free-ship-banner_mobile_1.png",
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow"
+      }
+    },
+    "wl_transparency_image_text_MQ4KF7": {
+      "type": "wl-transparency-image-text",
+      "name": "HL Transparency Image & Text",
+      "settings": {
+        "cclasses": "",
+        "color": "#ffffff",
+        "font_color": "#241f21",
+        "margin_top": 68,
+        "margin_bottom": 68,
+        "content": "<h3><strong>External Sources & References</strong></h3><ol><li>Harvard Health Publishing. “The endocannabinoid system: Essential and mysterious.” August 2021.</li><li>Zou, S. & Kumar, U. “Cannabinoid Receptors and the Endocannabinoid System.” Int. J. Mol. Sci. 2018. PMC5877694.</li><li>Formato, M. et al. “Phytocannabinoids: Exploring Pharmacological Profiles.” Pharmaceuticals. 2024. PMC11050509.</li><li>Wiley, J.L. et al. “Molecular Mechanism and Cannabinoid Pharmacology.” Pharmacol. Rev. 2021. PMC8637936.</li><li>De Petrocellis, L. et al. “Effects of cannabinoids on TRP channels.” Br. J. Pharmacol. 2011. PMC3165957.</li><li>Britch, S.C. et al. “CBG: A Comprehensive Review.” Int. J. Mol. Sci. 2024. PMC11597810.</li><li>U.S. FDA. “Regulation of Cannabis and Cannabis-Derived Products.” fda.gov.</li><li>WebMD. “CBD vs CBN: What Is the Difference?” webmd.com.</li></ol>",
+        "image": "shopify://shop_images/transparency.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "wl_gradient_header_bar_CAMYj8",
+    "image_with_text_bpPgHC",
+    "wl_hierarchy_UcptpM",
+    "wl_curated_library_pkTMLX",
+    "wl_tabbed_image_and_text_wyaJRa",
+    "wl_research_card_QPFyyU",
+    "wl_research_card_H6AVLM",
+    "wl_research_card_mj9FXX",
+    "wl_research_card_M9QbJ6",
+    "wl_tabbed_image_and_text_WdQPwM",
+    "wl_tabbed_image_and_text_EzzGVE",
+    "wl_image_with_text_overlay_n8QFmK",
+    "wl_transparency_image_text_MQ4KF7"
+  ]
+}

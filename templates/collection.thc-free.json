@@ -1,0 +1,615 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_with_text_overlay_DF3QNK": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_tBHxeK": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "★★★★★ 5,000+ Five Star Rating"
+          }
+        },
+        "heading_WTtwWC": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ collection.title }}",
+            "heading_max_width": 15,
+            "title_size": 72,
+            "title_size_mobile": 46,
+            "use_h1": false
+          }
+        },
+        "text_gzaQhk": {
+          "type": "text",
+          "settings": {
+            "text": "{{ collection.description }}",
+            "enlarge_text": true
+          }
+        },
+        "icons_Cfdqfb": {
+          "type": "icons",
+          "disabled": true,
+          "settings": {
+            "icon_1": "shopify://shop_images/Leaf_Icon_1.png",
+            "icon_2": "shopify://shop_images/CBG_Icon_1.png",
+            "icon_3": "shopify://shop_images/Lions_Mane_Icon_1.png",
+            "icon_4": "shopify://shop_images/Botanicals_Icon_1.png"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_tBHxeK",
+        "heading_WTtwWC",
+        "text_gzaQhk",
+        "icons_Cfdqfb"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "",
+        "image": "{{ collection.metafields.custom.desktop_header_background_image.value }}",
+        "mobile_image": "{{ collection.metafields.custom.mobile_header_background_image.value }}",
+        "height": "fixed",
+        "height_desktop": 320,
+        "height_mobile": 300,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center left",
+        "mobile_overlay_under": true,
+        "mobile_text_bkg_color": "#ab2c4e",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "custom_css": [
+        ".page-header--with-upper-spacing {display: none;}"
+      ],
+      "settings": {
+        "show_title": true,
+        "show_image_behind_heading": true,
+        "heading_image_height": "medium",
+        "overlay_style": "shadow",
+        "coll_desc_pos": "above",
+        "coll_num_per_page_int": 24,
+        "grid": 4,
+        "show_vendor": false,
+        "show_total": false,
+        "enable_filtering": false,
+        "collapse_tag_sidebar_by_default": true,
+        "collapse_filters_method": "all",
+        "show_filter_counts": true,
+        "filter_two_columns": false,
+        "button_grid_filter_name": "Size,Taille,Größe",
+        "auto_apply_hide_unavailable": false,
+        "enable_sticky_filter": true,
+        "show_sort": false,
+        "sort_show_featured": false,
+        "sort_show_best": true,
+        "sort_show_alpha": true,
+        "sort_show_price": true,
+        "sort_show_date": false,
+        "related_collections": [],
+        "related_collections_style": "buttons",
+        "rel_coll_gall_aspect_ratio": "1",
+        "image_position": "center center",
+        "rel_coll_gall_enable_margin": true,
+        "rel_coll_gall_full_width": false,
+        "rel_coll_gall_overlay_style": "shadow",
+        "rel_coll_gall_text_alignment": "center center",
+        "rel_coll_grid_mobile": "2"
+      }
+    },
+    "testimonials_k6pPFK": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial_zzYHgW": {
+          "type": "testimonial",
+          "disabled": true,
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "Add customer reviews and testimonials to showcase your store’s happy customers.",
+            "author": "Author's name",
+            "image_caption": "",
+            "link": ""
+          }
+        },
+        "testimonial_xipQG4": {
+          "type": "testimonial",
+          "settings": {
+            "star_rating": 5,
+            "testimonial": "{{ collection.metafields.custom.collection_review.value.review.value }}",
+            "author": "{{ collection.metafields.custom.collection_review.value.author.value }}",
+            "image": "{{ collection.metafields.custom.collection_review.value.image.value }}",
+            "image_caption": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_zzYHgW",
+        "testimonial_xipQG4"
+      ],
+      "name": "Testimonials",
+      "settings": {
+        "title": "What Customers Are Saying",
+        "layout": "image-right",
+        "text_caps": false,
+        "quote_text_size": 30,
+        "quote_text_size_mobile": 20,
+        "image_shape": "square",
+        "color_scheme": "2",
+        "use_custom_star_rating_color": false,
+        "star_rating_color": "#e9a80a",
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_all": true,
+        "show_all_link": "shopify://pages/customer-reviews"
+      }
+    },
+    "image_with_text_overlay_ipxnEk": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_68dhcp": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "{{ collection.metafields.custom.section_header.value.subheading.value }}"
+          }
+        },
+        "heading_erXanJ": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ collection.metafields.custom.section_header.value.heading.value }}",
+            "heading_max_width": 15,
+            "title_size": 84,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "text_UAiPgR": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_68dhcp",
+        "heading_erXanJ",
+        "text_UAiPgR"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "special-section-header",
+        "image": "shopify://shop_images/Cannabis_Banner_3.jpg",
+        "mobile_image": "shopify://shop_images/powered-by-plants.png",
+        "height": "fixed",
+        "height_desktop": 320,
+        "height_mobile": 320,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "mobile_text_bkg_color": "#595378",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "key_features_eA8hEF": {
+      "type": "key-features",
+      "blocks": {
+        "feature_QhnUwi": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Focused_Student_Mask.png",
+            "bg_color": "#595378",
+            "bg_gradient": "",
+            "text_color": "#ffffff",
+            "heading": "CBG And CBD For Focus",
+            "text": "<p>We talk a lot about CBD here at HempLucid, and for good reason. In addition to helping us <a href=\"https://hemplucid.com/collections/stress-support\" title=\"Stress Support\">FIGHT STRESS</a> and find <a href=\"https://hemplucid.com/collections/sleep-support\" title=\"Sleep Support\">DEEPER SLEEP</a> (without next-day grogginess), CBD can help induce a state of relaxed calm that helps us feel sharp, clear, and “in the zone.” As the major non-intoxicating compound in cannabis and hemp, CBD is an all-natural all-star when it comes to helping us access better <a href=\"https://pubmed.ncbi.nlm.nih.gov/33551817/\" title=\"Mental Clarity and Focus\">MENTAL CLARITY AND FOCUS</a>.  </p><p><br/>Then there’s CBG, another cannabinoid that’s attracting a lot of attention. Like CBD, CBG isn’t intoxicating, and it supports our health with anxiety-reducing, anti-inflammatory, and neuroprotective qualities. As <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9666035/\" title=\"Pharmacological Aspects and Biological Effects of Cannabigerol and Its Synthetic Derivatives\">THIS EARLY STUDY</a> suggests, it’s an all-natural compound we’ll be hearing much, much more about in the years to come.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "1",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        },
+        "feature_nyPMHr": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/Chaga_Mushroom_in_a_Mask3.png",
+            "bg_color": "#ffd700",
+            "bg_gradient": "",
+            "text_color": "#002531",
+            "heading": "Mushrooms For Focus",
+            "text": "<p>As powerful as CBD and CBG are, they’re not the only compounds we lean on here at HempLucid. Since the earliest days of Chinese medicine, humans have known that adaptogens and functional mushrooms such as chaga have the potential to help us manage stress and achieve deeper focus without intoxication. And here at HempLucid, one of the mushrooms we lean most on is Lion’s Mane.  </p><p><br/>In addition to promising data suggesting that Lion’s Mane can enhance the activities of neurotransmitters, Lion's Mane compounds have been shown to potentially <a href=\"https://pubmed.ncbi.nlm.nih.gov/24266378/\" title=\"Neurotrophic properties of the Lion's mane medicinal mushroom\">INCREASE THE LEVELS OF NERVE GROWTH FACTOR</a> (NGF) in the brain. NGF is a protein that plays an important role in the health of nerve cells, which is vital for cognitive function, memory, and concentration.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "2",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        },
+        "feature_XFPeiV": {
+          "type": "feature",
+          "settings": {
+            "image": "shopify://shop_images/LionsMane_Mushroom_Mask2.png",
+            "bg_color": "#bcd868",
+            "bg_gradient": "",
+            "text_color": "#002531",
+            "heading": "Plant-Powered Proprietary Focus Blend",
+            "text": "<p>Here at HempLucid, we think life is <a href=\"https://hemplucid.com/pages/about\" title=\"About\">BETTER WITHOUT CHEMICALS AND SYNTHETIC DRUGS</a> in our systems. That’s a major reason our <a href=\"https://hemplucid.com/products/functional-gummies-focus-cbg-mushroom\" title=\"Focus Mushroom Gummies - Grape\">MUSHROOM FOCUS GUMMIES</a> rely on Lion’s Mane, CBD and CBG, and brain-boosting botanicals such as green coffee beans, L-Tyrosine, and L-Theanine, two amino acids that are supportive of brain function and relaxation. Taken in conjunction, this “power trio” has been shown to have <a href=\"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6880365/\" title=\"Effects of acute caffeine, theanine and tyrosine supplementation on mental and physical performance in athletes\">BRAIN-BOOSTING BENEFITS</a>.  </p><p><br/>In addition to being convenient (and just plain delicious), our Focus Gummies are formulated to be highly bioavailable. In essence, this means that an especially high percentage of their functional compounds make it into the bloodstream to have the most impact and effect. That’s one reason many people experience positive effects with just half a gummy a day. That said, because of the robust safety profiles of all ingredients, it’s perfectly safe to take up to two Focus Gummies a day for maximum support.</p>",
+            "read_more": false,
+            "read_more_external": false,
+            "read_more_url": "",
+            "show_segments": false,
+            "segments": 4,
+            "active_segment": "3",
+            "fill_segments": true,
+            "show_labels": true,
+            "label_left": "",
+            "label_middle": "",
+            "label_right": "",
+            "show_icon": false,
+            "icon": "star"
+          }
+        }
+      },
+      "block_order": [
+        "feature_QhnUwi",
+        "feature_nyPMHr",
+        "feature_XFPeiV"
+      ],
+      "disabled": true,
+      "name": "Key features",
+      "settings": {
+        "heading": "",
+        "image_max_width": 360,
+        "media_aspect_ratio": "1",
+        "image_position": "left",
+        "segment_position": "under-text"
+      }
+    },
+    "wl_collection_itcta_cyTEeR": {
+      "type": "wl-collection-itcta",
+      "name": "HL Collection Img/Txt CTA",
+      "settings": {
+        "custom_class": "collection-points",
+        "title": "",
+        "bkg_color": "#feab46",
+        "font_color": "#ffffff"
+      }
+    },
+    "image_with_text_overlay_P8rPVc": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_8zD6gR": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "{{ collection.metafields.custom.section_break_cta.value.tagline.value }}"
+          }
+        },
+        "heading_wXjwYh": {
+          "type": "heading",
+          "settings": {
+            "title": "{{ collection.metafields.custom.section_break_cta.value.heading.value }}",
+            "heading_max_width": 15,
+            "title_size": 80,
+            "title_size_mobile": 32,
+            "use_h1": false
+          }
+        },
+        "subheading_tJRy9N": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "{{ collection.metafields.custom.section_break_cta.value.subheading.value }}"
+          }
+        },
+        "text_YbVVLD": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>Our Focus Gummies Support Your Brain And Body For Peak Presence And Performance.</p>",
+            "enlarge_text": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_8zD6gR",
+        "heading_wXjwYh",
+        "subheading_tJRy9N",
+        "text_YbVVLD"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "special-section-header smaller",
+        "image": "shopify://shop_images/Mountains_background_banner.jpg",
+        "height": "fixed",
+        "height_desktop": 360,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center center",
+        "mobile_overlay_under": false,
+        "mobile_text_bkg_color": "#595378",
+        "mobile_text_color": "#ffffff",
+        "overlay_style": "shadow"
+      }
+    },
+    "multi_column_eMmiLW": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_nQ9aDQ": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Leaf_Icon_a1af8eca-92cf-4159-839f-6217ae652a9c.svg",
+            "title": "CBD",
+            "title_bold": false,
+            "text": "<p>This cannabinoid supports a natural state of balance.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_rLYab7": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/CBG_Icon_35acdec9-6bae-4a11-969b-2b140a975d74.svg",
+            "title": "CBG",
+            "title_bold": false,
+            "text": "<p>This cannabinoid helps soothe stress and protect brain function.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_8RaFzt": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Lions_Mane_Icon_d8838568-456e-4107-b559-471fe4565342.svg",
+            "title": "Lion's Mane",
+            "title_bold": false,
+            "text": "<p>This adaptogenic mushroom supports cognitive function, memory, and concentration.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_MV6KLR": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Botanicals_Icon_bbc7f2da-128d-4171-b977-2bfb253fb9f1.svg",
+            "title": "Botanicals",
+            "title_bold": false,
+            "text": "<p>Our proprietary blend includes ingredients to help you find clarity and focus.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_nQ9aDQ",
+        "text_block_rLYab7",
+        "text_block_8RaFzt",
+        "text_block_MV6KLR"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "h2 {font-size: 32px;}"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "master_class": "industry-icons bigger-title",
+        "title": "Combining Nature's Best Focus Supports",
+        "subtitle": "",
+        "subtitle_link": "",
+        "use_h1": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "2",
+        "desktop_cols": "20"
+      }
+    },
+    "faq_header_KKNjFf": {
+      "type": "faq-header",
+      "name": "FAQ header",
+      "settings": {
+        "title": "FAQS",
+        "use_h1": false,
+        "text": "{{ collection.metafields.custom.faq_description | metafield_tag }}",
+        "show_search": false,
+        "show_index": false,
+        "index_heading": "Have More Questions?"
+      }
+    },
+    "collapsible_tabs_i7rBwx": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_bmJh66": {
+          "type": "question",
+          "settings": {
+            "title": "What is full-spectrum CBD?",
+            "answer": "<p>Full-spectrum CBD is a whole-plant hemp extract containing CBD alongside naturally occurring cannabinoids, terpenes, flavonoids, and trace amounts of THC. HempLucid’s full-spectrum formulas are designed for customers seeking a more complete hemp profile rather than CBD alone.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_qmDymB": {
+          "type": "question",
+          "settings": {
+            "title": "Does HempLucid full-spectrum CBD contain THC?",
+            "answer": "<p>Yes. HempLucid full-spectrum CBD products contain trace THC levels below 0.3%, alongside CBD and other naturally occurring hemp compounds. Review the product label and batch-specific Certificate of Analysis for the exact cannabinoid profile.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_KDgMmq": {
+          "type": "question",
+          "settings": {
+            "title": "Will full-spectrum CBD make me feel high?",
+            "answer": "<p>Full-spectrum CBD is not intended to create an intoxicating experience when used as directed. However, because it contains trace THC, individual experiences can vary—especially with higher-strength products or greater-than-recommended servings.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_g4RbU6": {
+          "type": "question",
+          "settings": {
+            "title": "Can HempLucid full-spectrum CBD cause a positive drug test?",
+            "answer": "<p>It is possible. Full-spectrum CBD contains trace THC, and repeated use or individual testing factors may lead to a positive result. Customers subject to workplace or athletic drug testing should consider a <a href=\"/collections/thc-free-cbd\" title=\"THC-Free & CBD Isolate\">THC-free HempLucid broad-spectrum or CBD isolate</a> product instead. </p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_n3jn6r": {
+          "type": "question",
+          "settings": {
+            "title": "How is full-spectrum CBD different from broad-spectrum CBD and CBD isolate?",
+            "answer": "<p>Full-spectrum CBD includes CBD, other hemp-derived compounds, and trace THC. Broad-spectrum CBD keeps a range of cannabinoids and terpenes but is formulated without detectable THC, while CBD isolate contains CBD only.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_gPAgYA": {
+          "type": "question",
+          "settings": {
+            "title": "What types of full-spectrum CBD products does HempLucid offer?",
+            "answer": "<p>HempLucid offers full-spectrum options in several formats, including MCT oil tinctures, hemp seed oil tinctures, softgels, gummies, water-soluble CBD, body creams, balms, and pet formulas. This makes it easy to choose a format that fits your preferred routine.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_4zr3Hq": {
+          "type": "question",
+          "settings": {
+            "title": "How does HempLucid test its full-spectrum CBD products?",
+            "answer": "<p>All HempLucid extracts and finished product batches are third-party tested at multiple stages for potency and cannabinoid content. Customers can scan the QR code on a product or visit <a href=\"https://lucidlabs.hemplucid.com\" title=\"https://lucidlabs.hemplucid.com\">lucidlabs.hemplucid.com</a> to access its <strong>Certificate of Analysis</strong> and review lab results.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_qMiKPq": {
+          "type": "question",
+          "settings": {
+            "title": "How do I choose the right HempLucid full-spectrum CBD product?",
+            "answer": "<p>Start by choosing the format that best fits your routine, such as a tincture for flexible serving sizes, capsules for convenience, or a topical for targeted application. Then review the CBD amount per serving, ingredients, and Certificate of Analysis, and follow the product label’s suggested use.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        }
+      },
+      "block_order": [
+        "question_bmJh66",
+        "question_qmDymB",
+        "question_KDgMmq",
+        "question_g4RbU6",
+        "question_n3jn6r",
+        "question_gPAgYA",
+        "question_4zr3Hq",
+        "question_qMiKPq"
+      ],
+      "disabled": true,
+      "name": "Collapsible tabs",
+      "settings": {
+        "custom_classes": "",
+        "title": "",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": true
+      }
+    },
+    "wl_collection_collapsible_tabs_w8KrXm": {
+      "type": "wl-collection-collapsible-tabs",
+      "name": "WL Collapsible tabs",
+      "settings": {
+        "custom_classes": "",
+        "title": "Collapsible tabs",
+        "text_align": "left",
+        "open_tab": false,
+        "color_scheme": "default",
+        "use_padding": false,
+        "padding_top": 78,
+        "padding_bottom": 70,
+        "enable_faq_schema": true
+      }
+    }
+  },
+  "order": [
+    "image_with_text_overlay_DF3QNK",
+    "main",
+    "testimonials_k6pPFK",
+    "image_with_text_overlay_ipxnEk",
+    "key_features_eA8hEF",
+    "wl_collection_itcta_cyTEeR",
+    "image_with_text_overlay_P8rPVc",
+    "multi_column_eMmiLW",
+    "faq_header_KKNjFf",
+    "collapsible_tabs_i7rBwx",
+    "wl_collection_collapsible_tabs_w8KrXm"
+  ]
+}

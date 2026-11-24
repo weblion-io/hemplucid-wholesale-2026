@@ -1,0 +1,529 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true,
+        "full_width": false
+      }
+    },
+    "image_with_text_overlay_7G3Tkj": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_TBjN9j": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "start saving today"
+          }
+        },
+        "heading_zEUAf8": {
+          "type": "heading",
+          "settings": {
+            "title": "Why Subscribe to<br>HempLucid?",
+            "heading_max_width": 15,
+            "title_size": 72,
+            "title_size_mobile": 46,
+            "use_h1": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_TBjN9j",
+        "heading_zEUAf8"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "custom_class": "subscription-hero",
+        "image": "shopify://shop_images/subscription-hero.png",
+        "mobile_image": "shopify://shop_images/subscription-hero_mo.png",
+        "height": "fixed",
+        "height_desktop": 420,
+        "height_mobile": 460,
+        "image_link": "",
+        "full_width": true,
+        "text_alignment": "center left",
+        "mobile_overlay_under": true,
+        "mobile_text_bkg_color": "#eae1d5",
+        "mobile_text_color": "#002531",
+        "overlay_style": "no_background"
+      }
+    },
+    "wl_subscribiption_benefit_cards_RfVCC3": {
+      "type": "wl-subscribiption-benefit-cards",
+      "blocks": {
+        "benefit_card_pgzTDq": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "30% OFF^All Orders",
+            "content": "Enjoy the best savings available and right to your door!",
+            "icon": "per",
+            "icon_bkg": "#e57e3b",
+            "icon_color": "light",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_ARjDGh": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Free Delivery^Available",
+            "content": "Free shipping on orders over $89.",
+            "icon": "truck",
+            "icon_bkg": "#595378",
+            "icon_color": "light",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_GhfmdE": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Exclusive^Discounts",
+            "content": "Enjoy additional discounts the longer you stay subscribed on orders over $50.",
+            "icon": "pig",
+            "icon_bkg": "#bcd868",
+            "icon_color": "dark",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_Eem99a": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Earn and Use^Reward Points on^Every Order",
+            "content": "Sign into your HempLucid account to apply for rewards.",
+            "icon": "ribbon",
+            "icon_bkg": "#ffd700",
+            "icon_color": "dark",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_rkiLy6": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Gift a^Subscription",
+            "content": "to a friend or loved one.",
+            "icon": "present",
+            "icon_bkg": "#ef4482",
+            "icon_color": "light",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_8UEzWG": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "100% Money Back Guarantee",
+            "content": "is included with each subscription delivery.",
+            "icon": "cash-back",
+            "icon_bkg": "#C83D1B",
+            "icon_color": "light",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_fiqqJQ": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Skip, Swap or^Cancel Anytime",
+            "content": "No longterm commitment. You can stop your subscription at any time.",
+            "icon": "hand",
+            "icon_bkg": "#484848",
+            "icon_color": "light",
+            "label_text": "",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "shop_card_iPNzLt": {
+          "type": "shop-card",
+          "settings": {
+            "title": "Shop and Subscribe Today",
+            "button_text": "Shop Now",
+            "button_link": "",
+            "color": "#ffffff",
+            "image": "shopify://shop_images/shop-and-subscribe.png"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_card_pgzTDq",
+        "benefit_card_ARjDGh",
+        "benefit_card_GhfmdE",
+        "benefit_card_Eem99a",
+        "benefit_card_rkiLy6",
+        "benefit_card_8UEzWG",
+        "benefit_card_fiqqJQ",
+        "shop_card_iPNzLt"
+      ],
+      "name": "HL Benefit Cards",
+      "settings": {
+        "custom_classes": "",
+        "title": "",
+        "text_alignment": "left",
+        "color_scheme": "2",
+        "columns": "4",
+        "card_bkg": "#ffffff",
+        "mobile_carousel": true
+      }
+    },
+    "multi_column_QmtVpA": {
+      "type": "multi-column",
+      "blocks": {
+        "text_block_WK9xrp": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/Leaf_Icon_2.png",
+            "title": "1.^Choose Your Product",
+            "title_bold": false,
+            "text": "<p>You can even order multiple products with different delivery schedules!</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_bWVBjn": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/check-mark.png",
+            "title": "2.^Pick Your Plan",
+            "title_bold": false,
+            "text": "<p>Choose the schedule that works for you! We offer two-, four-, six-, and  eight-week delivery.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_gY7i4W": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/relax-icon.png",
+            "title": "3.^Sit Back and Relax",
+            "title_bold": false,
+            "text": "<p>You don’t have to do anything else! We'll remind you before every delivery so you can make any changes.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        },
+        "text_block_xzYtGP": {
+          "type": "text_block",
+          "settings": {
+            "enable_media": true,
+            "image": "shopify://shop_images/smiley-icon.png",
+            "title": "4.^Enjoy",
+            "title_bold": false,
+            "text": "<p>With a subscription, you can get a steady supply of your favorite products with no effort on your part.</p>",
+            "button_label": "",
+            "link": "",
+            "use_onclick": false,
+            "onclick": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_block_WK9xrp",
+        "text_block_bWVBjn",
+        "text_block_gY7i4W",
+        "text_block_xzYtGP"
+      ],
+      "name": "Multi-column",
+      "settings": {
+        "master_class": "subscription-how",
+        "title": "How Does It Work?",
+        "subtitle": "",
+        "subtitle_link": "",
+        "use_h1": false,
+        "media_aspect_ratio": "s",
+        "media_width": 700,
+        "text_alignment": "center",
+        "button_style": "primary",
+        "color_scheme": "default",
+        "desktop_cols": "25"
+      }
+    },
+    "wl_image_cta_KgDUFn": {
+      "type": "wl-image-cta",
+      "name": "HL Image CTA",
+      "settings": {
+        "dt_image": "shopify://shop_images/shop-and-subscribe-today.png",
+        "mo_image": "shopify://shop_images/shop-and-subscribe-today_mo.png",
+        "title": "Shop & Subscribe Today",
+        "link_text": "SHOP NOW",
+        "link": "shopify://pages/store",
+        "text_alignment": "left",
+        "color": "#ffffff"
+      }
+    },
+    "wl_subscribiption_benefit_cards_xcEdfb": {
+      "type": "wl-subscribiption-benefit-cards",
+      "blocks": {
+        "benefit_card_PgDimH": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Every^Two Weeks",
+            "content": "I'm obsessed! I want my favorite HempLucid products on my doorstep every two weeks",
+            "icon": "none",
+            "icon_bkg": "#e57e3b",
+            "icon_color": "light",
+            "label_text": "Most Often",
+            "label_bkg": "#ffffff",
+            "label_color": "#ffffff"
+          }
+        },
+        "benefit_card_9Cfh8X": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Every^Four Weeks",
+            "content": "Monthly delivery (every four weeks) is the perfect frequency for me.",
+            "icon": "none",
+            "icon_bkg": "#e57e3b",
+            "icon_color": "light",
+            "label_text": "Most Popular",
+            "label_bkg": "#ffd700",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_jamRe6": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Every^Six Weeks",
+            "content": "Every month is too often for me, but I still want to subscribe & save! I need new products about every six weeks.",
+            "icon": "none",
+            "icon_bkg": "#e57e3b",
+            "icon_color": "light",
+            "label_text": "Recommended",
+            "label_bkg": "#bcd868",
+            "label_color": "#010101"
+          }
+        },
+        "benefit_card_nPB6Pk": {
+          "type": "benefit-card",
+          "settings": {
+            "title": "Every^Eight Weeks",
+            "content": "Please deliver my favorite HempLucid products in roughly two-month intervals. The best fit for me is every eight weeks!",
+            "icon": "none",
+            "icon_bkg": "#e57e3b",
+            "icon_color": "light",
+            "label_text": "occasional",
+            "label_bkg": "#ffffff",
+            "label_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_card_PgDimH",
+        "benefit_card_9Cfh8X",
+        "benefit_card_jamRe6",
+        "benefit_card_nPB6Pk"
+      ],
+      "name": "HL Benefit Cards",
+      "settings": {
+        "custom_classes": "delivery-schedule",
+        "title": "Find Your Delivery ^*Schedule",
+        "text_alignment": "center",
+        "color_scheme": "1",
+        "columns": "4",
+        "card_bkg": "#ffffff",
+        "mobile_carousel": false
+      }
+    },
+    "collapsible_tabs_3hkYAU": {
+      "type": "collapsible-tabs",
+      "blocks": {
+        "question_Nmkqwx": {
+          "type": "question",
+          "settings": {
+            "title": "Can I Earn Loyalty Points on Subscriptions?",
+            "answer": "<p>You will earn points with every subscription order.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_LUEaVX": {
+          "type": "question",
+          "settings": {
+            "title": "Can I Redeem Loyalty Points On Subscription Products?",
+            "answer": "<p>Yes! Any points you earn on purchases can be redeemed on one-time orders, subscription orders, and hybrid orders.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_6tVxYR": {
+          "type": "question",
+          "settings": {
+            "title": "Do Discounts Or Other Promos Apply To Subscription Orders?",
+            "answer": "<p>Yes subscribers will qualify for the same discount as site wide sales if the discount is greater than 30%.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_WhCtbw": {
+          "type": "question",
+          "settings": {
+            "title": "Is Shipping Free?",
+            "answer": "<p>Shipping is free for orders $89+.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_KfxnVP": {
+          "type": "question",
+          "settings": {
+            "title": "Can I Upgrade My Shipping Method?",
+            "answer": "<p>No, recurring orders will default to USPS standard shipping .</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_QkUPVa": {
+          "type": "question",
+          "settings": {
+            "title": "When will my subscription order be shipped?",
+            "answer": "<p>That depends on you! Once you choose your subscription plan, you get to choose how often you want it to be sent to you. Your first order will be processed within one business day of placing it. After that, the frequency of your recurring orders and when they’re shipped will be based on your plan.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_JxBGLp": {
+          "type": "question",
+          "settings": {
+            "title": "How long does shipping take?",
+            "answer": "<p>Recurring orders are shipped via USPS, and the shipping time varies depending on the distance it’s traveling from our warehouse. Typically, delivery time is 2 to 4 business days, but it could take up to 7 business days in rare cases.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_8iBKpq": {
+          "type": "question",
+          "settings": {
+            "title": "When will my card be charged?",
+            "answer": "<p>Cards will be charged at midnight the day the order is processed. We will be sure to send an email reminder to help keep you up to date on everything surrounding your subscription.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_8w9nPF": {
+          "type": "question",
+          "settings": {
+            "title": "Can I cancel anytime?",
+            "answer": "<p>Yes. We’ll miss you though. Sign in to your HempLucid account and go into “Manage Subscriptions.” Clicking on “Subscriptions” takes you to your active subscriptions. Click on the subscription you want to cancel, and find “Cancel Subscription” at the bottom of the page.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_WchCFN": {
+          "type": "question",
+          "settings": {
+            "title": "How can I update my payment method?",
+            "answer": "<p>Sign in to your HempLucid account and make the change. You’ve got the power! Sign in to your HempLucid account and click on “Manage Subscriptions.” Once there, click on “Billing Information.” You will be able to send yourself an email to securely update your payment method.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "question_d7wgPg": {
+          "type": "question",
+          "settings": {
+            "title": "Can I send my subscription order to an alternate address?",
+            "answer": "<p>Yes! Send it wherever you need to. Just change it in your HempLucid account by going into “Manage Subscriptions” and clicking on “Shipping Addresses.” From there, you can update or change your shipping address to have your next recurring order shipped wherever you need it to go.</p>",
+            "button_txt": "",
+            "link": "",
+            "onclick": false,
+            "onclick_code": "",
+            "info": ""
+          }
+        },
+        "content_L4Mer3": {
+          "type": "content",
+          "settings": {
+            "content": "<p>For any additional questions, click “We’re Online!” in the bottom, right corner to start a Live Chat. You can also contact us by calling +1 (385) 203-8556 or sending us a message <a href=\"/pages/contact\" title=\"Contact\">here</a>  </p><p><strong>Disclaimer:</strong> We reserve the right to modify, update, or discontinue our subscription program—including the rewards punch card—at any time, with or without prior notice.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_Nmkqwx",
+        "question_LUEaVX",
+        "question_6tVxYR",
+        "question_WhCtbw",
+        "question_KfxnVP",
+        "question_QkUPVa",
+        "question_JxBGLp",
+        "question_8iBKpq",
+        "question_8w9nPF",
+        "question_WchCFN",
+        "question_d7wgPg",
+        "content_L4Mer3"
+      ],
+      "name": "Collapsible tabs",
+      "settings": {
+        "custom_classes": "subscription-faqs",
+        "title": "Have More Questions?",
+        "text_align": "center",
+        "open_tab": false,
+        "enable_faq_schema": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_with_text_overlay_7G3Tkj",
+    "wl_subscribiption_benefit_cards_RfVCC3",
+    "multi_column_QmtVpA",
+    "wl_image_cta_KgDUFn",
+    "wl_subscribiption_benefit_cards_xcEdfb",
+    "collapsible_tabs_3hkYAU"
+  ]
+}
