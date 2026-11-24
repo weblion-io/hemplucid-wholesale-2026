@@ -1,0 +1,393 @@
+{%- comment -%}
+  Custom subscription widget (Appstle selling plans).
+  Usage (inside the product {% form %}):
+  {% render 'fg-subscription-widget', product: product, current_variant: current_variant, product_form_id: product_form_id %}
+{%- endcomment -%}
+
+{%- if product.selling_plan_groups.size > 0 -%}
+  {%- liquid
+    assign variant = current_variant | default: product.selected_or_first_available_variant
+
+    # 'subscribe' or 'onetime'
+    assign default_mode = 'subscribe'
+
+    assign first_plan = product.selling_plan_groups.first.selling_plans.first
+    assign sub_price = variant.price
+    for alloc in variant.selling_plan_allocations
+      if alloc.selling_plan.id == first_plan.id
+        assign sub_price = alloc.price
+        break
+      endif
+    endfor
+
+    # Compare-at price: only counts when it's higher than the regular price
+    assign compare_price = variant.compare_at_price | default: 0
+    assign has_compare = false
+    if compare_price > variant.price
+      assign has_compare = true
+    endif
+
+    # Struck-through price on the subscribe row: compare-at if set, else the regular price
+    assign sub_strike_price = variant.price
+    if has_compare
+      assign sub_strike_price = compare_price
+    endif
+
+    # Save % is measured against the struck-through price (compare-at if set, else regular)
+    assign save_pct = 0
+    if sub_strike_price > 0
+      assign save_pct = sub_price | times: 100.0 | divided_by: sub_strike_price | round
+      assign save_pct = 100 | minus: save_pct
+    endif
+
+    assign widget_id = 'fg-sub-' | append: product_form_id
+  -%}
+
+  <fg-subscription-widget class="fg-sub{% if default_mode == 'subscribe' or product.requires_selling_plan %} is-subscribe{% endif %}">
+    <fieldset class="fg-sub__box">
+      <legend class="visually-hidden">Purchase options</legend>
+
+      {%- unless product.requires_selling_plan -%}
+        <label class="fg-sub__row">
+          <input type="radio" class="visually-hidden" form="{{ widget_id }}-noform" name="{{ widget_id }}-mode" value="onetime" data-sub-mode
+            {%- if default_mode == 'onetime' %} checked{% endif %}>
+          <span class="fg-sub__text">
+            <span class="fg-sub__title">One-time Purchase</span>
+            <span class="fg-sub__prices">
+              <span class="fg-sub__price" data-sub-onetime-price>{{ variant.price | money }}</span>
+              <s class="fg-sub__compare" data-sub-onetime-compare{% unless has_compare %} hidden{% endunless %}>{{ compare_price | money }}</s>
+            </span>
+          </span>
+          <span class="fg-sub__radio" aria-hidden="true"></span>
+        </label>
+      {%- endunless -%}
+
+      <div class="fg-sub__option">
+        <label class="fg-sub__row">
+          <input type="radio" class="visually-hidden" form="{{ widget_id }}-noform" name="{{ widget_id }}-mode" value="subscribe" data-sub-mode
+            {%- if default_mode == 'subscribe' or product.requires_selling_plan %} checked{% endif %}>
+          <span class="fg-sub__text">
+            <span class="fg-sub__title">
+              Subscribe &amp; Save
+              <span class="fg-sub__badge" data-sub-if-saving{% if save_pct <= 0 %} hidden{% endif %}>Save <span data-sub-pct>{{ save_pct }}</span>%</span>
+            </span>
+            <span class="fg-sub__prices">
+              <span class="fg-sub__price" data-sub-price>{{ sub_price | money }}</span>
+              <s class="fg-sub__compare" data-sub-compare{% if sub_strike_price <= sub_price %} hidden{% endif %}>{{ sub_strike_price | money }}</s>
+            </span>
+          </span>
+          <span class="fg-sub__radio" aria-hidden="true"></span>
+        </label>
+
+        <div class="fg-sub__details">
+          <div class="fg-sub__benefits">
+            <div class="fg-sub__benefit">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="currentColor"/><rect x="8.25" y="7" width="2.5" height="10" rx="1" fill="#fff"/><rect x="13.25" y="7" width="2.5" height="10" rx="1" fill="#fff"/></svg>
+              <span>Pause/Cancel<br>Anytime</span>
+            </div>
+            <div class="fg-sub__benefit" data-sub-if-saving{% if save_pct <= 0 %} hidden{% endif %}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2 12.6V3.5A1.5 1.5 0 0 1 3.5 2h9.1c.4 0 .78.16 1.06.44l7.9 7.9a1.5 1.5 0 0 1 0 2.12l-9.1 9.1a1.5 1.5 0 0 1-2.12 0l-7.9-7.9A1.5 1.5 0 0 1 2 12.6Z"/><circle cx="7.5" cy="7.5" r="2" fill="#fff"/></svg>
+              <span>Save 30%<br>Every Order</span>
+            </div>
+          </div>
+
+          <div class="fg-sub__select-wrap">
+            <label class="visually-hidden" for="{{ widget_id }}-frequency">Delivery frequency</label>
+            <select class="fg-sub__select" id="{{ widget_id }}-frequency" form="{{ widget_id }}-noform" data-sub-frequency>
+              {%- for group in product.selling_plan_groups -%}
+                {%- for plan in group.selling_plans -%}
+                  <option value="{{ plan.id }}"{% if plan.id == first_plan.id %} selected{% endif %}>{{ plan.name | escape }}</option>
+                {%- endfor -%}
+              {%- endfor -%}
+            </select>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    {%- comment -%} This is the field that actually adds the subscription to the cart {%- endcomment -%}
+    <input type="hidden" name="selling_plan" value="{{ first_plan.id }}" data-sub-plan-input
+      {%- if default_mode == 'onetime' and product.requires_selling_plan == false %} disabled{% endif %}>
+
+    <script type="application/json" data-sub-json>
+      {
+        "moneyFormat": {{ shop.money_format | json }},
+        "initialVariant": {{ variant.id | json }},
+        "variants": {
+          {%- for v in product.variants -%}
+            "{{ v.id }}": {
+              "price": {{ v.price }},
+              "compare": {{ v.compare_at_price | default: 0 }},
+              "plans": {
+                {%- for alloc in v.selling_plan_allocations -%}
+                  "{{ alloc.selling_plan.id }}": {{ alloc.price }}{%- unless forloop.last -%},{%- endunless -%}
+                {%- endfor -%}
+              }
+            }{%- unless forloop.last -%},{%- endunless -%}
+          {%- endfor -%}
+        }
+      }
+    </script>
+  </fg-subscription-widget>
+
+  <style>
+    .fg-sub {
+      --fg-ink: var(--main-font-color, #222);
+      --fg-line: #d9d9d9;
+      --fg-muted: #7c7c7c;
+      --fg-tile: #f1f1f1;
+      --fg-radius: 8px;
+      --fg-pad: 12px;
+      margin: 0 0 16px;
+      color: var(--fg-ink);
+    }
+    .fg-sub [hidden] { display: none !important; }
+    .fg-sub__box {
+      min-width: 0;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--fg-line);
+      border-radius: var(--fg-radius);
+      overflow: hidden;
+    }
+    .fg-sub__row + .fg-sub__option { border-top: 1px solid var(--fg-line); }
+    .fg-sub__row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--fg-pad);
+      margin: 0;
+      padding: var(--fg-pad);
+      cursor: pointer;
+    }
+    .fg-sub__text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+    .fg-sub__title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+    .fg-sub__badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: var(--fg-radius);
+      background: var(--fg-ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .fg-sub__prices {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .fg-sub__price {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    .fg-sub__compare {
+      color: var(--fg-muted);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: line-through;
+    }
+    .fg-sub__radio {
+      flex: 0 0 auto;
+      box-sizing: border-box;
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--fg-ink);
+      border-radius: 50%;
+      background: transparent;
+    }
+    /* Selected: 2px outline ring + 10px centered dot, with a see-through gap between */
+    .fg-sub__row input:checked ~ .fg-sub__radio {
+      border-width: 2px !important;
+      background-color: transparent !important;
+      background-image: radial-gradient(circle at center, var(--fg-ink) 0 5px, transparent 5.5px) !important;
+      background-size: 100% 100% !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      box-shadow: none !important;
+    }
+    .fg-sub__row input:focus-visible ~ .fg-sub__radio {
+      outline: 2px solid var(--fg-ink);
+      outline-offset: 3px;
+    }
+
+    .fg-sub__details { padding: 0 var(--fg-pad) var(--fg-pad); }
+    .fg-sub:not(.is-subscribe) .fg-sub__details { display: none; }
+
+    .fg-sub__benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 3px;
+      margin-bottom: var(--fg-pad);
+    }
+    .fg-sub__benefit {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: var(--fg-pad);
+      border-radius: var(--fg-radius);
+      background: var(--fg-tile);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+    }
+    .fg-sub__benefit svg {
+      width: 26px;
+      height: 26px;
+      color: #555;
+    }
+
+    .fg-sub__select-wrap { position: relative; }
+    .fg-sub__select-wrap::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      bottom: 14px;
+      right: 54px;
+      width: 1px;
+      background: var(--fg-line);
+      pointer-events: none;
+    }
+    .fg-sub__select-wrap::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 23px;
+      width: 8px;
+      height: 8px;
+      border-right: 1.5px solid #555;
+      border-bottom: 1.5px solid #555;
+      transform: translateY(-70%) rotate(45deg);
+      pointer-events: none;
+    }
+    .fg-sub__select {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: auto;
+      min-height: 60px;
+      margin: 0;
+      padding: 0 70px 0 var(--fg-pad);
+      border: 1px solid var(--fg-line);
+      border-radius: var(--fg-radius);
+      background: #fff none;
+      box-shadow: none;
+      color: var(--fg-ink);
+      font: inherit;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    /* Hide Appstle's own widget if it still injects */
+    .appstle_sub_widget { display: none !important; }
+  </style>
+
+  <script>
+    if (!customElements.get('fg-subscription-widget')) {
+      customElements.define('fg-subscription-widget', class extends HTMLElement {
+        connectedCallback() {
+          if (this._ready) return;
+          this._ready = true;
+
+          this.data = JSON.parse(this.querySelector('[data-sub-json]').textContent);
+          this.form = this.closest('form');
+          this.planInput = this.querySelector('[data-sub-plan-input]');
+          this.select = this.querySelector('[data-sub-frequency]');
+          this.subscribeRadio = this.querySelector('[data-sub-mode][value="subscribe"]');
+
+          // Purchase type or frequency changed
+          this.addEventListener('change', () => this.update());
+
+          // Variant changed: the theme swaps or updates the form's id input
+          var check = () => { if (this.variantId() !== this._variantId) this.update(); };
+          if (this.form) {
+            new MutationObserver(check).observe(this.form, { subtree: true, childList: true, attributes: true, attributeFilter: ['value'] });
+          }
+          document.addEventListener('change', (e) => {
+            if (e.target.closest && e.target.closest('variant-picker')) {
+              setTimeout(check, 150);
+              setTimeout(check, 800);
+            }
+          });
+          document.addEventListener('on:variant:change', () => setTimeout(check, 0));
+
+          this.update();
+        }
+
+        variantId() {
+          var input = this.form && this.form.querySelector('input[name="id"]');
+          return input ? input.value : '';
+        }
+
+        update() {
+          this._variantId = this.variantId();
+          var v = this.data.variants[this._variantId] || this.data.variants[this.data.initialVariant];
+          if (!v) return;
+
+          var subscribe = this.subscribeRadio.checked;
+          var planPrice = v.plans[this.select.value];
+          if (planPrice == null) planPrice = v.price;
+          // Compare-at only counts when it's higher than the regular price
+          var compare = v.compare > v.price ? v.compare : 0;
+          // Subscribe row strikes the compare-at price if set, else the regular price
+          var subStrike = compare || v.price;
+          // Save % is measured against that struck-through price
+          var pct = subStrike > 0 ? Math.round((1 - planPrice / subStrike) * 100) : 0;
+
+          this.setText('[data-sub-onetime-price]', this.money(v.price));
+          this.setText('[data-sub-onetime-compare]', this.money(compare));
+          this.setText('[data-sub-price]', this.money(planPrice));
+          this.setText('[data-sub-compare]', this.money(subStrike));
+          this.setText('[data-sub-pct]', String(pct));
+          this.querySelectorAll('[data-sub-if-saving]').forEach((el) => { el.hidden = pct <= 0; });
+          this.querySelectorAll('[data-sub-onetime-compare]').forEach((el) => { el.hidden = !compare; });
+          this.querySelectorAll('[data-sub-compare]').forEach((el) => { el.hidden = subStrike <= planPrice; });
+
+          this.classList.toggle('is-subscribe', subscribe);
+          this.planInput.value = this.select.value;
+          this.planInput.disabled = !subscribe;
+        }
+
+        setText(selector, text) {
+          this.querySelectorAll(selector).forEach((el) => {
+            if (el.textContent !== text) el.textContent = text;
+          });
+        }
+
+        money(cents) {
+          var format = this.data.moneyFormat.replace(/<[^>]*>/g, '');
+          var match = format.match(/\{\{\s*(\w+)\s*\}\}/);
+          var num = (decimals, thousands, decimal) => {
+            var parts = (cents / 100).toFixed(decimals).split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, thousands);
+            return parts.join(decimal);
+          };
+          var value;
+          switch (match ? match[1] : 'amount') {
+            case 'amount_no_decimals': value = num(0, ',', '.'); break;
+            case 'amount_with_comma_separator': value = num(2, '.', ','); break;
+            case 'amount_no_decimals_with_comma_separator': value = num(0, '.', ','); break;
+            default: value = num(2, ',', '.');
+          }
+          return format.replace(/\{\{\s*\w+\s*\}\}/, value);
+        }
+      });
+    }
+  </script>
+{%- endif -%}

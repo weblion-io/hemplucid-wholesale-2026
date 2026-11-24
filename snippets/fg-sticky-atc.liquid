@@ -1,0 +1,272 @@
+{%- liquid
+  assign anchor = '#product-info'
+
+  assign rating = product.metafields.reviews.rating.value
+  assign rating_count = product.metafields.reviews.rating_count.value | default: 0
+  if rating
+    assign rating_pct = rating.rating | times: 100.0 | divided_by: rating.scale_max
+  endif
+-%}
+
+<link rel="stylesheet" href="{{ 'sticky-atc.css' | asset_url }}" media="print" onload="this.media='all'">
+<script src="{{ 'sticky-atc.js' | asset_url }}" defer="defer"></script>
+
+{% style %}
+  sticky-atc.fg-sticky {
+    --fg-star: #E57E3B;
+    --fg-shop: #E57E3B;
+    position: fixed !important;
+    top: var(--fg-sticky-top, 0px) !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 90;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    padding: 12px 16px;
+    background: #fff;
+    border-radius: 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.12);
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-10px) !important;
+    pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s linear .2s;
+  }
+  sticky-atc.fg-sticky.is-shown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto;
+    transition: opacity .2s ease, transform .2s ease, visibility 0s;
+  }
+  @media (max-width: 767.98px) {
+    sticky-atc.fg-sticky.sticky-atc--hide-on-mobile { display: none !important; }
+  }
+
+  sticky-atc.fg-sticky .sticky-atc__image { display: none !important; }
+
+  sticky-atc.fg-sticky .sticky-atc__details {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0;
+  }
+
+  /* Rating row */
+  .fg-sticky__rating {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+    color: var(--main-font-color, #002531);
+    font-size: 14px;
+    line-height: 1;
+  }
+  .fg-stars {
+    flex: 0 0 auto;
+    width: 95px;
+    height: 18px;
+    background: linear-gradient(90deg, var(--fg-star) var(--fg-pct, 100%), #d9d9d9 var(--fg-pct, 100%));
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.8l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.6l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z'/%3E%3C/svg%3E") left center / 19px 18px repeat-x;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 1.8l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.6l-6.4 3.6 1.5-7.1-5.4-4.9 7.2-.8z'/%3E%3C/svg%3E") left center / 19px 18px repeat-x;
+  }
+  .fg-sticky__rating-avg { font-weight: 700; }
+  .fg-sticky__rating-count { font-weight: 400; }
+
+  /* Title */
+  sticky-atc.fg-sticky .sticky-atc__details__title {
+    margin: 0;
+    color: var(--main-font-color, #002531);
+    font-family: Ambit, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  /* Shop Now button: hidden until the main CTA scrolls away */
+  sticky-atc.fg-sticky:not(.is-atc) .sticky-atc__buttons { display: none; }
+  sticky-atc.fg-sticky .sticky-atc__buttons { flex: 0 0 auto; margin: 0; }
+
+  .fg-sticky__shop {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    border: 1px solid var(--fg-shop);
+    border-radius: 8px;
+    background: var(--fg-shop);
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: filter .15s ease, box-shadow .15s ease;
+  }
+  .fg-sticky__shop:hover {
+    color: #fff;
+    filter: brightness(1.05);
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.18);
+  }
+  .fg-sticky__shop:active {
+    filter: brightness(0.97);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.15);
+  }
+  .fg-sticky__shop:focus-visible {
+    outline: 2px solid var(--main-font-color, #002531);
+    outline-offset: 3px;
+  }
+
+    /* Keep the rating on one line at every width */
+  .fg-sticky__rating > span { white-space: nowrap; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 767.98px) {
+    sticky-atc.fg-sticky {
+      gap: 8px 12px;
+      padding: 10px 12px;
+    }
+
+    .fg-sticky__rating {
+      gap: 4px;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+    .fg-stars {
+      width: 79px;
+      height: 15px;
+      -webkit-mask-size: 16px 15px;
+              mask-size: 16px 15px;
+    }
+
+    sticky-atc.fg-sticky .sticky-atc__details__title {
+      font-size: 15px;
+      line-height: 19px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+    }
+
+    .fg-sticky__shop {
+      min-height: 36px;
+      padding: 8px 14px;
+      font-size: 13px;
+      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.15);
+    }
+  }
+{% endstyle %}
+
+<sticky-atc class="sticky-atc
+                   fg-sticky
+                   sticky-atc--out
+                   sticky-atc--{{ section.settings.sticky_atc_position }}
+                   {%- if section.settings.sticky_atc_mobile == false %} sticky-atc--hide-on-mobile{% endif %}
+                   invisible"
+                   data-dynamic-variant-content="{{ section.id }}-sticky-atc"
+            data-current-variant="{{ current_variant.id }}"
+            inert>
+  {%- comment -%} Kept as an empty hidden placeholder so sticky-atc.js doesn't error if it targets it {%- endcomment -%}
+  <div class="sticky-atc__image img-ar img-ar--contain" hidden></div>
+  <div class="sticky-atc__details">
+    {%- if rating -%}
+      <div class="fg-sticky__rating">
+        <span class="fg-stars" style="--fg-pct: {{ rating_pct }}%;" aria-hidden="true"></span>
+        <span class="visually-hidden">{{ rating.rating | round: 1 }} out of {{ rating.scale_max | round }} stars</span>
+        <span class="fg-sticky__rating-avg" aria-hidden="true">{{ rating.rating | round: 1 }} Stars</span>
+        <span class="fg-sticky__rating-count">&middot; {{ rating_count }} Reviews</span>
+      </div>
+    {%- endif -%}
+    <div class="sticky-atc__details__title">
+      {{- product.title | escape -}}
+    </div>
+  </div>
+  <div class="sticky-atc__buttons">
+    <a class="fg-sticky__shop" href="{{ anchor }}" data-fg-sticky-shop>Shop Now</a>
+  </div>
+</sticky-atc>
+
+<script>
+  (() => {
+    if (window.fgStickyAtcInit) return;
+    window.fgStickyAtcInit = true;
+
+    const init = () => {
+      const sticky = document.querySelector('sticky-atc.fg-sticky');
+      if (!sticky) return;
+
+      const header =
+        document.querySelector('.section-header') ||
+        document.getElementById('shopify-section-header') ||
+        document.querySelector('header');
+
+      // Main product title / CTA / form (anything not inside the sticky card)
+      const outside = (sel) => [...document.querySelectorAll(sel)].find((el) => !sticky.contains(el));
+      const getTitle = () => outside('.product-form .product-title, h1.product-title');
+      const getCta = () => outside('.product-form .btn.add-to-cart, .product-form [name="add"]');
+      const getForm = () => outside('.product-form') || document.getElementById('product-info');
+
+      const headerBottom = () => (header ? Math.max(0, header.getBoundingClientRect().bottom) : 0);
+
+      let ticking = false;
+
+      const update = () => {
+        ticking = false;
+
+        const top = headerBottom();
+        sticky.style.setProperty('--fg-sticky-top', `${top}px`);
+
+        const title = getTitle();
+        const cta = getCta();
+
+        const showBar = !!title && title.getBoundingClientRect().bottom <= top;
+        const barBottom = top + sticky.offsetHeight;
+        const showAtc = showBar && (!cta || cta.getBoundingClientRect().bottom <= barBottom);
+
+        sticky.classList.toggle('is-shown', showBar);
+        sticky.classList.toggle('is-atc', showAtc);
+        sticky.toggleAttribute('inert', !showBar);
+      };
+
+      const requestUpdate = () => {
+        if (ticking) return;
+        ticking = true;
+        requestAnimationFrame(update);
+      };
+
+      // Shop Now → smooth scroll to the product form, clear of the header
+      sticky.addEventListener('click', (e) => {
+        const link = e.target.closest('[data-fg-sticky-shop]');
+        if (!link) return;
+        const target = getForm();
+        if (!target) return;
+        e.preventDefault();
+        const y = window.scrollY + target.getBoundingClientRect().top - headerBottom() - 16;
+        window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+      });
+
+      window.addEventListener('scroll', requestUpdate, { passive: true });
+      window.addEventListener('resize', requestUpdate);
+      update();
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>
