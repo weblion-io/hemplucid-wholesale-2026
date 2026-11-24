@@ -1,0 +1,200 @@
+{% style %}
+    #{{ section.id }} {
+        background: {{ section.settings.color }};
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+    }
+    #{{ section.id }} .container.desktop-narrow {
+        max-width: 1280px;
+    }
+    #{{ section.id }} h2 {
+        text-align: center;
+        font-size: 46px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 57px;
+        margin: 0 auto 48px;
+    }
+    #{{ section.id }} .wl-video-grid--wrapper {
+        display: flex;
+        gap: 44px;
+        flex-wrap: wrap;
+    }
+    #{{ section.id }} .wl-video-grid--wrapper .wl-video-card { flex: 0 0 calc(50% - 22px); }
+    #{{ section.id }} .wl-video-grid--wrapper .wl-video-card video { width: 100%; }
+    #{{ section.id }} .content { margin-top: 74px; }
+    #{{ section.id }} .content p {
+        text-align: center;
+        font-family: var(--ambit-font-light);
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 26px;
+        letter-spacing: -0.72px;
+        margin: 0 auto 16px;
+        max-width: 95%;
+    }
+    @media only screen and (max-width: 899px) {
+        #{{ section.id }} .wl-video-grid--wrapper { 
+            flex-direction: column;
+            gap: 32px;
+        }
+        #{{ section.id }} h2 {
+            font-size: 32px;
+            line-height: 32px;
+            margin: 0 auto 40px;
+        }
+        #{{ section.id }} .container.desktop-narrow {
+            max-width: 85%;
+        }
+        #{{ section.id }} .content { margin-top: 52px; }
+        #{{ section.id }} .content p {
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: normal;
+        }
+    }
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    <div class="container desktop-narrow">
+        {% for block in section.blocks %}
+        {% if block.type == 'title' %}
+            <h2 style="color: {{ block.settings.color }};">{{ block.settings.title | replace: '*','<br>' }}</h2>
+        {% endif %}
+        {% endfor %}
+        <div class="wl-video-grid--wrapper">
+            {% for block in section.blocks %}
+                {% if block.type == 'card' %}
+                    <div class="wl-video-card">
+                        <video poster="{{ block.settings.image | image_url: width: 512  }}">
+                        <source src="{{ block.settings.link }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                        </video>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% for block in section.blocks %}
+        {% if block.type == 'content' %}
+        {% style %}
+        #{{ block.id }} > * { color: {{ block.settings.color }}; }
+        {% endstyle %}
+        <div id="{{ block.id }}" class="content">
+            {{ block.settings.content }}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    $('#{{ section.id }} video').on('click', function(e){
+        togglePlay(this);
+    });
+});
+
+function togglePlay(video) {
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+}
+</script>
+{% schema %}
+{
+  "name": "HL Video Grid",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Hear It Directly"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Font Color",
+            "default": "#002531"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Content",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Every review on this page is from a verified HempLucid customer. We believe the most credible thing a brand can do is step aside and let the community speak. If you have a story to share, we’d welcome it—reach out at <a href='https://hemplucid.com/pages/contact'>hemplucid.com/pages/contact</a>.</p><p>To see the clinical evidence behind these ingredients, visit our <a href='/pages/hemp-and-cannabinoid-research-the-science-of-wellness'>Research Hub</a>. To verify what’s in your product, use <a href='https://lucidlabs.hemplucid.com/'>LucidLabs</a>.</p>"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Font Color"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 4,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "link",
+            "label": "Video Link",
+            "info": ".mp4 only. Upload videos to Shopify Admin > Content > Files. Once uploaded, click the copy link and paste it here."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Video Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

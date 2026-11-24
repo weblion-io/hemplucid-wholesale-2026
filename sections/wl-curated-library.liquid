@@ -1,0 +1,229 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-library {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-library h2 {
+    color: {{ section.settings.font_color_2 }};
+    font-family: var(--heading-font-family);
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-library p {
+    color: {{ section.settings.font_color_2 }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-library p.wl-subtitle {
+    text-align: center;
+    margin-bottom: 48px;
+    margin-top: 10px;
+}
+#{{ section.id }} .wl-library p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-library p a {
+    color: {{ section.settings.link_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 24px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-library .wl-library--flex {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+#{{ section.id }} .wl-library .wl-library--flex .wl-column_1, #{{ section.id }} .wl-library .wl-library--flex .wl-column_2 {
+    flex: 1 1 48%;
+}
+#{{ section.id }} .wl-library .wl-library--flex h3 {
+    color: {{ section.settings.font_color_1 }};
+    font-family: var(--ambit-font-bold);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.22px;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-library {
+        margin-top: {{ section.settings.margin_top | times: 0.6 }}px;
+        margin-bottom: {{ section.settings.margin_bottom | times: 0.8 }}px;
+    }
+    #{{ section.id }} .wl-library h2 {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    #{{ section.id }} .wl-library p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    }
+    #{{ section.id }} .wl-library p.wl-subtitle {
+        text-align: left;
+        margin-bottom: 36px;
+        margin-top: 12px;
+    }
+    #{{ section.id }} .wl-library p strong {
+        font-family: var(--ambit-font-bold);
+        font-weight: 700;
+    }
+    #{{ section.id }} .wl-library p a {
+        letter-spacing: -0.64px;
+    }
+    #{{ section.id }} .wl-library .wl-library--flex {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+    }
+    #{{ section.id }} .wl-library .wl-library--flex h3 {
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+    }   
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-library container">
+        <h2>{{ section.settings.title }}</h2>
+        <p class="wl-subtitle">{{ section.settings.subtitle }}</p>
+        <div class="wl-library--flex">
+            <div class="wl-column-1">{{ section.settings.column_1 | replace: '*','<br class="hl-desktop">' | replace: '~','<br class="hl-mobile">' }}</div>
+            <div class="wl-column-2">{{ section.settings.column_2 | replace: '*','<br class="hl-desktop">' | replace: '~','<br class="hl-mobile">' }}</div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Curated Library",
+  "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Curated library Library"
+    },
+    {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "The following studies are hosted on PubMed, the U.S. National Library of Medicine’s open-access database. Each link opens in a new tab."
+    },
+    {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 76,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 68,
+        "unit": "px"
+    },
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#5A5478"
+    },
+    {
+        "type": "color",
+        "id": "font_color_1",
+        "label": "Font Color 1",
+        "default": "#FFD700"
+    },
+    {
+        "type": "color",
+        "id": "font_color_2",
+        "label": "Font Color 2",
+        "default": "#FFFFFF"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#FFFFFF"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#FFFFFF"
+    },
+    {
+        "type": "richtext",
+        "id": "column_1",
+        "label": "Column 1 Content",
+        "default": "<p>Biologically*Established</p>"    
+    },
+    {
+        "type": "richtext",
+        "id": "column_2",
+        "label": "Column 2 Content",
+        "default": "<p>Biologically*Established</p>"    
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Curated Library",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

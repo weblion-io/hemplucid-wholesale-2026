@@ -1,0 +1,289 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-research {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-research h2 {
+    color: {{ section.settings.font_color_1 }};
+    text-align: center;
+    font-family: var(--ambit-font-bold);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -1.12px;
+    margin: 0 auto 32px auto;
+}
+#{{ section.id }} .wl-research h2 span {
+    color: {{ section.settings.font_color_2 }};
+    font-family: var(--heading-font-family);
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-research p {
+    color: {{ section.settings.font_color_2 }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-research p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-research p a {
+    color: {{ section.settings.link_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-research .wl-research--flex {
+    background: {{ section.settings.bkg_color }};
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    gap:16px;
+    border: 1px solid {{ section.settings.border_color }};
+    border-radius: 10px;
+
+}
+#{{ section.id }} .wl-research .wl-research--flex .wl-research-card--color {
+    height: -webkit-fill-available;
+    flex: 0 0 24px;
+    background: {{ section.settings.font_color_1 }};
+}
+#{{ section.id }} .wl-research .wl-research--flex .wl-research-card--content {
+    margin: 36px 46px 24px 24px;
+}
+#{{ section.id }} .wl-research .wl-research--flex h3 {
+    color: #241F21;
+    font-family: var(--ambit-font-bold);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -0.22px;
+    margin: 0;
+}
+#{{ section.id }} .wl-research .wl-research--flex img {
+    width: 240px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-research {
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+        gap: 10px;
+    }
+    #{{ section.id }} .wl-research {
+        margin-top: {{ section.settings.margin_top | times: 0.6 }}px;
+        margin-bottom: {{ section.settings.margin_bottom | times: 0.8 }}px;
+    }
+    #{{ section.id }} .wl-research h2 {
+        font-size: 22px;
+        line-height: 26px;
+        letter-spacing: -0.88px;
+        margin: 0 auto 32px auto;
+    }
+    #{{ section.id }} .wl-research h2 span {
+        font-size: 28px;
+        line-height: 35px;
+    }
+    #{{ section.id }} .wl-research p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    }
+    #{{ section.id }} .wl-research p a {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    }
+    #{{ section.id }} .wl-research .wl-research--flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+    #{{ section.id }} .wl-research .wl-research--flex .wl-research-card--color {
+        width: 100%;
+        height: 24px;
+    }
+    #{{ section.id }} .wl-research .wl-research--flex .wl-research-card--content {
+        margin: 36px 26px 8px 26px;
+    }
+    #{{ section.id }} .wl-research .wl-research--flex h3 {
+        margin-bottom: 24px;
+    }
+    #{{ section.id }} .wl-research .wl-research--flex img {
+        width: 240px;
+        height: auto;
+        object-fit: contain;
+        margin: auto;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-research container">
+        {% unless section.settings.title == blank and section.settings.subtitle == blank %}
+        <h2>{% unless section.settings.title == blank %}{{ section.settings.title }}{% endunless %}{% unless section.settings.subtitle == blank %}<br><span>{{ section.settings.subtitle }}</span>{% endunless %}</h2>
+        {% endunless %}
+        <div class="wl-research--flex">
+            <div class="wl-research-card--color"></div>
+            <img src="{{ section.settings.image | image_url: width: 300 }}" alt="{{ section.settings.header }}" />
+            <div class="wl-research-card--content">
+                <h3>{{ section.settings.card_title | replace: '*',' <br class="hl-mobile">' }}</h3>
+                {{ section.settings.card_content }}
+            </div>
+            <div class="wl-research-card--body">{{ section.settings.content }}</div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Research Card",
+  "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Research Pillar 1:"
+    },
+    {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "The Endocannabinoid System"
+    },
+    {
+        "type": "text",
+        "id": "card_title",
+        "label": "Card Title",
+        "default": "Evidence tier: Biologically Established"
+    },
+    {
+        "type": "richtext",
+        "id": "card_content",
+        "label": "Card Content",
+        "default": "<p>Evidence tier: Biologically Established</p>"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    },
+    {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 76,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 68,
+        "unit": "px"
+    },
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Section Background Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "bkg_color",
+        "label": "Card Background Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "font_color_1",
+        "label": "Font Color 1",
+        "default": "#BCD868"
+    },
+    {
+        "type": "color",
+        "id": "font_color_2",
+        "label": "Font Color 2",
+        "default": "#241F21"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#C83D1B"
+    },
+    {
+        "type": "color",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#DDDDDD"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#EAE1D5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Research Card",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

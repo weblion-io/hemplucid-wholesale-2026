@@ -1,0 +1,163 @@
+{%- liquid
+    assign article = section.settings.article
+-%}
+{% style %}
+.featured-article--wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+    align-items: center;
+    max-height: 474px;
+    background: #EAE1D5;
+}
+.featured-article--wrapper .featured-article-details {
+    flex: 0 0 50%;
+}
+.featured-article--wrapper .featured-article-details .featured-article-details--container {
+    padding-left: 12%;
+    max-width: calc(468px + 14%);
+}
+.featured-article--wrapper .featured-article-details .descriptive-heading {
+    color: #C83D1B;
+    font-family: var(--ambit-font-bold);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: uppercase;
+}
+.featured-article--wrapper .featured-article-details .featured-article-title {
+    color: #000;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0 0 10px;
+}
+.featured-article--wrapper .featured-article-details .featured-article-title span {
+    color: #000;
+    font-family: var(--ambit-font-light);
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 42px;
+    letter-spacing: -1.44px;
+    display: inline-block;
+}
+.featured-article--wrapper .featured-article-details .date-author {
+    overflow: hidden;
+    color: #000;
+    text-overflow: ellipsis;
+    font-family: var(--ambit-font-light);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 150%;
+}
+.featured-article--wrapper .featured-article-details .article-content {
+    overflow: hidden;
+    color: #000;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+.featured-article--wrapper .featured-article-image {
+    background-image: url('{{ article.image | image_url: width: 720 }}');
+    flex: 0 0 50%;
+    padding-top: 474px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media only screen and (max-width: 767px) {
+    .featured-article--wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0;
+        align-items: center;
+        background: #EAE1D5;
+        max-height: unset;
+        padding-bottom: 1.5rem;
+    }
+    .featured-article--wrapper .featured-article-details .featured-article-details--container {
+        padding-left: unset;
+        margin-left: 26px;
+        margin-right: 26px;
+        max-width: 100%;
+    }
+    .featured-article--wrapper .featured-article-details .descriptive-heading {
+        color: #C83D1B;
+        font-family: var(--ambit-font-bold);
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-top: 39px;
+    }
+    .featured-article--wrapper .featured-article-details .featured-article-title {
+        color: #002531;
+        font-size: 32px;
+        line-height: 49px;
+        letter-spacing: unset;
+    }
+    .featured-article--wrapper .featured-article-details .featured-article-title span {
+        font-size: 28px;
+        line-height: 35px;
+        letter-spacing: -1.12px;
+        display: inline-block;
+    }
+    .featured-article--wrapper .featured-article-details .article-content {
+        overflow: hidden;
+        color: #002531;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        margin-bottom: 2.7rem;
+    }
+    .featured-article--wrapper .featured-article-image {
+        aspect-ratio: 5/4;
+        padding-top: unset;
+        width: 100%;
+    }
+    .featured-article--wrapper .featured-article-details .btn {
+        width: 100% !important;
+        min-width: unset;
+    }
+}
+{% endstyle %}
+<div class="featured-article--wrapper">
+    <div class="featured-article-details">
+        <div class="featured-article-details--container">
+            <p class="descriptive-heading">Featured Article</p>
+            <p class="featured-article-title heading-font">{{ article.title | replace: '^/','<br><span>' | replace: '/^','</span>' }}</p>
+            <p class="date-author">{{ article.published_at | date: '%B %d, %Y' }} &mdash; {{ article.author }}</p>
+            <p class="article-content">{{ article.content | strip_html | truncate: 120 }}</p>
+            <p><a href="{{ article.url }}" class="btn btn--primary">Read The Article</a></p>
+        </div>
+    </div>
+    <div class="featured-article-image"></div>
+</div>
+
+{% schema %}
+{
+  "name": "HL Featured Articl Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "article",
+      "id": "article",
+      "label": "Article"
+    }
+  ],
+  "presets": [
+    {
+        "name": "HL Featured Article Banner",
+        "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

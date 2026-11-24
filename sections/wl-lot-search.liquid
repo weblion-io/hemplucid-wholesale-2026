@@ -1,0 +1,111 @@
+{% style %}
+#{{ section.id }} {
+    background-image: url('{{ section.settings.image | image_url: width: 1920 }}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 124px 0;
+}
+#{{ section.id }} .wl-lot-search {
+    background: {{ section.settings.bkg_color }}CC;
+    max-width: 684px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid {{ section.settings.font_color }};
+    padding: 1.5rem 0 2.5rem;
+}
+#{{ section.id }} .wl-lot-search h3 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font-light);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 74px;
+    margin: 0;
+}
+#{{ section.id }} .wl-lot-search a.btn-custom {
+    border: 1px solid {{ section.settings.font_color }};
+    color: {{ section.settings.font_color }};
+    text-transform: uppercase;
+    background: transparent;
+    padding: 0.75rem 2rem;
+    display: block;
+    margin: auto;
+    max-width: 320px;
+    font-family: var(--ambit-font);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 1.28px;
+}
+@media only screen and (max-width: 767px) {
+    #{{ section.id }} {
+        background-image: url('{{ section.settings.mo_image | image_url: width: 469 }}');
+        padding: 140px 20px;
+    }
+    #{{ section.id }} .wl-lot-search a.btn-custom {
+        padding: 0.75rem 1rem;
+        max-width: 300px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    <div class="wl-lot-search">
+        <h3>{{ section.settings.title }}</h3>
+        <a href="{{ section.settings.link }}" class="btn btn-custom">{{ section.settings.link_text }}</a>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Lot Search",
+  "settings": [
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Background Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "mo_image",
+        "label": "Mobile Background Image"
+    },
+    {
+        "type": "color",
+        "id": "bkg_color",
+        "label": "Background Color",
+        "default": "#000000"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font / Border Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Lot Search"
+    },
+    {
+        "type": "text",
+        "id": "link_text",
+        "label": "Link Text",
+        "default": "Search Your Batch Now"
+    },
+    {
+        "type": "url",
+        "id": "link",
+        "label": "Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Lot Search",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

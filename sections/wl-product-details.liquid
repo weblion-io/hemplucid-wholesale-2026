@@ -1,0 +1,315 @@
+<script src="{{ 'slideshow.js' | asset_url }}" defer></script>
+{% for block in section.blocks %}
+
+{%- liquid
+  assign min_aspect_ratio = 0.6
+  assign product = block.settings.selected_product
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media
+
+  unless product.has_only_default_variant
+    if section.settings.select_first_variant == false and product.variants_count > 1
+      assign current_variant = product.selected_variant | default: false
+      unless current_variant
+        assign featured_media = product.featured_media
+      endunless
+    endif
+  endunless
+
+  assign product_form_id = 'product-form-' | append: block.id
+  assign loop = 'odd'
+  assign loopM = forloop.index | modulo: 2
+  if loopM == 0
+  assign loop = 'even'
+  endif
+-%}
+<div class="product-form--wrapper {{ loop }}">
+<product-form id="{{ block.id }}" class="js-product product-info quickbuy-content spaced-row container section-product-details">
+  <media-gallery class="media-gallery media-gallery--layout-carousel-under media-gallery-size-medium product-column-left {% if product.media.size > 1 %}has-thumbnails{% endif %}"
+    data-preload
+    data-dynamic-product-content="media-gallery-{{ block.id }}"
+    {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.2s"' -%}>
+
+    <a class="skip-link visually-hidden top-0 start-0" href="#ProductInfo-{{ block.id }}">{{ 'accessibility.skip_to_product_info' | t }}</a>
+
+    <div class="media-gallery__inner">
+      <div class="main-image">
+        {%- liquid
+          for media in product.media
+            if media.id == featured_media.id
+              assign initial_slide = forloop.index0
+              break
+            endif
+          endfor
+        -%}
+
+        <carousel-slider class="" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}" data-dynamic-height="true" data-dispatch-events="true" data-lazy="false">
+          <div class="slider slider--no-scrollbar" id="slider-{{ block.id }}" aria-live="polite" aria-atomic="true">
+            <div class="slider__grid">
+              {%- for media in product.media -%}
+                <div class="slider__item{% if forloop.index0 == initial_slide %} is-active{% endif %}"
+                  role="group" aria-roledescription="{{ 'sections.slideshow.slide' | t }}"
+                  aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                  {%- unless forloop.index0 == initial_slide %} tabindex="-1"{% endunless %}
+                  {%- if request.design_mode %} data-index="{{ forloop.index0 }}"{% endif %}
+                  data-media-id="{{ media.id }}">
+
+                  {%- liquid
+                    if forloop.index0 == initial_slide
+                      assign loading = 'eager'
+                    else
+                      assign loading = 'lazy'
+                    endif
+
+                    render 'media', media: media, product: product, min_aspect_ratio: min_aspect_ratio, loading: loading
+                  -%}
+                </div>
+              {%- endfor -%}
+            </div>
+          </div>
+
+          {%- if product.media.size > 1 -%}
+            <div class="slider-nav slider-nav--floating js-only">
+              <button type="button" class="slider-nav__btn slider-nav__btn--style-2 has-ltr-icon" name="prev" aria-controls="slider-{{ block.id }}">
+                <span class="visually-hidden">{{ 'general.slider.previous' | t }}</span>
+                {% render 'icon-chevron-left' %}
+              </button>
+
+              <button type="button" class="slider-nav__btn slider-nav__btn--style-2 has-ltr-icon" name="next" aria-controls="slider-{{ block.id }}">
+                <span class="visually-hidden">{{ 'general.slider.next' | t }}</span>
+                {% render 'icon-chevron-right' %}
+              </button>
+            </div>
+          {%- endif -%}
+        </carousel-slider>
+
+        {% render 'product-label-detail', product: product, current_variant: current_variant %}
+      </div>
+
+      {% if product.media.size > 1 %}
+        <carousel-slider class="carousel block thumbnails">
+          <div class="slider slider--no-scrollbar">
+            <ul class="slider__grid">
+              {% for media in product.media %}
+                <li class="slider__item{% if forloop.index0 == initial_slide %} is-active{% endif %}" data-media-id="{{ media.id }}">
+                  <a class="thumbnail thumbnail--media-{{ media.media_type }}" href="#">
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </carousel-slider>
+      {% endif %}
+    </div>
+  </media-gallery>
+
+  <div class="detail product-column-right" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.2s"' -%}>
+    <div class="product-form" id="ProductInfo-{{ block.id }}" data-ajax-add-to-cart="true">
+        <!-- Vendor -->
+        <div class="lightly-spaced-row" {{ block.shopify_attributes }}>
+            <div class="product-info-block">HEMPLUCID</div>
+        </div>
+        <!-- Title -->
+        <div class="title-row" data-dynamic-variant-content="{{ block.id }}" {{ block.shopify_attributes }}>
+          <h1 class="product-title">{{ product.title | escape }}</h1>
+        </div>
+        <!-- Price -->
+        <div class="price-container" {{ block.shopify_attributes }}>
+          <div class="product-info__price product-price product-price--large" role="status" data-dynamic-variant-content="{{ block.id }}-price">
+            {% render 'price', product: product, show_currency_code: settings.product_currency_code_enabled, for_variant_picker: true, current_variant: current_variant, show_labels: true %}
+          </div>
+        </div>
+        <!-- Shipping Message -->
+        <div class="lightly-spaced-row" {{ block.shopify_attributes }}>
+            <div class="product-info-block">Shipping Calculated at Checkout</div>
+        </div>
+        <!-- Star Rating -->
+        <div class="{% unless settings.qb_show_app_blocks %}not-in-quickbuy{% endunless %}">
+            <!-- Start of Judge.me code -->
+                <div style='{{ jm_style }}' class='jdgm-widget jdgm-preview-badge' data-id='{{ product.id }}' data-auto-install='false'>
+                    {{ product.metafields.judgeme.badge }}
+                </div>
+            <!-- End of Judge.me code -->
+        </div>
+        <!-- Variant Picker -->
+        <div class="input-row" data-dynamic-variant-content="{{ block.id }}" {{ block.shopify_attributes }}>
+          {%- capture size_chart_link -%}
+            {%- if block.settings.enable_size_chart -%}
+              {%- if block.settings.size_chart_source == 'section' or block.settings.size_chart_page != blank -%}
+                <script src="{{ 'open-or-scroll-to.js' | asset_url }}" defer></script>
+                <open-or-scroll-to data-target-id="size-chart-{{ product.id }}">
+                  <button type="button" class="link block text-sm size-chart-link">
+                    <span class="size-chart-link__icon">{%- render 'icon', icon: 'ruler', size: 'small' -%}</span>
+                    <span class="size-chart-link__text underline">{{- block.settings.size_chart_label -}}</span>
+                  </button>
+                </open-or-scroll-to>
+              {%- endif -%}
+            {%- endif -%}
+          {%- endcapture -%}
+          {% render 'variant-picker',
+            product: product,
+            current_variant: current_variant,
+            product_form_id: product_form_id,
+            block: block,
+            update_url: true,
+            size_chart_link: size_chart_link,
+            media_ratio: 1
+          %}
+        </div>
+        <!-- Buy Buttons -->
+        <div class="input-row" {{ block.shopify_attributes }}>
+          {% form 'product', product, id: product_form_id, class: 'form js-product-form', data-product-id: product.id %}
+            <input type="hidden" name="id" value="{{ current_variant.id }}" required data-dynamic-variant-content="{{ block.id }}-input-id">
+            {%- liquid
+              assign appstle_product = all_products[product.handle]
+              assign gift_card_recipient_feature_active = false
+              if block.settings.show_gift_card_recipient and product.gift_card?
+              assign gift_card_recipient_feature_active = true
+              endif
+              
+              assign enable_dynamic_payment_button = false
+              if block.settings.enable_payment_button and product.selling_plan_groups == empty and gift_card_recipient_feature_active == false
+              unless product.template_suffix contains 'preorder'
+              assign enable_dynamic_payment_button = true
+              endunless
+              endif
+              -%}
+              <span class="appstle_stand_alone_selector" data-product-data="{{ appstle_product | json | escape }}" style="display:none;"></span>
+
+            {% if gift_card_recipient_feature_active %}
+              {% render 'gift-card-recipient', section: section %}
+            {% endif %}
+
+            <div class="quantity-submit-row input-row {% if enable_dynamic_payment_button %}has-spb{% endif %}">
+              {% if block.settings.show_quantity_selector %}
+                <div class="qty-wrapper">
+                  <label class="label" for="quantity">{{ 'products.product.quantity' | t }}</label>
+                  <quantity-wrapper class="buttoned-input">
+                    {% comment %}
+                    <a href="#" data-quantity="down" aria-label="{{ 'cart.items.decrease_quantity' | t }}">{% render 'icon-minus' %}</a>
+                    <input aria-label="{{ 'products.product.quantity' | t }}" id="quantity" type="number" name="quantity" value="1" />
+                    <a href="#" data-quantity="up" aria-label="{{ 'cart.items.increase_quantity' | t }}">{% render 'icon-plus' %}</a>
+                    {% endcomment %}
+                    <select aria-label="{{ 'products.product.quantity' | t }}" id="quantity" name="quantity">
+                      <option value="1" selected>1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                    </select>
+                  </quantity-wrapper>
+                </div>
+              {% endif %}
+
+              <div class="quantity-submit-row__submit input-row" data-dynamic-variant-content="{{ block.id }}-atc">
+                <div class="js-form-error lightly-spaced-row" role="alert" hidden></div>
+
+                {%- capture add_to_cart_text -%}
+                  {%- if product.template_suffix contains 'preorder' -%}
+                    {{- 'products.product.preorder' | t -}}
+                  {%- else -%}
+                    {{- 'products.product.add_to_cart' | t -}}
+                  {%- endif -%}
+                {%- endcapture -%}
+                <button class="btn btn--large add-to-cart" type="submit" name="add" data-add-to-cart-text="{{ add_to_cart_text | escape }}"{% unless current_variant.available %} disabled{% endunless %}>
+                  {%- if current_variant.available or current_variant == false -%}
+                    {{- add_to_cart_text -}}
+                  {%- else -%}
+                    {{- 'products.variant.no_stock' | t -}}
+                  {%- endif -%}
+                </button>
+              </div>
+
+              {% if enable_dynamic_payment_button %}
+                <buy-buttons class="product-dynamic-payment-button">
+                  <script class="dynamic-payment-button-template" type="text/template">
+                    {{ form | payment_button }}
+                  </script>
+                </buy-buttons>
+              {% endif %}
+
+              {% if block.settings.show_backorder_text %}
+                <div data-dynamic-variant-content="{{ block.id }}-backorder">
+                  {%- render 'backorder', product: product, variant: current_variant -%}
+                </div>
+              {% endif %}
+            </div>
+          {% endform %}
+
+          {%- if block.settings.show_pickup_availability -%}
+            <div data-dynamic-variant-content="{{ block.id }}-pickup-availability"{% unless product.available %} hidden{% endunless %}>
+              {% render 'pickup-availability', current_variant: current_variant %}
+            </div>
+          {%- endif -%}
+        </div>
+        <!-- Share and Link -->
+        <div class="input-row not-in-quickbuy flex-share" {{ block.shopify_attributes }}>
+            <div class="social-share flex items-center">
+            <p class="social-share__heading">{{ 'general.social.share_heading' | t }}</p>
+            {% render 'social-share',
+                share_twitter: block.settings.show_twitter,
+                share_facebook: block.settings.show_facebook,
+                share_pinterest: block.settings.show_pinterest,
+                share_title: product.title,
+                share_url: product.url,
+                share_image: product %}
+            </div>
+            <a class="small-feature-link link" href="{{ product.url }}">
+                View full details
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <mask id="mask0_446_2491" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="14" height="14">
+                <rect width="14" height="14" fill="#D9D9D9"/>
+                </mask>
+                <g mask="url(#mask0_446_2491)">
+                <path d="M9.43534 7.58325H2.33325V6.41658H9.43534L6.16867 3.14992L6.99992 2.33325L11.6666 6.99992L6.99992 11.6666L6.16867 10.8499L9.43534 7.58325Z" fill="#C83D1B"/>
+                </g>
+                </svg>
+            </a>
+        </div>
+    </div>
+  </div>
+</product-form>
+</div>
+{% endfor %}
+{% schema %}
+{
+  "name": "HL Product Details",
+  "class": "section-main-product page-section-spacing page-section-spacing--no-top-mobile",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "select_first_variant",
+      "label": "Select the first available variant",
+      "info": "When disabled, the first product media always shows on page load",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 4,
+      "settings": [
+        {
+            "type": "product",
+            "id": "selected_product",
+            "label": "Select Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Product Details",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

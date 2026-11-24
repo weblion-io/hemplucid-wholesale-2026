@@ -1,0 +1,223 @@
+{%- style -%}
+.section-id-{{ section.id }} .pill-btns {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    gap: 8px;
+    margin-bottom: 44px;
+}
+.section-id-{{ section.id }} .pill-btns a {
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+.section-id-{{ section.id }} .pill-btns a.pill-btn {
+    flex: 0 0 190px;
+    text-align: center;
+    border: 2px solid #595378;
+    color: #595378;
+    letter-spacing: 1.038px;
+    line-height: 30px;
+    border-radius: 48px;
+    padding: 4px;
+}
+.section-id-{{ section.id }} .pill-btns a.pill-btn.active {
+    color: white;
+    background-color: #595378;
+}
+.section-id-{{ section.id }} .collection-listing { display: none; }
+.section-id-{{ section.id }} .collection-listing.active { display: block; }
+.section-id-{{ section.id }} .center-btn {
+    display: block;
+    margin: 44px auto;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .section-id-{{ section.id }} .pill-btns a.pill-btn {
+        flex: 0 0 165px;
+        text-align: center;
+        border: 2px solid #595378;
+        color: #595378;
+        letter-spacing: 1.038px;
+        line-height: 30px;
+        border-radius: 48px;
+        padding: 4px;
+        font-size: 12px;
+    }
+}
+{%- endstyle -%}
+<div class="section-id-{{ section.id }} collection-slider-row {% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }}{% endif %}">
+  <div class="container{% if section.settings.full_width %} container--no-max{% endif %}">
+
+    <div class="hometitle align-center has-paging{% if section.settings.enable_carousel %} slider-nav{% endif %}" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.3s"' -%}>
+      <h2 class="has-paging__title h4 m-0 fs-46">{{ section.settings.title | escape }}</h2>
+    </div>
+
+    {% unless section.blocks.size < 2 %}
+    <div class="pill-btns">
+    {%- for block in section.blocks -%}
+        <a aria-collection="{{ forloop.index }}" class="pill-btn{% if forloop.first %} active{% endif %}">{{ block.settings.title }}</a>
+    {%- endfor -%}
+    </div>
+    {% endunless %}
+
+    {%- if section.settings.show_view_all -%}
+      <div class="view-all align-center" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.5s"' -%}>
+        <a class="small-feature-link" href="{{ collection.url }}">{{ 'sections.featured_collection.view_all' | t }}</a>
+      </div>
+    {%- endif -%}
+
+    {%- for block in section.blocks -%}
+    <div class="collection-listing fade-in-up slider--mobile-container-pad{% if forloop.first %} active{% endif %}" aria-collection="{{ forloop.index }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+      <div class="product-grid product-grid--per-row-{{ section.settings.grid }} product-grid--per-row-mob-{{ settings.prod_thumb_mob_per_row }}">
+        {%- liquid
+          assign product_limit = section.settings.grid
+          if block.settings.collection == blank
+            for i in (1..product_limit)
+              render 'onboarding-product-block', forloop: forloop
+            endfor
+          else
+            if settings.prod_thumb_shape == 'portrait-23'
+              assign chosen_aspect_ratio = 0.67
+            elsif settings.prod_thumb_shape == 'portrait-45'
+              assign chosen_aspect_ratio = 0.8
+            elsif settings.prod_thumb_shape == 'square'
+              assign chosen_aspect_ratio = 1.0
+            elsif settings.prod_thumb_shape == 'landscape-54'
+              assign chosen_aspect_ratio = 1.25
+            elsif settings.prod_thumb_shape == 'landscape-32'
+              assign chosen_aspect_ratio = 1.50
+            elsif settings.prod_thumb_shape == 'tallest'
+              assign chosen_aspect_ratio = 99
+              for product in collection.products limit: product_limit
+                if product.featured_media.preview_image.aspect_ratio < chosen_aspect_ratio
+                  assign chosen_aspect_ratio = product.featured_media.preview_image.aspect_ratio
+                endif
+              endfor
+            else
+              assign chosen_aspect_ratio = 0
+              for product in collection.products limit: product_limit
+                if product.featured_media.preview_image.aspect_ratio > chosen_aspect_ratio
+                  assign chosen_aspect_ratio = product.featured_media.preview_image.aspect_ratio
+                endif
+              endfor
+            endif
+
+            for product in block.settings.collection.products limit: product_limit
+              render 'product-block', product: product, collection: collection, custom_aspect_ratio: chosen_aspect_ratio, no_swiping: section.settings.enable_carousel, no_quick_buy_markup: section.settings.enable_carousel
+            endfor
+          endif
+        -%}
+      </div>
+      <div class="center-btn">
+          <a href="{{ block.settings.collection.url }}" class="btn primary-btn" title="Shop All {{ block.settings.collection.title }}">SHOP ALL PRODUCTS</a>
+        </div>
+    </div>
+    {%- endfor -%}
+
+  </div>
+</div>
+
+{% javascript %}
+$(document).ready(function(){
+  $('.pill-btn').on('click', function(e){
+    $('.pill-btn').toggleClass('active');
+    $('.collection-listing').toggleClass('active');
+  });
+
+});
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "HL Featured Collections",
+  "class": "section-featured-collection",
+  "disabled_on": {
+    "templates": [
+      "password"
+    ],
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        { 
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Shop By Solution"
+        },
+        {
+        "type": "collection",
+        "id": "collection",
+        "label": "Collection"
+        },  
+        {
+        "type": "checkbox",
+        "id": "show_view_all",
+        "label": "Show 'View all' link",
+        "default": true
+        },
+        {
+        "id": "full_width",
+        "type": "checkbox",
+        "label": "Full page width",
+        "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Featured Collections",
+      "category": "Collections",
+      "settings": {
+        "title": "Featured collection"
+      }
+    }
+  ]
+}
+{% endschema %}

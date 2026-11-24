@@ -1,0 +1,276 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-lucid-id {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-lucid-id h2 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 78px;
+    margin: 0;
+}
+#{{ section.id }} .wl-lucid-id p {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    margin: 0 auto 4rem;
+    max-width: 77%;
+}
+#{{ section.id }} .wl-lucid-id img {
+    display: block;
+    margin: auto;
+}
+#{{ section.id }} .wl-lucid-id .wl-lucid-id--cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4rem;
+}
+#{{ section.id }} .wl-lucid-id .wl-lucid-id--cards .wl-lucid-id--card {
+    flex: 0 0 calc(33% - 10.66px);
+    border-radius: 10px;
+    overflow: hidden;
+}
+#{{ section.id }} .wl-lucid-id .wl-lucid-id--cards .wl-lucid-id--card .wl-card--header {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 24px;
+}
+#{{ section.id }} .wl-lucid-id .wl-lucid-id--cards .wl-lucid-id--card .wl-card--header img {
+    height: 50px;
+    width: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-lucid-id .wl-lucid-id--cards .wl-lucid-id--card .wl-card--header h3 {
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    margin: 0;
+    text-align: left;
+}
+#{{ section.id }} .wl-lucid-id .wl-lucid-id--cards .wl-lucid-id--card p {
+    padding: 40px 45px 60px 45px;
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-align: left;
+    max-width: 100%;
+    margin: 0;
+}
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-lucid-id {
+        margin-top: {{ section.settings.margin_top | times: 0.6}}px;
+        margin-bottom: {{ section.settings.margin_bottom | times: 0.6 }}px;
+    }
+    #{{ section.id }} .wl-lucid-id h2 {
+        font-size: 28px;
+        line-height: 35px;
+        max-width: 73%;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-lucid-id p {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 1rem auto 2rem;
+        max-width: 90%;
+    }
+    #{{ section.id }} .wl-lucid-id .wl-lucid-id--cards {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    #{{ section.id }} .wl-lucid-id .wl-lucid-id--cards .wl-lucid-id--card p {
+        padding: 24px 32px 24px 40px;
+        font-family: var(--ambit-font-light);
+        font-size: 16px;
+        line-height: 24px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-lucid-id container">
+        <h2>{{ section.settings.title }}</h2>
+        <p>{{ section.settings.content }}</p>
+        <img src="{{ section.settings.image | image_url: width: 882 }}" alt="{{ section.settings.title }}" class="wl-lucid-id__img"/>
+        <div class="wl-lucid-id--cards">
+            {% for block in section.blocks %}
+            <div class="wl-lucid-id--card" style="background: {{ block.settings.body_color }};">    
+                <div class="wl-card--header" style="background: {{ block.settings.header_color }};">
+                    <img src="{{ block.settings.image | image_url: width: 50 }}" alt="{{ block.settings.header }}">
+                    <h3 style="color: {{ block.settings.header_font_color }};">{{ block.settings.header }}</h3>
+                </div>
+                <p style="color: {{ block.settings.body_font_color }};">{{ block.settings.body }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Lucid Id",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#EAE1D5"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#241F21"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "LucidID: From Soil to Shelf in One Scan"
+    },
+    {
+        "type": "text",
+        "id": "content",
+        "label": "Content",
+        "default": "Every Hemplucid product carries a LucidID—an intelligent identifier that connects your specific bottle to its exact batch lab report. Think of it as a passport for your product: it tells you what’s inside, what’s been tested, and what the results were."
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 3,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "Step 1: Scan"
+        },
+        {
+            "type": "color",
+            "id": "header_color",
+            "label": "Header Background Color",
+            "default": "#BCD868"
+        },
+        {
+            "type": "color",
+            "id": "header_font_color",
+            "label": "Header Font Color",
+            "default": "#241F21"
+        },
+        {
+            "type": "text",
+            "id": "body",
+            "label": "Body",
+            "default": "Use your phone’s camera to scan the QR code on your bottle, or enter the lot number manually in the search bar below."
+        },
+        {
+            "type": "color",
+            "id": "body_color",
+            "label": "Body Background Color",
+            "default": "#FCF5ED"
+        },
+        {
+            "type": "color",
+            "id": "body_font_color",
+            "label": "Body Font Color",
+            "default": "#241F21"
+        },
+        {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "Darth Vader"
+
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Lucid Id",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

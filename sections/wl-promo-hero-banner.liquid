@@ -1,0 +1,513 @@
+{%- comment -%}
+  Promo Hero Banner
+  - Desktop (>= 750px): centered text over the desktop background image.
+  - Mobile  (< 750px): left-aligned text over the mobile background image.
+  Heading:     wrap words in *italic* in the editor to give them the heading accent color.
+  Subheading:  **bold** = bold text color, *italic* = bold accent color.
+{%- endcomment -%}
+
+{%- liquid
+  assign img_d = section.settings.image_desktop
+  assign img_m = section.settings.image_mobile
+
+  assign ratio_d = 2.873
+  if img_d
+    assign ratio_d = img_d.aspect_ratio
+  endif
+
+  assign ratio_m = 1.667
+  if img_m
+    assign ratio_m = img_m.aspect_ratio
+  elsif img_d
+    assign ratio_m = img_d.aspect_ratio
+  endif
+
+  assign sid = '#PromoHero-' | append: section.id
+
+  assign font_heading = 'var(--font-heading-family, inherit)'
+  assign font_body = 'var(--font-body-family, inherit)'
+  if section.settings.use_custom_fonts
+    assign f_head = section.settings.heading_font
+    assign f_head_bold = f_head | font_modify: 'weight', 'bolder'
+    assign f_body = section.settings.body_font
+    assign f_body_bold = f_body | font_modify: 'weight', 'bolder'
+    assign font_heading = f_head.family | append: ', ' | append: f_head.fallback_families
+    assign font_body = f_body.family | append: ', ' | append: f_body.fallback_families
+  endif
+-%}
+
+{%- style -%}
+  {%- if section.settings.use_custom_fonts -%}
+    {{ f_head | font_face: font_display: 'swap' }}
+    {%- if f_head_bold -%}{{ f_head_bold | font_face: font_display: 'swap' }}{%- endif -%}
+    {{ f_body | font_face: font_display: 'swap' }}
+    {%- if f_body_bold -%}{{ f_body_bold | font_face: font_display: 'swap' }}{%- endif -%}
+  {%- endif -%}
+
+  {{ sid }} {
+    --ph-ratio-d: {{ ratio_d }};
+    --ph-ratio-m: {{ ratio_m }};
+    /* Font sizes: px values at a reference viewport (desktop 1440px, mobile 390px), scaled with viewport width. */
+    --ph-heading-d: {{ section.settings.heading_size_desktop }};
+    --ph-heading-m: {{ section.settings.heading_size_mobile }};
+    --ph-sub-d: {{ section.settings.subheading_size_desktop }};
+    --ph-sub-m: {{ section.settings.subheading_size_mobile }};
+    --ph-bg: {{ section.settings.color_bg }};
+    --ph-text: {{ section.settings.color_text }};
+    --ph-accent-1: {{ section.settings.color_heading_accent }};
+    --ph-accent-2: {{ section.settings.color_sub_accent }};
+    --ph-btn-bg: {{ section.settings.color_button_bg }};
+    --ph-btn-text: {{ section.settings.color_button_text }};
+    --ph-font-heading: {{ font_heading }};
+    --ph-font-body: {{ font_body }};
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    aspect-ratio: var(--ph-ratio-m);
+    min-height: {{ section.settings.min_height_mobile }}px;
+    overflow: hidden;
+    background-color: var(--ph-bg);
+    color: var(--ph-text);
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+  }
+
+  {{ sid }} .promo-hero__media {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+  }
+
+  {{ sid }} .promo-hero__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  {{ sid }} .promo-hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 74%;
+    padding: 5vw 3.2vw;
+    text-align: left;
+    box-sizing: border-box;
+  }
+
+  {{ sid }} .promo-hero__heading {
+    margin: 0;
+    font-family: var(--ph-font-heading);
+    font-weight: 800;
+    font-size: max(14px, calc(var(--ph-heading-m) * 100vw / 390));
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    color: var(--ph-text);
+  }
+
+  {{ sid }} .promo-hero__heading em,
+  {{ sid }} .promo-hero__heading i {
+    font-style: normal;
+    color: var(--ph-accent-1);
+    white-space: nowrap;
+  }
+
+  {{ sid }} .promo-hero__subheading {
+    margin: 2.2vw 0 0;
+    font-family: var(--ph-font-body);
+    font-weight: 400;
+    font-size: max(11px, calc(var(--ph-sub-m) * 100vw / 390));
+    line-height: 1.25;
+    color: var(--ph-text);
+  }
+
+  {{ sid }} .promo-hero__subheading strong,
+  {{ sid }} .promo-hero__subheading b {
+    font-weight: 800;
+  }
+
+  {{ sid }} .promo-hero__subheading em,
+  {{ sid }} .promo-hero__subheading i {
+    font-style: normal;
+    font-weight: 800;
+    color: var(--ph-accent-2);
+  }
+
+  {{ sid }} .promo-hero__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4.5vw;
+    min-width: 36vw;
+    padding: clamp(9px, 2.3vw, 20px) clamp(20px, 5vw, 48px);
+    border-radius: 999px;
+    background: var(--ph-btn-bg);
+    color: var(--ph-btn-text);
+    font-family: var(--ph-font-heading);
+    font-weight: 800;
+    font-size: clamp(12px, 2.7vw, 22px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  {{ sid }} .promo-hero__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+
+  {{ sid }} .promo-hero__button:focus-visible {
+    outline: 3px solid var(--ph-accent-2);
+    outline-offset: 3px;
+  }
+
+  @media screen and (min-width: 750px) {
+    {{ sid }} {
+      aspect-ratio: var(--ph-ratio-d);
+      min-height: {{ section.settings.min_height_desktop }}px;
+      justify-content: center;
+    }
+
+    {{ sid }} .promo-hero__content {
+      align-items: center;
+      max-width: none;
+      padding: 3vw 18%;
+      text-align: center;
+    }
+
+    {{ sid }} .promo-hero__heading {
+      font-size: max(20px, calc(var(--ph-heading-d) * 100vw / 1440));
+    }
+
+    {{ sid }} .promo-hero__subheading {
+      margin-top: 2.8vw;
+      font-size: max(14px, calc(var(--ph-sub-d) * 100vw / 1440));
+    }
+
+    {{ sid }} .promo-hero__button {
+      margin-top: 3.8vw;
+      min-width: clamp(200px, 31.5vw, 640px);
+      padding: clamp(14px, 1.9vw, 38px) clamp(28px, 4vw, 80px);
+      font-size: clamp(14px, 1.65vw, 32px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    {{ sid }} .promo-hero__button { transition: none; }
+    {{ sid }} .promo-hero__button:hover { transform: none; }
+  }
+{%- endstyle -%}
+
+<section id="PromoHero-{{ section.id }}" class="promo-hero" aria-label="{{ section.settings.heading | strip_html | escape }}">
+  {%- if img_d or img_m -%}
+    <picture class="promo-hero__media">
+      {%- if img_m -%}
+        <source
+          media="(max-width: 749px)"
+          srcset="
+            {{ img_m | image_url: width: 500 }} 500w,
+            {{ img_m | image_url: width: 750 }} 750w,
+            {{ img_m | image_url: width: 1100 }} 1100w,
+            {{ img_m | image_url: width: 1500 }} 1500w
+          "
+          sizes="100vw"
+          width="{{ img_m.width }}"
+          height="{{ img_m.height }}"
+        >
+      {%- endif -%}
+      {%- assign main_img = img_d | default: img_m -%}
+      {{
+        main_img
+        | image_url: width: 2400
+        | image_tag:
+          widths: '750, 1000, 1400, 1800, 2400',
+          sizes: '100vw',
+          alt: main_img.alt,
+          loading: section.settings.lazy_load_value,
+          fetchpriority: section.settings.fetch_priority_value
+      }}
+    </picture>
+  {%- endif -%}
+
+  <div class="promo-hero__content">
+    {%- if section.settings.heading != blank -%}
+      <{{ section.settings.heading_tag }} class="promo-hero__heading">
+        {{- section.settings.heading -}}
+      </{{ section.settings.heading_tag }}>
+    {%- endif -%}
+
+    {%- if section.settings.subheading != blank -%}
+      <p class="promo-hero__subheading">{{ section.settings.subheading }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_label != blank -%}
+      <a
+        class="promo-hero__button"
+        {% if section.settings.button_link != blank %}
+          href="{{ section.settings.button_link }}"
+        {% else %}
+          role="link" aria-disabled="true"
+        {% endif %}
+      >
+        {{- section.settings.button_label | escape -}}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Promo hero banner",
+  "tag": "div",
+  "class": "section-promo-hero",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_desktop",
+      "label": "Desktop image",
+      "info": "Recommended 2000 x 696px. Keep the center clear for text."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile image",
+      "info": "Recommended 1230 x 738px. Keep the left side clear for text. Falls back to the desktop image."
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our early bird sale <em>is live!</em>",
+      "info": "Italicize words to show them in the heading accent color."
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "default": "h2",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "p", "label": "Paragraph" }
+      ]
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "<strong>Everything is</strong> <em>50% OFF</em> for a limited time.",
+      "info": "Bold = bold text. Italic = bold text in the subheading accent color."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Font sizes",
+      "info": "Text scales with screen width so it stays in place over the image. Desktop sizes are measured on a 1440px-wide screen, mobile sizes on a 390px-wide phone."
+    },
+    {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading size (desktop)",
+      "min": 24,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 54
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_desktop",
+      "label": "Subheading size (desktop)",
+      "min": 14,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "default": 33
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading size (mobile)",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "label": "Subheading size (mobile)",
+      "min": 10,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "header",
+      "content": "Fonts"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_fonts",
+      "label": "Use custom fonts",
+      "default": false,
+      "info": "When off, the theme's heading and body fonts are used."
+    },
+    {
+      "type": "font_picker",
+      "id": "heading_font",
+      "label": "Heading & button font",
+      "default": "montserrat_n8"
+    },
+    {
+      "type": "font_picker",
+      "id": "body_font",
+      "label": "Subheading font",
+      "default": "montserrat_n5"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "color_bg",
+      "label": "Background (shown while image loads)",
+      "default": "#0B2233"
+    },
+    {
+      "type": "color",
+      "id": "color_text",
+      "label": "Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_heading_accent",
+      "label": "Heading accent",
+      "default": "#F9A63A"
+    },
+    {
+      "type": "color",
+      "id": "color_sub_accent",
+      "label": "Subheading accent",
+      "default": "#C5E05B"
+    },
+    {
+      "type": "color",
+      "id": "color_button_bg",
+      "label": "Button background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "color_button_text",
+      "label": "Button text",
+      "default": "#2E3A40"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "min_height_desktop",
+      "label": "Minimum height on desktop",
+      "min": 0,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 0,
+      "info": "By default the height follows the image's proportions."
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "label": "Minimum height on mobile",
+      "min": 0,
+      "max": 600,
+      "step": 20,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Top margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Bottom margin",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "lazy_load_value",
+      "label": "Image loading",
+      "default": "eager",
+      "info": "Use Eager when this banner is at the top of the page.",
+      "options": [
+        { "value": "eager", "label": "Eager" },
+        { "value": "lazy", "label": "Lazy" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "fetch_priority_value",
+      "label": "Image fetch priority",
+      "default": "high",
+      "options": [
+        { "value": "high", "label": "High" },
+        { "value": "auto", "label": "Auto" },
+        { "value": "low", "label": "Low" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo hero banner"
+    }
+  ]
+}
+{% endschema %}

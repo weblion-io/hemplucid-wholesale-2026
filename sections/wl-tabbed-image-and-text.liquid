@@ -1,0 +1,233 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-tabbed-ti {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-tabbed-ti h2 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-tabbed-ti .wl-tabbed-ti--flex {
+    display: flex;
+    justify-content: space-between;
+    {% if section.settings.image_position == 'left' %}
+    flex-direction: row-reverse;
+    {% endif %}
+    align-items: center;
+    margin-top: 42px;
+}
+#{{ section.id }} .wl-tabbed-ti div {
+    flex: 0 0 45%;
+}   
+#{{ section.id }} .wl-tabbed-ti p {
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-tabbed-ti p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }}.research-transparency .wl-tabbed-ti p:nth-of-type(1) strong { color: #FFD700; }
+#{{ section.id }}.research-transparency .wl-tabbed-ti p:nth-of-type(2) strong { color: #BCD868; }
+#{{ section.id }}.research-transparency .wl-tabbed-ti p:nth-of-type(3) strong { color: #EF4681; }
+#{{ section.id }}.functional .wl-tabbed-ti p:nth-of-type(2) strong { color: #FFD700; }
+#{{ section.id }}.functional .wl-tabbed-ti p:nth-of-type(3) strong { color: #BCD868; }
+#{{ section.id }}.functional .wl-tabbed-ti p:nth-of-type(4) strong { color: #EF4681; }
+#{{ section.id }} .wl-tabbed-ti p a {
+    color: {{ section.settings.link_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-tabbed-ti img {
+    flex: 0 0 45%;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-tabbed-ti {
+        margin-top: {{ section.settings.margin_top | times: 0.6}}px;
+        margin-bottom: {{ section.settings.margin_bottom | times: 0.6 }}px;
+    }
+    #{{ section.id }} .wl-tabbed-ti h2 {
+        font-size: 28px;
+        line-height: 35px;
+        max-width: {{ section.settings.max_width }}%;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-tabbed-ti .wl-tabbed-ti--flex {
+        flex-direction: column-reverse;
+        gap: 32px;
+    }
+    #{{ section.id }} .wl-tabbed-ti p, #{{ section.id }} .wl-tabbed-ti p a {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 1rem auto 2rem;
+        max-width: 90%;
+    }
+    #{{ section.id }} .wl-tabbed-ti img {
+        max-width: 302px;
+        margin: auto;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}"{% unless section.settings.cclasses == blank %} class="{{ section.settings.cclasses }}"{% endunless %}>
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-tabbed-ti container">
+        <h2>{{ section.settings.title | replace: '*','<br>' }}</h2>
+        <div class="wl-tabbed-ti--flex">
+            <div>{{ section.settings.content }}</div>
+            <img src="{{ section.settings.image | image_url: width: 882 }}" alt="{{ section.settings.title }}" />
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Tabbed Image & Text",
+  "settings": [
+    {
+        "type": "text",
+        "id": "cclasses",
+        "label": "Custom Classes"
+    },
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#5A5478"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#EAE1D5"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "USDA Organic Integrity"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Mobile Title Max-width",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 73,
+      "unit": "px"
+    },
+    {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>Several Hemplucid products carry <a href='https://www.usda.gov/farming-and-ranching/organic-farming'>USDA Organic certification</a>—a designation that applies not just to the final extract, but to the entire supply chain. USDA Organic standards govern the soil the hemp is grown in, the cultivation practices used, and the processing methods applied during extraction. This means no synthetic fertilizers, no prohibited pesticides, and no genetically modified organisms at any stage. Our <a href='https://hemplucid.com/collections/organic-cbd'>organic CBD collection</a> reflects this commitment.</p><p>Organic certification does not replace third-party testing—it complements it. We test our organic products with the same full-panel protocol described above, because certification verifies process, and testing verifies outcome. You need both.</p>"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "left"
+        },
+        {
+          "value": "right",
+          "label": "right"
+        }
+      ],
+      "default": "left"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Tabbed Image & Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

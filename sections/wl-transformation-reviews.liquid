@@ -1,0 +1,212 @@
+{% style %}
+  
+{% endstyle %}
+
+<section id="{{ section.id }}" class="transformation-reviews" data-label="{{ section.settings.aria }}">
+    <div class="container transformation-reviews--header">
+        <h2>{{ section.settings.title }}</h2>
+        <h3>{{ section.settings.subtitle }}</h3>
+        <div class="icon-content-flex">
+            {%- case section.settings.icon -%}
+            {% when 'sleep' %}
+            <img src="https://cdn.shopify.com/s/files/1/0249/6764/3198/files/sleep-icon-purple.png?v=1779125139" width="97px" height="97px" />
+            {% when 'focus' %}
+            <img src="https://cdn.shopify.com/s/files/1/0249/6764/3198/files/focus-icon-orange.png?v=1779125318" width="97px" height="97px" />
+            {% when 'stress' %}
+            <img src="https://cdn.shopify.com/s/files/1/0249/6764/3198/files/stress-icon-green.png?v=1779125412" width="97px" height="97px" />
+            {% when 'recovery' %}
+            <img src="https://cdn.shopify.com/s/files/1/0249/6764/3198/files/recovery-icon-yellow.png?v=1779125874" width="97px" height="97px" />
+            {%- endcase -%}
+            <p>{{ section.settings.content }}</p>
+        </div>
+    </div>
+    <div class="transformation-reviews--cards {{ section.settings.aria }}">
+        {% for block in section.blocks %}
+            <div class="review-card">
+                <div class="review-card--left">
+                    <p class="stars">
+                    {%- case block.settings.rating -%}
+                    {%- when '5' -%}
+                      ★★★★★
+                    {%- when '4' -%}
+                      ★★★★
+                    {%- when '3' -%}
+                      ★★★
+                    {%- endcase -%}
+                    </p>
+                    <p class="review">"{{ block.settings.review }}"</p>
+                    <p class="author">{{ block.settings.author }}</p>
+                    {% unless block.settings.link_1_text == blank %}
+                    <p class="link_1"><a href="{{ block.settings.link_1 }}">{{ block.settings.link_1_text }} {% render 'wl-right-arrow' %}</a></p>
+                    {% endunless %}
+                    {% unless block.settings.link_2_text == blank %}
+                    <p class="link_2"><a href="{{ block.settings.link_2 }}">{{ block.settings.link_2_text }}</a></p>
+                    {% endunless %}
+                </div>
+                <div class="review-card--right">
+                    <img src="{{ block.settings.image | image_url: width: 240 }}" width="100%" height="100%" />
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    $('.transformation-reviews--cards.{{ section.settings.aria }}').slick({
+      infinite: false,
+      autoplay: false,
+      arrows: false,
+      slidesToShow: 1.5,
+      slidesToScroll: 1,
+      dots: true,
+      responsive: [
+        {
+          breakpoint: 2400,
+          settings: {
+            slidesToShow: 1.5,
+          },
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1.1,
+          }
+        }
+      ]
+    });
+});
+</script>
+
+{% schema %}
+{
+  "name": "HL Transformation Reveiws",
+  "class": "section-main-product page-section-spacing page-section-spacing--no-top-mobile",
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria",
+      "label": "Aria Label",
+      "info": "This is the label you should use in the transformation reviews navigation to link to this section.",
+      "default": "Sleep"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Sleep Transformation"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Sub Title",
+      "default": "For people who were tired of being tired."
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Icon",
+      "options": [
+          {
+            "value": "none",
+            "label": "none",
+        },
+        {
+            "value": "sleep",
+            "label": "Sleep",
+        },
+        {
+            "value": "focus",
+            "label": "Focus",
+        },
+        {
+            "value": "stress",
+            "label": "Stress",
+        },
+        {
+            "value": "recovery",
+            "label": "Recovery",
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Content",
+      "default": "The most common story we hear starts the same way: waking up at 2 or 3 AM with a mind that won’t quiet down, then dragging through the next day on willpower and caffeine. For many in our community, adding CBN to their nighttime routine changed the pattern—not by knocking them out, but by supporting uninterrupted, restorative sleep."
+    },
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "limit": 12,
+      "settings": [
+        {
+            "type": "select",
+            "id": "rating",
+            "label": "Rating",
+            "options": [
+                {
+                    "value": "5",
+                    "label": "5 Stars"
+                },
+                {
+                    "value": "4",
+                    "label": "4 Stars"
+                },
+                {
+                    "value": "3",
+                    "label": "3 Stars"
+                }
+            ]
+        },
+        {
+            "type": "textarea",
+            "id": "review",
+            "label": "Review",
+            "default": "No grogginess. I wake up at 6 AM feeling like I actually rested. I’ve tried melatonin, magnesium, everything—this is the only thing that didn’t leave me foggy."
+        },
+        {
+            "type": "text",
+            "id": "author",
+            "label": "Author",
+            "default": "-[Name], Verified Buyer"
+        },
+        {
+            "type": "text",
+            "id": "link_1_text",
+            "label": "Link 1 Text",
+            "default": "Shop Sleep Support"
+        },
+        {
+            "type": "url",
+            "id": "link_1",
+            "label": "Link 1"
+        },
+        {
+            "type": "text",
+            "id": "link_2_text",
+            "label": "Link 2 Text",
+            "default": "Learn About CBN"
+        },
+        {
+            "type": "url",
+            "id": "link_2",
+            "label": "Link 2"
+        },
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Review Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Transformation Reveiws",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

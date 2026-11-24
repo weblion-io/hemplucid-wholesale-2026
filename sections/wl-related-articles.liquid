@@ -1,0 +1,167 @@
+{%- style -%}
+#section-id-{{ section.id }} h2 {
+    color: #241F21;
+    text-align: center;
+    font-family: var(--heading-font-family-bold);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    letter-spacing: -1.2px;
+    margin-bottom: 35px;
+}
+
+#section-id-{{ section.id }} h3 {
+    color: #241F21;
+    font-family: var(--heading-font-family-bold);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+}
+#section-id-{{ section.id }} p {
+    overflow: hidden;
+    color: #241F21;
+    text-overflow: ellipsis;
+    font-family: var(--ambit-font-light);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+#section-id-{{ section.id }} .article-list--with-images {
+    display: flex;
+    gap: 15px;
+}
+#section-id-{{ section.id }} .slick-slide { margin: 0 6px; }
+#section-id-{{ section.id }} .article-list--with-images .article-card img { margin-bottom: 35px; }
+@media only screen and (max-width: 767px) {
+  #section-id-{{ section.id }} .mobile-controls {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    gap: 1rem;
+  }
+}
+{%- endstyle -%}
+<div id="section-id-{{ section.id }}" class="{% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--small{% else %}fully-padded-row--small{% endif %}">
+  <div class="container fade-in" {%- render 'animation-attrs', attrs: 'data-cc-animate data-cc-animate-delay="0.2s"' -%}>
+    <h2>{{ section.settings.title }}</h2>
+    <div class="article-list article-list--{{ section.settings.layout }} article-list--with-images" data-article-count="{{ section.settings.col_count }}">
+        {% for article in section.settings.article_list %}
+            <div class="article-card">
+                <img src="{{ article.image | image_url: width: 371, height: 234, crop: 'center'  }}" width="100%" height="auto" title="{{ article.title }}">
+                <h3>{{ article.title }}</h3>
+                <div class="rte">
+                    <p>{{ article.content | strip_html| truncate: 154 }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="mobile-controls">
+    </div>
+  </div>
+</div>
+
+{% javascript %}
+$(document).ready(function(){
+    let width = $(window).width();
+    if(width < 768) {
+        $('.article-list--with-images').slick({
+            infinite: false,
+            autoplay: false,
+            arrows: true,
+            appendArrows: $('.mobile-controls'),
+            prevArrow: `<button type="button" class="slick-prev"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <mask id="mask0_451_3545" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+    <rect width="24" height="24" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask0_451_3545)">
+    <path d="M10.0001 21.3079L0.692383 12.0001L10.0001 2.69238L11.0636 3.75588L2.81938 12.0001L11.0636 20.2444L10.0001 21.3079Z" fill="#1C1B1F"/>
+  </g>
+</svg></button>`,
+            nextArrow: `<button type="button" class="slick-next"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+  <mask id="mask0_451_3542" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+    <rect width="24" height="24" fill="#D9D9D9"/>
+  </mask>
+  <g mask="url(#mask0_451_3542)">
+    <path d="M8.00588 21.3079L6.94238 20.2444L15.1866 12.0001L6.94238 3.75588L8.00588 2.69238L17.3136 12.0001L8.00588 21.3079Z" fill="#1C1B1F"/>
+  </g>
+</svg></button>`,
+            dots: false,
+            slidesToShow: 1.1,
+            slidesToScroll: 1,
+        });
+    }
+});
+{% endjavascript %}
+{% schema %}
+{
+  "name": "HL Related Articles",
+  "class": "section-related-articles",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Related Articles"
+    },
+    {
+      "type": "select",
+      "id": "col_count",
+      "label": "Desktop Columns",
+      "info": "This is the max articles that will be shown",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+     {
+      "type": "article_list",
+      "id": "article_list",
+      "label": "Article list",
+      "limit": 4
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Related Articles",
+      "category": "Custom",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

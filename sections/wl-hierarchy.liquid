@@ -1,0 +1,356 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-hierarchy {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+#{{ section.id }} .wl-hierarchy h2 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0;
+}
+#{{ section.id }} .wl-hierarchy .wl-subtitle {
+    max-width: 690px;
+    margin: auto;
+    text-align: center;
+}
+#{{ section.id }} .wl-hierarchy p {
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-hierarchy p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-hierarchy p a {
+    color: {{ section.settings.link_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-hierarchy .wl-pyramid {
+    position: relative;
+    text-align: center;
+}
+#{{ section.id }} .wl-hierarchy .wl-pyramid img {
+    width: auto;
+    height: 354px;
+    margin: auto;
+}
+#{{ section.id }} .wl-hierarchy .wl-hierarchy--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#{{ section.id }} .wl-hierarchy .wl-hierarchy--flex .wl-hierarchy-card {
+    border-radius: 10px;
+    overflow: hidden;
+    flex: 0 0 32%;
+}
+#{{ section.id }} .wl-hierarchy .wl-hierarchy--flex .wl-hierarchy-card--header {
+    display: flex;
+    padding: 26px 21px;
+    gap: 28px;
+    align-items: center;
+}
+#{{ section.id }} .wl-hierarchy .wl-hierarchy--flex .wl-hierarchy-card--header h3 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -0.6px;
+    margin: 0;
+}
+#{{ section.id }} .wl-hierarchy .wl-hierarchy--flex .wl-hierarchy-card--header img {
+    width: {{ section.settings.icon_width }}px;
+    height: auto;
+}
+#{{ section.id }} .wl-hierarchy-card .wl-hierarchy-card--body {
+    padding: 27px 48px;
+    height: 100%;
+}   
+#{{ section.id }} .wl-hierarchy-bottom-content {
+    max-width: 90%;
+    margin: auto;
+}
+#{{ section.id }} .wl-hierarchy-bottom-content p {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: -1.12px;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-hierarchy {
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+        gap: 10px;
+    }
+    #{{ section.id }} .wl-hierarchy h2 {
+        font-size: 28px;
+        line-height: 35px;
+        max-width: 300px;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-hierarchy .wl-hierarchy--flex {
+        flex-direction: column;
+        gap: 23px;
+    }
+    #{{ section.id }} .wl-hierarchy p, #{{ section.id }} .wl-hierarchy p a {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 1rem auto 2rem;
+        max-width: 90%;
+        text-align: left;
+    }
+    #{{ section.id }} .wl-hierarchy .wl-pyramid { margin-bottom: 32px; }
+    #{{ section.id }} .wl-hierarchy .wl-pyramid img {
+        width: 100%;
+        height: auto;
+        max-width: 360px;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-hierarchy .wl-hierarchy--flex .wl-hierarchy-card--header {
+        display: flex;
+        padding: 16px;
+        gap: 22px;
+        align-items: center;
+    }
+    #{{ section.id }} .wl-hierarchy .wl-hierarchy--flex .wl-hierarchy-card--header h3 {
+        font-size: 24px;
+        line-height: 34px;
+        letter-spacing: -0.48px;
+    }
+    #{{ section.id }} .wl-hierarchy-card .wl-hierarchy-card--body {
+        padding: 23px 20px 5px 20px;
+    } 
+    #{{ section.id }} .wl-hierarchy-bottom-content p {
+        max-width: 100%;
+        font-size: 22px;
+        line-height: 30px;
+        letter-spacing: -0.88px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-hierarchy container">
+        <h2>{{ section.settings.title }}</h2>
+        {% unless section.settings.subtitle == blank %}
+        <div class="wl-subtitle">
+            {{ section.settings.subtitle }}
+        </div>
+        {% endunless %}
+        {% unless section.settings.image == blank %}
+        <div class="wl-pyramid">
+            <img src="{{ section.settings.image | image_url: width: 458 }}" alt="{{ section.settings.title }}" class="hl-desktop"/>
+            <img src="{{ section.settings.image_mo | image_url: width: 360 }}" alt="{{ section.settings.title }}" class="hl-mobile"/>
+        </div>
+        {% endunless %}
+        <div class="wl-hierarchy--flex">
+            {% for block in section.blocks %}
+            <div class="wl-hierarchy-card">
+                <div class="wl-hierarchy-card--header" style="background: {{ block.settings.header_color }};">
+                    <img src="{{ block.settings.icon | image_url: width: 68 }}" alt="{{ block.settings.header }}" />
+                    <h3 style="color: {{ block.settings.header_font_color }};">{{ block.settings.header | replace: '*',' <br class="hl-desktop">' | replace: '~','<br>' }}</h3>                </div>
+                <div class="wl-hierarchy-card--body" style="background: {{ block.settings.body_color }};">{{ block.settings.content }}</div>
+            </div>
+            {% endfor %}
+        </div>
+        {% unless section.settings.bottom_content == blank %}
+        <div class="wl-hierarchy-bottom-content">
+            {{ section.settings.bottom_content }}
+        </div>
+        {% endunless %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Hierarchy",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#EAE1D5"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#241F21"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#C83D1B"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 76,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "How to Read the Evidence: A Hierarchy"
+    },
+    {
+        "type": "richtext",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "<p>Not all evidence is equal. A single testimonial is not the same as a randomized controlled trial. To help you evaluate what you read here—and anywhere else—we use a three-tier framework:</p>"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mo",
+        "label": "Mobile Image"
+    },
+    {
+      "type": "range",
+      "id": "icon_width",
+      "label": "Card Icon Width",
+      "min": 0,
+      "max": 96,
+      "step": 1,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "richtext",
+        "id": "bottom_content",
+        "label": "Bottom Content"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header Text",
+            "default": "Biologically*Established",
+            "info": "Enter * for line break"
+        },
+        {
+            "type": "color",
+            "id": "header_color",
+            "label": "Header Color",
+            "default": "#BCD868"
+        },
+        {
+            "type": "color",
+            "id": "header_font_color",
+            "label": "Header Font Color",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "color",
+            "id": "body_color",
+            "label": "Body Color",
+            "default": "#FCF5ED"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>Confirmed through decades of peer-reviewed research and widely accepted within the scientific community. Example: the existence and regulatory function of the <a href='https://hemplucid.com/blogs/blog/what-is-the-endocannabinoid-system'>endocannabinoid system</a>.</p>"
+        }   
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Hierarchy",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

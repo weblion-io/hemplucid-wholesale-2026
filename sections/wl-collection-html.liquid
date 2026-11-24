@@ -1,0 +1,45 @@
+{% if collection.metafields.custom.collection_html != blank %}
+{% style %}
+#{{ section.id }} {
+    background-color: {{ section.settings.bkg_color }};
+    font-color: {{ section.settings.font_color }};
+}
+{% endstyle %}
+<section id="{{ section.id }}" style="background-color: #eae1d5; padding: 50px 0;">
+    <div class="container cc-animate-init cc-animate-in">
+        {{ collection.metafields.custom.collection_html.value }}
+    </div>
+</section>
+{% endif %}
+{% schema %}
+{
+  "name": "Collection HTML",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+        "type": "color",
+        "id": "bkg_color",
+        "label": "Background Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#010101"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection HTML",
+      "category": "Custom",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

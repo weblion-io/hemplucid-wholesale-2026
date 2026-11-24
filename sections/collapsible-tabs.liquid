@@ -1,0 +1,313 @@
+{% style %}
+{% if section.settings.use_padding %}
+.container .collapsible-tabs {
+  padding-top: {{ section.settings.padding_top }}px;
+  padding-bottom: {{ section.settings.padding_bottom }}px;
+}
+@media only screen and (max-width: 767px) {
+  .container .collapsible-tabs {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
+{% endif %}
+{% endstyle %}
+<link rel="stylesheet" href="{{ 'collapsible-tabs.css' | asset_url }}" {%- render 'lazy-stylesheet-attrs' %}>
+{% if section.settings.color_scheme != 'default' %}<div class="use-color-scheme use-color-scheme--{{ section.settings.color_scheme }}">{% endif %}
+<div class="container {{ section.settings.custom_classes }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+  <div class="collapsible-tabs">
+    {% if section.settings.title != blank %}
+      <h3 class="collapsible-tabs__heading collapsible-tabs__content" id="faq-{{ section.settings.title | handle }}" style="text-align: {{ section.settings.text_align }};">{{ section.settings.title | escape }}</h3>
+    {% endif %}
+
+    {%- for block in section.blocks -%}
+      <div class="collapsible-tabs__block" {{ block.shopify_attributes }}>
+        {% if block.type == 'content' %}
+          <div class="collapsible-tabs__text collapsible-tabs__content rte">{{ block.settings.content }}</div>
+
+        {% elsif block.type == 'button' %}
+          <div class="collapsible-tabs__button collapsible-tabs__content">
+            <a class="btn btn--primary btn--link" href="{{ block.settings.link }}"><span class="btn__text">{{ block.settings.title | escape }}</span></a>
+          </div>
+
+        {% elsif block.type == 'question' %}
+          {% liquid
+            assign rowIcon = null
+            if section.settings.custom_classes == 'pdp-icons'
+            assign title = block.settings.title | escape | trim | downcase
+            case title
+              when 'product description'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/brain.png?v=1778534011'
+
+              when 'ingredients'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/cannabis.png?v=1778534011'
+
+              when 'for best results'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/thumb_up.png?v=1778534011'
+
+              when 'suggested use'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/medication.png?v=1778534012'
+
+              when 'tips and tricks'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/family_star.png?v=1778534012'
+
+              when 'lucid labs'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/biotech.png?v=1778534011'
+
+              when 'find your strength'
+              assign rowIcon = 'https://cdn.shopify.com/s/files/1/0249/6764/3198/files/orange-card-icon.png?v=1780007773'
+            endcase
+            endif
+          %}
+          <div class="collapsible-tabs__tab">
+            <details-disclosure>
+              <details class="disclosure"{% if section.settings.open_tab %} open{% endif %}>
+                
+                <summary class="disclosure__title">
+                  {% unless rowIcon == null %}<img src="{{ rowIcon }}" width="100%" height="auto" class="pdp-icon" />{% endunless %}{{- block.settings.title | escape -}}
+                </summary>
+                <div class="disclosure__panel has-motion">
+                  <div class="disclosure__content rte">
+                    {{- block.settings.answer -}}
+                  </div>
+                  {% unless block.settings.button_txt == blank %}
+                  <div class="collapsible-tabs__button collapsible-tabs__content mt-0">
+                    <a class="btn btn--primary btn--link" {% if block.settings.onclick %}onclick="{{ block.settings.onclick_code }}"{% else %}href="{{ block.settings.link }}"{% endif %}><span class="btn__text">{{ block.settings.button_txt | escape }}</span></a>
+                  </div>
+                  {% endunless %}
+                  {% unless block.settings.info == blank %}
+                  <div class="disclosure__content rte">
+                    {{- block.settings.info -}}
+                  </div>
+                  {% endunless %}
+                </div>
+              </details>
+            </details-disclosure>
+          </div>
+        {% endif %}
+      </div>
+    {%- endfor -%}
+  </div>
+</div>
+{% if section.settings.color_scheme != 'default' %}</div>{% endif %}
+
+{% if section.settings.enable_faq_schema %}
+    {%- capture faq_json -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'question' and block.settings.title != blank and block.settings.answer != blank -%}
+          {%- capture answer_text -%}{% render 'structured-data-text', html: block.settings.answer %}{%- endcapture -%}
+          {
+            "@type": "Question",
+            "name": {{ block.settings.title | json }},
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": {{ answer_text | json }}
+            }
+          },
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endcapture -%}
+
+    {%- if faq_json != blank -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ faq_json | remove_last: ',' }}
+      ]
+    }
+  </script>
+    {%- endif -%}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Collapsible tabs",
+  "class": "section-collapsible-tabs",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom Classes"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collapsible tabs"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_align",
+      "label": "Header Alignment",
+      "default": "left"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_tab",
+      "label": "Open by default",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "use_padding",
+      "label": "Use Custom Padding",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "label": "Media width",
+      "unit": "px",
+      "default": 78
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "label": "Media width",
+      "unit": "px",
+      "default": 70
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_faq_schema",
+      "label": "Enable FAQ structured data",
+      "info": "Adds FAQPage data to the page for SEO",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Question"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_txt",
+          "label": "Label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link",
+          "visible_if": "{{ block.settings.button_txt != blank }}"
+        },
+        { 
+          "type": "checkbox",
+          "id": "onclick",
+          "label": "Use Onclick instead of URL",
+          "default": false,
+          "visible_if": "{{ block.settings.button_txt != blank }}"
+        },
+        {
+          "type": "text",
+          "id": "onclick_code",
+          "label": "Onclick Code",
+          "visible_if": "{{ block.settings.onclick == true }}"
+        },
+        {
+          "type": "header",
+          "content": "Additional Info"
+        },
+        {
+          "type": "richtext",
+          "id": "info",
+          "label": "Additional Info"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "name": "Paragraph",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collapsible tabs",
+      "category": "Info",
+      "settings": {
+      },
+      "blocks": [
+        {
+          "type": "question"
+        },
+        {
+          "type": "question"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

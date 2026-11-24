@@ -1,0 +1,272 @@
+{% style %}
+#{{ section.id }} {
+    padding-top: {{ section.settings.margin_top }}px;
+    padding-bottom: {{ section.settings.margin_bottom }}px;
+    background: {{ section.settings.color }};
+}
+#{{ section.id }} .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#{{ section.id }} .container h2 {
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+}
+#{{ section.id }} .container p {
+    text-align: center;
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    max-width: 555px;
+    margin: 0 auto;
+}
+#{{ section.id }} .container .wl-color-card--wrapper {
+    display: flex;
+    gap: 18px;
+    margin-top: 65px;
+    margin-bottom: 32px;
+}
+#{{ section.id }} .container .wl-color-card--wrapper .wl-color-card {
+    border-radius: 25px;
+    padding: 16px 28px 35px 28px;
+    text-align: center;
+}
+#{{ section.id }} .container .wl-color-card--wrapper .wl-color-card .wl-card-img {
+    height: 128px;
+    width: 128px;
+}
+#{{ section.id }} .container .wl-color-card--wrapper .wl-color-card .wl-card-icon {
+    height: 44px;
+    width: 44px;
+}
+#{{ section.id }} .container .wl-color-card--wrapper .wl-color-card .wl-color-card--inner { text-align: left; }
+#{{ section.id }} .container .wl-color-card--wrapper .wl-color-card .wl-color-card--inner h3 {
+    font-family: var(--ambit-font-bold);
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19.8px;
+    letter-spacing: -0.19px;
+}
+#{{ section.id }} .container .wl-color-card--wrapper .wl-color-card .wl-color-card--inner p {
+    font-family: var(--ambit-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 767px) {
+    #{{ section.id }} {
+        padding-top: {{ section.settings.margin_top | times: 0.85 }}px;
+        padding-bottom: {{ section.settings.margin_bottom  | times: 0.85 }}px;
+    }
+    #{{ section.id }} .container {
+        padding-left: 45px;
+        padding-right: 45px;
+    }
+    #{{ section.id }} .container h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    #{{ section.id }} .container p {
+        font-size: 16px;
+        line-height: 24px;
+        max-width: 100%;
+    }
+    #{{ section.id }} .container .wl-color-card--wrapper {
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 42px;
+    }
+}
+{% endstyle %}
+<section id="{{section.id }}">
+    <div class="container">
+        {% for block in section.blocks %}
+        {% if block.type == 'title' %}
+            <h2 style="color: {{ block.settings.color }};">{{ block.settings.title | replace: '*','<br>' }}</h2>
+        {% endif %}
+        {% endfor %}
+        {% for block in section.blocks %}
+        {% if block.type == 'description' %}
+        <p style="color: {{ block.settings.color }};">{{ block.settings.content }}</p>
+        {% endif %}
+        {% endfor %}
+        <div class="wl-color-card--wrapper">
+            {% for block in section.blocks %}
+            {% if block.type == 'card' %}
+            <div class="wl-color-card" style="background: {{ block.settings.bkg_color }};">
+                <img src="{{ block.settings.image | image_url: width: 128 }}" alt="{{ block.settings.title }}" class="wl-card-img"/>
+                <div class="wl-color-card--inner">
+                    <img src="{{ block.settings.icon | image_url: width: 44 }}" alt="{{ block.settings.title }}" class="wl-card-icon">
+                    <h3 style="color: {{ block.settings.color }};">{{ block.settings.title }}</h3>
+                    <p style="color: {{ block.settings.color }};">{{ block.settings.content }}</p>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+
+        {% for block in section.blocks %}
+        {% if block.type == 'notice' %}
+        {% style %}
+        #{{ block.id }} > * { color: {{ block.settings.color }}; }
+        #{{ block.id }} p a { 
+            color: {{ block.settings.color }} !important; 
+            text-decoration: underline;
+        }
+        {% endstyle %}
+        <div id="{{ block.id }}" class="notice">
+            {{ block.settings.content }}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Color Cards",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#5A5478"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 75,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80,
+      "unit": "px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Font Color",
+            "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Font Color",
+            "default": "#ffffff"
+        }
+      ]
+    },
+    {
+      "type": "notice",
+      "name": "Notice",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p>This is one framework, not a prescription. Every body is different. Start with the product that addresses your most pressing need and build from there. To understand the science behind each ingredient, visit out <a href='/pages/ingredients'>Ingredients Hub</a>.</p>"
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Font Color"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 4,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+        },
+        {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Morning:"
+        },
+        {
+            "type": "text",
+            "id": "content",
+            "label": "Content",
+            "default": "Focus CBG + Mushroom Gummy with breakfast. Lion’s Mane and CBG for sustained cognitive clarity without stimulant jitters."
+        },
+        {
+            "type": "color",
+            "id": "color",
+            "label": "Font Color",
+            "default": "#241F21"
+        },
+        {
+            "type": "color",
+            "id": "bkg_color",
+            "label": "Card Color",
+            "default": "#BCD868"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Color Cards",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

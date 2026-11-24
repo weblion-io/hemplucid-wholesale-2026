@@ -1,0 +1,174 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+#{{ section.id }} .container.narrow {
+    max-width: 915px;
+}
+#{{ section.id }} .wl-transparency-ti {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-transparency-ti .wl-transparency-ti--flex {
+    display: flex;
+    gap: 56px;
+    align-items: center;
+}
+#{{ section.id }} .wl-transparency-ti div {
+    flex: 0 0 76%;
+}
+#{{ section.id }} .wl-transparency-ti h3 {
+    color: {{ section.settings.font_color }};   
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px; /* 208.333% */
+    margin: 0;
+}
+#{{ section.id }} .wl-transparency-ti ol {
+    list-style-type: decimal;
+}
+#{{ section.id }} .wl-transparency-ti li {
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 20px;
+    letter-spacing: -0.48px; 
+    margin-left: 12px;      
+}
+#{{ section.id }} .wl-transparency-ti p {
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-transparency-ti p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-transparency-ti p a {
+    /*color: {{ section.settings.link_color }};*/
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-transparency-ti img {
+    flex: 0 0 255px;
+    max-width: 255px;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-transparency-ti {
+        margin-top: {{ section.settings.margin_top | times: 1.8}}px;
+        margin-bottom: {{ section.settings.margin_bottom | times: 1.4 }}px;
+    }
+    #{{ section.id }} .wl-transparency-ti .wl-transparency-ti--flex {
+        flex-direction: column;
+        gap: 45px;
+    }
+    #{{ section.id }} .wl-transparency-ti p, #{{ section.id }} .wl-transparency-ti p a {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 1rem auto 2rem;
+        max-width: 90%;
+    }
+    #{{ section.id }} .wl-transparency-ti h3 {
+        margin: 0 auto;
+        font-size: 24px;
+        line-height: 35px;
+        max-width: 90%;
+    }
+    #{{ section.id }} .wl-transparency-ti img {
+        max-width: auto;
+        flex: auto;
+        margin: auto;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    <div class="wl-transparency-ti container narrow">
+        <div class="wl-transparency-ti--flex">
+            <img src="{{ section.settings.image | image_url: width: 255 }}" alt="{{ section.settings.title }}" />
+            <div>{{ section.settings.content }}</div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Transparency Img & Txt",
+  "settings": [
+    {
+        "type": "text",
+        "id": "cclasses",
+        "label": "Custom Classes"
+    },
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#5A5478"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>Transparency is not a marketing strategy. It is the operating principle behind every decision we make—from <a href='https://hemplucid.com/pages/ingredients'>sourcing and ingredients</a> to <a href='/pages/hemp-and-cannabinoid-research-the-science-of-wellness'>the research we follow</a>. The Lucid Guarantee means that if you can’t verify it, we haven’t earned your trust. And we intend to earn it with every batch.</p>"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Transparency Image & Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

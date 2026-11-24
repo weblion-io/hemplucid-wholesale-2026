@@ -1,0 +1,62 @@
+{% style %}
+{% endstyle %}
+<section id="{{ section.id }}" class="transformation-reviews--nav">
+    <div class="reviews-nav--wrapper">    
+        <a class="is-active" data-label="all">All Reviews</a>
+        {% for block in section.blocks %}
+        <a data-label="{{ block.settings.aria }}">{{ block.settings.label }}</a>
+        {% endfor %}
+    </div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    $('.transformation-reviews--nav a').on('click', function(e) {
+        $('.transformation-reviews--nav a').removeClass('is-active');
+        $(this).toggleClass('is-active');
+        let aria = $(this).attr('data-label');
+        if (aria == 'all') {
+            $('.transformation-reviews').show();
+        } else {
+            $('.transformation-reviews').hide();
+            $('.transformation-reviews[data-label='+aria+']').show();
+        }
+    });
+});
+</script>
+
+{% schema %}
+{
+  "name": "HL Transformation Nav",
+  "class": "section-main-product page-section-spacing page-section-spacing--no-top-mobile",
+  "settings": [
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Nav Item",
+      "limit": 12,
+      "settings": [
+        {
+            "type": "text",
+            "id": "aria",
+            "label": "Aria Label",
+            "info": "This is the label you should use in the transformation reviews block to link to this section."
+        },
+        {
+            "type": "text",
+            "id": "label",
+            "label": "Label",
+            "default": "Button Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Transformation Nav",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

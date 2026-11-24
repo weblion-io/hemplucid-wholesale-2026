@@ -1,0 +1,315 @@
+{% style %}
+#{{ section.id }} {
+    background: {{ section.settings.color }};
+    padding-top: {{ section.settings.margin_top }}px;
+    padding-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-qt-header { 
+    max-width: 768px;
+    margin: auto;
+    text-align: center;
+}
+#{{ section.id }} .wl-qt-header h2 { 
+    color: {{  section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 50px;
+}
+#{{ section.id }} .wl-qt-header p { 
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-qt-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 48px;
+}
+#{{ section.id }} .wl-qt-flex .wl-qt-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#{{ section.id }} .wl-qt-flex .wl-qt-icon h3 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font-bold);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 19.8px;
+    letter-spacing: -0.22px;
+}
+#{{ section.id }} .wl-qt-cards {
+    margin-top: 96px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+#{{ section.id }} .wl-qt-cards .wl-qt-card {
+    height: 222px;
+    border-radius: 10px;
+    width: 100%;
+    display: flex;
+    gap: 46px;
+    align-items: flex-start;
+    overflow: hidden;
+}
+#{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-tab {
+    flex: 0 0 24px;
+    height: 222px
+}
+#{{ section.id }} .wl-qt-cards .wl-qt-card img {
+    width: 180px;
+    height: 202px;
+    margin: 10px 0;
+}
+#{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-card--content {
+    margin-top: 32px;
+    margin-left: 23px;
+    margin-right: 46px;
+}
+#{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-card--content h3 {
+    font-family: var(--ambit-font-bold);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+    letter-spacing: -0.22px;
+}
+#{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-card--content p {
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+@media only screen and (max-width: 767px) {
+    #{{ section.id }} {
+        padding-top: {{ section.settings.margin_top | times: 0.5 }}px;
+        padding-bottom: {{ section.settings.margin_bottom | times: 0.8 }}px;
+    }
+    #{{ section.id }} .wl-qt-header { 
+        max-width: 376px;
+    }
+    #{{ section.id }} .wl-qt-header h2 { 
+        max-width: 278px;
+        font-size: 28px;
+        line-height: 35px;
+        margin: auto;
+    }
+    #{{ section.id }} .wl-qt-header p { 
+        font-size: 16px;
+        line-height: 24px;
+    }
+    #{{ section.id }} .wl-qt-flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0;
+        row-gap: 60px;
+        margin-top: 42px;
+    }
+    #{{ section.id }} .wl-qt-flex .wl-qt-icon {
+        flex: 0 0 45%;
+    }
+    #{{ section.id }} .wl-qt-cards {
+        margin-top: 42px;
+        gap: 20px;
+    }
+    #{{ section.id }} .wl-qt-cards .wl-qt-card {
+        height: auto;
+        flex-direction: column;
+        gap: 26px;
+        align-items: center;
+    }
+    #{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-tab {
+        width: 100%;
+        height: 21px
+    }
+    #{{ section.id }} .wl-qt-cards .wl-qt-card img {
+        margin: 0;
+    }
+    #{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-card--content {
+        margin-top: 0;
+        margin-left: 26px;
+        margin-right: 26px;
+        margin-bottom: 26px;
+    }
+    #{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-card--content h3 { max-width: 93%; }
+    #{{ section.id }} .wl-qt-cards .wl-qt-card .wl-qt-card--content p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    <div class="container">
+        <div class="wl-qt-header">
+            <h2>{{ section.settings.title }}</h2>
+            <p>{{ section.settings.content }}</p>
+        </div>
+        <div class="wl-qt-flex">
+        {% for block in section.blocks %}
+            {% if block.type == 'image' %}
+            <div class="wl-qt-icon">
+                <img src="{{ block.settings.icon | image_url: width: 97 }}" alt="{{ block.settings.header }}">
+                <h3>{{ block.settings.header }}</h3>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        <div class="wl-qt-cards">
+        {% for block in section.blocks %}
+            {% if block.type == 'card' %}
+            <div class="wl-qt-card" style="background: {{ block.settings.bkg_color }};">
+                <div class="wl-qt-tab" style="background: {{ block.settings.tab_color }};"></div>
+                <img src="{{ block.settings.icon |image_url: width: 180 }}" alt="{{ block.settings.header }}">
+                <div class="wl-qt-card--content">
+                    <h3 style="color: {{ block.settings.font_color }};">{{ block.settings.header }}</h3>
+                    <p style="color: {{ block.settings.font_color }};">{{ block.settings.content }}</p>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Q&T Overlook",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#EAE1D5"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#241F21"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "We Rule Out What Others Overlook"
+    },
+    {
+        "type": "text",
+        "id": "content",
+        "label": "Content",
+        "default": "Some brands test for the minimum. We test to lead. Our full-panel testing protocol goes beyond basic cannabinoid potency to screen for contaminants that many competitors never check for."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Icon",
+      "limit": 4,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "Heavy Metals"
+        },
+        {
+            "type": "color",
+            "id": "font_color",
+            "label": "Header Font Color",
+            "default": "#241F21"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card",
+      "limit": 3,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "Potency: Certificate of Analysis Accuracy"
+        },
+        {
+            "type": "text",
+            "id": "content",
+            "label": "Content",
+            "default": "What the label says should match what’s in the bottle. Our third-party lab quantifies the exact milligram concentration of CBD, CBN, CBG, CBC, and THC in every batch. If a product says 1,000 mg of CBD, the COA confirms it—within the lab’s validated margin of analytical precision. No rounding, no estimates."
+        },
+        {
+            "type": "color",
+            "id": "font_color",
+            "label": "Font Color",
+            "default": "#241F21"
+        },
+        {
+            "type": "color",
+            "id": "bkg_color",
+            "label": "Card Background Color",
+            "default": "#FFFFFF"
+        },
+        {
+            "type": "color",
+            "id": "tab_color",
+            "label": "Tab Color",
+            "default": "#BBD868"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Q&T Overlook",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

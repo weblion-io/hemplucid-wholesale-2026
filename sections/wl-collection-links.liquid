@@ -1,0 +1,48 @@
+{% unless collection.metafields.custom.related_collections == blank %}
+{% style %}
+.related-collections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+    margin: 1.5rem auto 2rem;
+    max-width: 1200px;
+    padding: 0 1rem;
+}
+
+.related-collection-button {
+    background: #BCD868;
+    color: #010101;
+    padding: .5rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: background .2s;
+}
+{% endstyle %}
+<section id="{{ section.id }}">
+    <div class="related-collections">
+        {% for value in collection.metafields.custom.related_collections.value %}
+        <a href="/collections/{{ value.handle }}" class="related-collection-button">
+            {{ value.title }}
+        </a>
+        {% endfor %}
+    
+    
+  </div>
+</section>
+{% endunless %}
+{% schema %}
+{
+  "name": "HL Collection Links",
+  "class": "section-collection-links",
+  "settings": [
+  ],
+ "presets": [
+    {
+      "name": "HL Collection Links"
+    }
+  ]
+}
+{% endschema %}

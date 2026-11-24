@@ -1,0 +1,231 @@
+{% style %}
+#{{ section.id }} {
+    overflow: hidden;
+    background: {{ section.settings.color }};
+}
+{%- if section.settings.show_tab -%}
+#{{ section.id }} .triangle {
+    width: 0; 
+    height: 0;
+    border-style: solid;
+    border-width: 60px 52px 0px 52px;
+    border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+    transform: rotate(0deg);
+    margin: auto;
+}
+{%- endif -%}
+#{{ section.id }} .wl-tct {
+    margin-top: {{ section.settings.margin_top }}px;
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+}
+#{{ section.id }} .wl-tct h2 {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 40px;
+    margin: 0 auto 48px auto;
+}
+#{{ section.id }} .wl-tct p {
+    color: {{ section.settings.font_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-tct p strong {
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-tct p a {
+    color: {{ section.settings.link_color }};
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+    text-decoration-line: underline;
+    text-underline-offset: 3px;
+}
+#{{ section.id }} .wl-tct .wl-tct--flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    align-items: center;
+}
+#{{ section.id }} .wl-tct .wl-tct--left {
+    flex: 0 0 60%;
+}
+#{{ section.id }} .wl-tct .wl-tct--right {
+    flex: 0 0 30%;
+    display: flex;
+    justify-content: space-between;
+}
+#{{ section.id }} .wl-tct .wl-tct--right .wl-tct-card--color {
+    /*height: -webkit-fill-available;*/
+    flex: 0 0 10px;
+    background: linear-gradient(180deg, #EF4482 0%, #FFD700 100%);
+}
+#{{ section.id }} .wl-tct .wl-tct--right p {
+    flex: 0 0 80%;
+    margin: 0;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 32px;
+    letter-spacing: -1.2px;
+}
+#{{ section.id }} .wl-tct .wl-tct--right p strong {
+    font-family: var(--heading-font-family-bold);
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -1.52px;
+}
+
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-tct {
+        margin-top: {{ section.settings.margin_top }}px;
+        margin-bottom: {{ section.settings.margin_bottom }}px;
+        gap: 10px;
+        padding: 0 35px;
+    }
+    #{{ section.id }} .wl-tct {
+        margin-top: {{ section.settings.margin_top | times: 1.2 }}px;
+        margin-bottom: {{ section.settings.margin_bottom | times: 1.2 }}px;
+    }
+    #{{ section.id }} .wl-tct h2 {
+        font-size: 28px;
+        line-height: 25px;
+    }
+    
+    #{{ section.id }} .wl-tct p {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    }
+    #{{ section.id }} .wl-tct p a {
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    }
+    #{{ section.id }} .wl-tct .wl-tct--flex {
+        flex-direction: column;
+        gap: 24px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-tct container">
+        {% unless section.settings.title == blank and section.settings.subtitle == blank %}
+        <h2>{% unless section.settings.title == blank %}{{ section.settings.title }}{% endunless %}{% unless section.settings.subtitle == blank %}<br><span>{{ section.settings.subtitle }}</span>{% endunless %}</h2>
+        {% endunless %}
+        <div class="wl-tct--flex">
+            <div class="wl-tct--left">
+                {{ section.settings.left_content }}
+            </div>
+            <div class="wl-tct--right">
+                <div class="wl-tct-card--color"></div>
+                {{ section.settings.right_content }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Two Column Text",
+  "settings": [
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Why We Combine CBN with CBD and Mushrooms"
+    },
+    {
+        "type": "richtext",
+        "id": "left_content",
+        "label": "Left Column Content",
+        "default": "<p>lorem ipsum</p>"
+    },
+    {
+        "type": "richtext",
+        "id": "right_content",
+        "label": "Right Column Content",
+        "default": "<p>lorem ipsum</p>"
+    },
+    {
+        "type": "range",
+        "id": "margin_top",
+        "label": "Margin Top",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 76,
+        "unit": "px"
+    },
+    {
+        "type": "range",
+        "id": "margin_bottom",
+        "label": "Margin Bottom",
+        "min": 0,
+        "max": 200,
+        "step": 4,
+        "default": 68,
+        "unit": "px"
+    },
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Section Background Color",
+        "default": "#ffffff"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#241F21"
+    },
+    {
+        "type": "color",
+        "id": "link_color",
+        "label": "Link Color",
+        "default": "#C83D1B"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#EAE1D5"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Two Column Text",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

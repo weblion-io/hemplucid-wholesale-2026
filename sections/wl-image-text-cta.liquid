@@ -1,0 +1,368 @@
+{%- style -%}
+#{{ section.id }} { 
+    background-color: {{ section.settings.bkg_color }}; 
+    text-align: center;
+    {% if section.settings.custom_class == blank %}
+    padding-top: 55px;
+    {% endif %}
+}
+#{{ section.id }} h2 { color: {{ section.settings.font_color }}; }
+#{{ section.id }} .wl-img-text-cta_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 170px;
+    {% if section.settings.custom_class != blank %}
+    align-items: center;
+    {% else %}
+    align-items: flex-end;
+    {% endif %}
+
+    width: fit-content;
+    margin: auto;
+}
+#{{ section.id }}  .wl-img {
+    max-width: 362px;
+    aspect-ratio: 1/1;
+}
+#{{ section.id }}  .wl-text-cta .wl-tagline {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 2.8px;
+    text-transform: uppercase;
+}
+#{{ section.id }}  .wl-text-cta img { 
+    margin-top: 16px;
+    margin-bottom: 10px;
+    height: 71px; 
+    width: auto;
+}
+#{{ section.id }}  .wl-text-cta h3, #{{ section.id }}  .wl-text-cta h1 {
+    font-size: 33px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 35px; /* 106.061% */
+    margin-bottom: 4px;
+}
+#{{ section.id }}  .wl-text-cta p { 
+    max-width: 486px; 
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px; /* 127.778% */
+}
+#{{ section.id }}  .wl-text-cta .secondary-btn {
+    margin-top: 0.8rem;
+    min-width: 154px;
+    background-color: transparent;
+}
+#{{ section.id }}.collection-points .wl-text-cta .rte * {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+}
+#{{ section.id }}.collection-points .wl-text-cta .rte p a {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: inherit;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    color: inherit;
+}
+@media only screen and (max-width: 1079px) {
+    #{{ section.id }} .wl-img {
+        max-width: 240px;
+    }
+    #{{ section.id }} .wl-img-text-cta_wrapper {
+        gap: 70px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    #{{ section.id }} h2 { }
+    #{{ section.id }} .wl-img-text-cta_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-end;
+        width: fit-content;
+        margin: auto;
+        position: relative;
+        padding: 68px 0px;
+        text-align: center;
+    }
+    #{{ section.id }} .wl-img {
+        max-width: 190px;
+        margin: auto;
+    }
+    {% if section.settings.custom_class != blank %}
+    #{{ section.id }} .wl-text-cta { 
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    {% else %}
+    #{{ section.id }} .wl-text-cta * { 
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    {% endif %}
+    #{{ section.id }} .wl-text-cta .wl-tagline {
+        display: none;
+    }
+    #{{ section.id }}  .wl-text-cta img { 
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 71px; 
+        width: auto;
+        position: absolute;
+        top: 10%;
+        left: 15%;
+    }
+    #{{ section.id }}  .wl-text-cta h3, #{{ section.id }}  .wl-text-cta h1 {
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 35px; /* 106.061% */
+        margin-bottom: 4px;
+    }
+    #{{ section.id }} .wl-text-cta p { 
+        max-width: 486px; 
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 127.778% */
+    }
+    #{{ section.id }}  .wl-text-cta .secondary-btn {
+        margin-top: 0.8rem;
+        min-width: 154px;
+        background-color: transparent;
+    }
+
+    #{{ section.id }}.collection-points .wl-text-cta h3, #{{ section.id }}.collection-points .wl-text-cta h1 {
+        margin-top: 2rem;
+    }
+    #{{ section.id }}.collection-points .wl-text-cta .rte * {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+    }
+    #{{ section.id }}.collection-points .wl-text-cta .rte p a {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 23px;
+        text-decoration-line: underline;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: auto;
+        text-decoration-color: inherit;
+        text-decoration-thickness: auto;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+        color: inherit;
+    }
+}
+{%- endstyle -%}
+<div id="{{ section.id }}" class="wl-img-text-cta{% if section.settings.custom_class %} {{ section.settings.custom_class }}{% endif %}">
+    {% if section.settings.title != blank %}
+    <h2 class="fs-46">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    {% for block in section.blocks %}
+    {%- style -%}
+    #{{ block.id }} {
+        {% if section.settings.custom_class != blank %}
+        height: auto;
+        padding: 6rem 0;
+        {% else %}
+        {%- if forloop.first -%}
+        align-content: start;
+        height: calc(558px - 55px - 57px);
+        {%- else -%}
+        height: 558px; 
+        align-content: center;
+        {%- endif -%}
+        {% endif %}
+        background-color: {{ block.settings.bkg_color }};
+        color: {{ block.settings.font_color }};
+        text-align: left;
+    }
+    #{{ block.id }} h3, #{{ block.id }} h1 {
+        color: {{ block.settings.font_color }};
+    }
+    #{{ section.id }} #{{ block.id }}  .wl-text-cta .secondary-btn { 
+        border: 2px solid {{ block.settings.font_color }}; 
+        color: {{ block.settings.font_color }};
+    }
+    @media only screen and (max-width: 767px) {
+        #{{ block.id }} {
+            {% if section.settings.custom_class != blank %}
+            height: auto;
+            padding: 2.5rem 0;
+            {% else %}
+            {%- if forloop.first -%}
+            align-content: start;
+            height: auto;
+            {%- else -%}
+            height: auto; 
+            align-content: center;
+            {%- endif -%}
+            {% endif %}
+            background-color: {{ block.settings.bkg_color }};
+            color: {{ block.settings.font_color }};
+            text-align: left;
+        }    
+    }
+    {%- endstyle -%}
+    <div id="{{ block.id }}" class="wl-img-text-cta_container">
+        <div class="wl-img-text-cta_wrapper">
+            <div class="wl-img">
+                <img src="{{ block.settings.image | image_url: width: 362 }}" alt="{{ block.settings.title }}" width="100%" height="auto" class="lazy" />
+            </div>
+            <div class="wl-text-cta">
+                {%- unless block.settings.tagline == blank -%}
+                <p class="wl-tagline">{{ block.settings.tagline }}</p>
+                {%- endunless -%}
+                {%- unless block.settings.icon == blank -%}
+                <img src="{{ block.settings.icon | image_url: width: 71 }}" alt="{{ block.settings.title }} icon" width="100%" height="auto" class="lazy" />
+                {%- endunless -%}
+                {%- unless block.settings.title == blank -%}
+                {%- if block.settings.h1 -%}
+                <h1>{{ block.settings.title | replace: '^', '<br>' }}</h1>
+                {%- else -%}
+                <h3>{{ block.settings.title | replace: '^', '<br>' }}</h3>
+                {%- endif -%}
+                {%- endunless -%}
+                {%- unless block.settings.content == blank -%}
+                <div class="rte">{{ block.settings.content }}</div>
+                {%- endunless -%}
+                {%- unless block.settings.cta_link == blank -%}
+                <a href="{{ block.settings.cta_link }}" alt="{{ block.settings.cta_text }}" class="btn secondary-btn">{{ block.settings.cta_text }}</a>
+                {%- endunless -%}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+
+<!-- wl-image-text-cta -->
+{% schema %}
+{
+  "name": "HL Image Text CTA",
+  "class": "section-image-text-cta",
+  "disabled_on": {
+    "templates": [
+      "password"
+    ],
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_class",
+      "label": "Add Custom Class"    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Shop By Solution"
+    },
+    {
+        "type": "color",
+        "id": "bkg_color",
+        "label": "Header Background Color",
+        "default": "#E57E3B"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Header Font Color",
+        "default": "#FFFFFF"
+    }
+  ],
+"blocks": [
+    {
+      "type": "image",
+      "name": "Image Text CTA",
+      "settings": [
+        {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+        },
+        {
+        "type": "color",
+        "id": "bkg_color",
+        "label": "Header Background Color",
+        "default": "#E57E3B"
+        },
+        {
+        "type": "color",
+        "id": "font_color",
+        "label": "Header Font Color",
+        "default": "#FFFFFF"
+        },
+        {
+        "type": "text",
+        "id": "tagline",
+        "label": "Tagline",
+        "default": "Shop By Solution"
+        },
+        {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+        },
+        { 
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Focus Support"
+        },
+        {
+        "type": "checkbox",
+        "id": "h1",
+        "label": "Make H1",
+        "default": false
+        },
+        { 
+        "type": "richtext",
+        "id": "content",
+        "label": "Content",
+        "default": "<p>Lorem ipsum ploribus unum init</p>"
+        },
+        { 
+        "type": "text",
+        "id": "cta_text",
+        "label": "CTA Text",
+        "default": "Shop Now"
+        },
+        { 
+        "type": "url",
+        "id": "cta_link",
+        "label": "CTA Link"
+        }
+      ]
+    }
+ ],
+ "presets": [
+    {
+      "name": "HL Image Text CTA",
+      "category": "Informational",
+      "settings": {
+        "title": "Featured collection"
+      }
+    }
+  ]
+}
+{% endschema %}

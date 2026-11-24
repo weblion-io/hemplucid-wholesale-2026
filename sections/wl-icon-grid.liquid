@@ -1,0 +1,319 @@
+{% style %}
+#{{ section.id }} {
+    background: {{ section.settings.color }};
+    margin: 0;
+}
+{%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        width: 0; 
+        height: 0;
+        border-style: solid;
+        border-width: 60px 52px 0px 52px;
+        border-color: {{ section.settings.tab_color }} {{ section.settings.color }} {{ section.settings.color }} {{ section.settings.color }};
+        transform: rotate(0deg);
+        margin: auto;
+    }
+{%- endif -%}
+#{{ section.id }} .wl-icon-grid {
+    margin-top: {{ section.settings.margin_top }}px;
+    {%- if section.blocks.size < 7 -%}
+    margin-bottom: {{ section.settings.margin_bottom }}px;
+    {%- else -%}
+    margin-bottom: 0px;
+    {%- endif -%}
+    {%- if section.blocks.size > 6 -%}
+    padding-bottom: {{ section.settings.margin_bottom }}px;
+    {%- endif -%}
+}
+#{{ section.id }} .wl-icon-grid--header { 
+    margin: auto;
+    text-align: center;
+}
+#{{ section.id }} .wl-icon-grid--header h2 { 
+    color: {{  section.settings.font_color }};
+    text-align: center;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 57px;
+    margin-bottom: 16px;
+}
+#{{ section.id }} .wl-icon-grid--header p, #{{ section.id }} .wl-icon-grid--footer { 
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font-light);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 26px;
+    letter-spacing: -0.72px;
+}
+#{{ section.id }} .wl-icon-grid--footer { 
+    font-family: var(--ambit-font-bold);
+    font-weight: 700;
+}
+#{{ section.id }} .wl-icon-grid-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: fit-content;
+    margin: 64px auto;
+    {%- if section.blocks.size > 6 -%}
+    flex-wrap: wrap;
+    width: 560px;
+    {%- endif -%}
+}
+#{{ section.id }} .wl-icon-grid-flex .wl-icon-grid-icon {
+    flex: 0 0 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#{{ section.id }} .wl-icon-grid-flex .wl-icon-grid-icon p {
+    color: {{ section.settings.font_color }};
+    text-align: center;
+    font-family: var(--ambit-font);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    text-transform: capitalize;
+}
+#{{ section.id }} .wl-icon-grid-flex .wl-icon-grid-icon img {
+    width: 92px;
+    height: 92px;
+}
+#{{ section.id }} .wl-icon-grid__narrow {
+    max-width: 600px;
+    margin: auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1279px) {
+    #{{ section.id }} .wl-icon-grid-flex {
+        flex-wrap: wrap;
+        width: 560px;
+    }
+}
+@media only screen and (max-width: 767px) {
+    {%- if section.settings.show_tab -%}
+    #{{ section.id }} .triangle {
+        border-width: 48px 42px 0px 42px;
+    }
+    {%- endif -%}
+    #{{ section.id }} .wl-icon-grid {
+        {% if section.blocks.size < 7 %}
+        margin-bottom: {{ section.settings.margin_bottom | times: 0.8 }}px;
+        {% endif %}
+        margin-top: {{ section.settings.margin_top | times: 0.5 }}px;
+    }
+    #{{ section.id }} .wl-icon-grid--header { 
+        max-width: 376px;
+    }
+    #{{ section.id }} .wl-icon-grid--header h2 { 
+        max-width: 310px;
+        font-size: 32px;
+        line-height: 32px;
+        margin: auto;
+        margin-bottom: 12px;
+    }
+    #{{ section.id }} .wl-icon-grid--header p { 
+        font-size: 14px;
+        line-height: 24px;
+        letter-spacing: -0.6px;
+    }
+    #{{ section.id }} .wl-icon-grid-flex {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 42px auto;
+        row-gap: 60px;
+        max-width: 335px;
+    }
+    #{{ section.id }} .wl-icon-grid-flex .wl-icon-grid-icon {
+        flex: 0 0 160px;
+    }
+    #{{ section.id }} .wl-icon-grid-flex .wl-icon-grid-icon p {
+        font-size: 16px;
+    }
+    #{{ section.id }} .wl-icon-grid-flex .wl-icon-grid-icon img {
+        width: 72px;
+        height: 72px;
+    }
+    #{{ section.id }} .wl-icon-grid--footer {
+        max-width: 85%;
+        margin: auto;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.64px;
+    } 
+}
+{% endstyle %}
+
+<section id="{{ section.id }}">
+    {%- if section.settings.show_tab -%}
+    <div class="triangle" style="background: {{ section.settings.tab_color }}">
+    </div>
+    {%- endif -%}
+    <div class="wl-icon-grid container">
+        <div class="wl-icon-grid--header">
+            {% unless section.settings.title == blank %}
+            <h2>{{ section.settings.title }}</h2>
+            {% endunless %}
+            {% unless section.settings.content == blank %}
+            <p{% if section.settings.narrow == true %} class="wl-icon-grid__narrow"{% endif %}>{{ section.settings.content | replace: '\*','<strong>' | replace: '*/','</strong>' | replace: '^','<br>' }}</p>
+            {% endunless %}
+        </div>
+        <div class="wl-icon-grid-flex">
+        {% for block in section.blocks %}
+            {% if block.type == 'image' %}
+            <div class="wl-icon-grid-icon">
+                <img src="{{ block.settings.icon | image_url: width: 92 }}" alt="{{ block.settings.header }}">
+                <p style="color: {{ block.settings.font_color }};{% unless block.settings.content == blank %} margin-bottom: 0;{% endunless %}">{{ block.settings.header | replace: '\*','<strong>' | replace: '*/','</strong>' | replace: '*','<br class="hl-mobile">' }}</p>
+                {% unless block.settings.content == blank %}
+                <div style="color: {{ block.settings.font_color }}; text-align: center;">{{ block.settings.content }}</div>
+                {% endunless %}
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+        {% unless section.settings.footer == blank %}
+        <p class="wl-icon-grid--footer">{{ section.settings.footer }}</p>
+        {% endunless %}
+        {% for block in section.blocks %}
+            {% if block.type == 'button' %}
+            <a href="{{ block.settings.link }}" class="btn btn--primary" style="display: block; max-width: fit-content; margin: auto;">{{ block.settings.text }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "HL Icon Grid",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Background Color",
+        "default": "#EAE1D5"
+    },
+    {
+        "type": "color",
+        "id": "font_color",
+        "label": "Font Color",
+        "default": "#241F21"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "label": "Margin Top",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "label": "Margin Bottom",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 68,
+      "unit": "px"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The No-Go List: What We Never Use"
+    },
+    {
+        "type": "text",
+        "id": "content",
+        "label": "Content",
+        "default": "A clean formula is defined as much by what’s absent as by what’s present. Every Hemplucid product is formulated without:"
+    },
+    {
+        "type": "checkbox",
+        "id": "narrow",
+        "label": "Use Narrow Content",
+        "default": false
+    },
+    {
+        "type": "text",
+        "id": "footer",
+        "label": "Bottom Content",
+        "default": "If an ingredient doesn’t serve your body, it doesn’t belong in the bottle."
+    },
+    {
+        "type": "checkbox",
+        "id": "show_tab",
+        "label": "Show Tab",
+        "default": true
+    },
+    {
+        "type": "color",
+        "id": "tab_color",
+        "label": "Tab Color",
+        "default": "#595378"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Icon",
+      "limit": 12,
+      "settings": [
+        {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "text",
+            "id": "header",
+            "label": "Header",
+            "default": "Artificial Sweetners"
+        },
+        {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content"
+        },
+        {
+            "type": "color",
+            "id": "font_color",
+            "label": "Header Font Color",
+            "default": "#241F21"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+            "type": "text",
+            "id": "text",
+            "label": "Button Text",
+            "default": "Apply To Start Earning ⟶"
+        },
+        {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Icon Grid",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

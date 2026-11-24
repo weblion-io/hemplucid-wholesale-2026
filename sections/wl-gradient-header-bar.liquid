@@ -1,0 +1,119 @@
+{% style %}
+#{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: linear-gradient(180deg, #EF4482 0%, #FFD700 100%);
+}
+#{{ section.id }} .wl-gradient-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+#{{ section.id }} .wl-gradient-header img {
+    width: auto;
+    height: 58px;
+}
+#{{ section.id }} .wl-gradient-header h2 {
+    color: #FFF;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    #{{ section.id }} {
+        padding-top: {{ section.settings.padding_top | times: 0.6 }}px;
+        padding-bottom: {{ section.settings.padding_bottom | times: 0.6 }}px;
+    }
+    #{{ section.id }} .wl-gradient-header {
+        display: flex;
+        align-items: flex-end;
+        gap: 16px;
+    }
+    #{{ section.id }} .wl-gradient-header img {
+        width: auto;
+        height: 28px;
+    }
+    #{{ section.id }} .wl-gradient-header h2 {
+        font-size: 26px;
+        line-height: 18px;
+    }   
+}
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+    #{{ section.id }} .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
+@media only screen and (max-width: 399px) {
+    #{{ section.id }} .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+{% endstyle %}
+<section id="{{ section.id }}">
+    <div class="wl-gradient-header container">
+        <img src="{{ section.settings.image | image_url: height: 58 }}" alt="{{ section.settings.title }}"/>
+        <h2>{{ section.settings.title }}</h2>
+    </div>
+</section>
+{% schema %}
+{
+  "name": "HL Gradient Header",
+  "settings": [
+    {
+        "type": "color",
+        "id": "color_1",
+        "label": "Background Color Left",
+        "default": "#EF4482 "
+    },
+    {
+        "type": "color",
+        "id": "color_2",
+        "label": "Background Color Right",
+        "default": "#FFD700"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Educational Hub"
+    },
+  ],
+  "presets": [
+    {
+      "name": "HL Gradient Header",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

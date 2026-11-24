@@ -1,0 +1,107 @@
+{% style %}
+#{{ section.id }} {
+    background-image: url('{{ section.settings.dt_image | image_url: width: 1920 }}');
+    aspect-ratio: {{ section.settings.dt_image.aspect_ratio }};
+    background-size: cover;
+}
+#{{ section.id }} .image-cta--wrapper { 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+#{{ section.id }} .image-cta--text h2 { 
+    color: {{ section.settings.color }};
+    font-family: var(--ambit-font-light);
+    font-size: 68px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: 74px;
+    text-align: left;
+    margin-bottom: 24px;
+}
+#{{ section.id }} .image-cta--text a { 
+    border: 2px solid {{ section.settings.color }};
+    color: {{ section.settings.color }};
+    background: none;
+    min-width: unset;
+}
+@media only screen and (max-width: 768px) {
+    #{{ section.id }} {
+        background-image: url('{{ section.settings.mo_image | image_url: width: 430 }}');
+        aspect-ratio: {{ section.settings.mo_image.aspect_ratio }};
+    }
+    #{{ section.id }} .image-cta--text { 
+        margin:0 15px;
+    }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}" class="image-cta">
+  <div class="image-cta--wrapper container">
+    <div class="image-cta--text">
+        <h2>{{ section.settings.title }}</h2>
+        {% unless section.settings.link == blank %}
+        <a href="{{ section.settings.link }}" class="btn btn--secondary">{{ section.settings.link_text }}</a>
+        {% endunless %}
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "HL Image CTA",
+  "class": "section-image-cta",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "dt_image",
+      "label": "Desktop Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mo_image",
+      "label": "Mobile Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "left"
+    },
+    {
+        "type": "color",
+        "id": "color",
+        "label": "Text Color",
+        "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Image CTA",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

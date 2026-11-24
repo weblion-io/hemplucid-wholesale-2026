@@ -1,0 +1,505 @@
+{% style %}
+#{{ section.id }} {
+    position: relative;
+    padding-top: 56px;
+    padding-bottom: 76px;
+    top: -2px;
+}
+#{{ section.id }} .benefits-card--container h2 {
+    text-align: center;
+    text-align: center;
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 57px;
+    margin-bottom: 53px;
+}
+#{{ section.id }} .benefits-card--wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+#{{ section.id }} .benefits-card--wrapper .benefit-card, #{{ section.id }} .shop-card {
+    background: {{ section.settings.card_bkg }};
+    border-radius: 25px;
+    {% case section.settings.columns %}
+        {% when '2' %}
+            flex: 0 0 calc(50% - 7.5px);
+        {% when '3' %}
+            flex: 0 0 calc(33.3% - 10px);
+        {% when '4' %}
+            flex: 0 0 calc(25% - 11.25px);
+    {% endcase %}
+    padding: 0 27px;
+}
+#{{ section.id }} .shop-card {
+  position: relative;
+  background-size: 110%;
+  background-position: center center;
+  align-content: center;
+}
+#{{ section.id }} .benefits-card--wrapper .benefit-card--icon {
+    position: relative;
+    width: 62px;
+    height: 56px;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    align-items: center;
+}
+#{{ section.id }} .benefits-card--wrapper .benefit-card--icon svg {
+  display: block;
+  margin: auto;
+}
+#{{ section.id }} .benefits-card--wrapper .benefit-card h3 {
+  color: #010101;
+  font-family: var(--heading-font-family-bold);
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  text-align: {{ section.settings.text_alignment }};
+}
+#{{ section.id }} .benefits-card--wrapper .benefit-card p {
+  color: #010101;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 23px;
+  margin: 0;
+  margin-bottom: 30px;
+  text-align: {{ section.settings.text_alignment }};
+}
+#{{ section.id }} .shop-card h3 {
+  color: #FFF;
+  font-family: var(--heading-font-family-bold);
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 35px;
+  margin-bottom: 24px;
+}
+#{{ section.id }} .shop-card .btn {
+  min-width: 0;
+}
+#{{ section.id }} .benefits-card--wrapper .benefit-card .benefit-card--label {
+  padding: 15px 10px;
+  max-width: 80%;
+  margin: 0 auto;
+  border-radius: 0 0 8px 8px;
+  text-transform: uppercase; 
+  font-size: 14px;
+  line-height: 14px;
+  white-space: nowrap;
+  font-family: var(--ambit-font-bold);
+  font-weight: 700;
+}
+@media only screen and (min-width: 900px) and (max-width: 1279px) {
+  {% if section.settings.columns == '4' %}
+  #{{ section.id }} .benefits-card--wrapper .benefit-card, #{{ section.id }} .benefits-card--wrapper .shop-card {
+    flex: 0 0 calc(33.3% - 10px);
+  }
+  {% endif %}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 899px) {
+  #{{ section.id }} .benefits-card--wrapper { padding: 0 15px; }
+  {% if section.settings.columns == '4' or section.settings.columns == '3' %}
+  #{{ section.id }} .benefits-card--wrapper .benefit-card, #{{ section.id }} .benefits-card--wrapper .shop-card {
+    flex: 0 0 calc(50% - 7.5px);
+  }
+  {% endif %}
+}
+
+@media only screen and (max-width: 767px) {
+  #{{ section.id }} { padding-top: 36px; }
+  #{{ section.id }}.delivery-schedule {
+    padding-top: 52px;
+    padding-bottom: 45px;
+  }
+  #{{ section.id }} .benefits-card--container h2 {
+    font-size: 32px;
+    line-height: 32px;
+    margin-bottom: 35px;
+  }
+  #{{ section.id }}.delivery-schedule .benefits-card--container .benefit-card h3 {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  #{{ section.id }}.delivery-schedule .benefits-card--container .benefit-card p:not(.benefit-card--label) {
+    font-size: 16px;
+    line-height: 23px;
+  }
+  #{{ section.id }} .benefits-card--wrapper .benefit-card {
+    margin-right: 15px;
+    min-height: 250px;
+  }
+  #{{ section.id }}.delivery-schedule .benefits-card--wrapper .benefit-card {
+    margin-right: 0;
+    flex: 0 0 calc(50% - 8px);
+    padding: 0 20px;
+  }
+  #{{ section.id }} .shop-card {
+    margin-top: 56px;
+    aspect-ratio: 380/253;
+    background-size: 110%;
+  }
+  #{{ section.id }} .shop-card > * {
+    max-width: 170px;
+  }
+  #{{ section.id }} .benefits-card--wrapper .benefit-card .benefit-card--label {
+    font-size: 12px;
+    line-height: 12px;
+    max-width: fit-content;
+  }
+  #{{ section.id }} .slick-dots {
+    display: flex;
+    gap: 8px;
+    width: fit-content;
+    margin: auto;
+  }
+  #{{ section.id }} .slick-dots li button {
+    height: 8px;
+    width: 8px;
+    background: white;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 0;
+  }
+  #{{ section.id }} .slick-dots li button[aria-selected="true"] {
+    background: #595378;
+  }
+}
+@media only screen and (max-width: 399px) {
+  #{{ section.id }}.delivery-schedule .benefits-card--wrapper .benefit-card {
+    flex: 0 0 calc(50% - 11px);
+    padding: 0 14px;
+  }
+}
+{% endstyle %}
+<div id="{{ section.id }}" class="{% if section.settings.color_scheme != 'default' %}use-color-scheme use-color-scheme--{{ section.settings.color_scheme }} fully-padded-row--medium{% else %}fully-spaced-row--medium{% endif %}{% if section.settings.custom_classes != blank %} {{ section.settings.custom_classes }}{% else %} no-custom{% endif %}">
+    <div class="benefits-card--container container{% if section.settings.mobile_carousel %} mobile-carousel{% endif %}">
+        {% unless section.settings.title == blank %}
+        <h2>{{ section.settings.title | replace: '^*','<br class"hl-mobile">' | replace: '^','<br>'}}</h2>
+        {% endunless %}
+        <div class="benefits-card--wrapper{% if section.settings.mobile_carousel %} mobile-carousel{% endif %}">
+            {% for block in section.blocks %}
+                {% if block.type == 'benefit-card' %}
+                    <div class="benefit-card">
+                        {% unless block.settings.icon == 'none' %}
+                        <div class="benefit-card--icon" style="background: {{ block.settings.icon_bkg }}">
+                          {% render 'wl-subscription-icon', icon: block.settings.icon %}
+                        </div>
+                        {% endunless %}
+                        {% if block.settings.icon == 'none' and block.settings.label_text != blank %}
+                          <p class="benefit-card--label" style="background-color: {{ block.settings.label_bkg }}; color: {{ block.settings.label_color }}">{{ block.settings.label_text }}</p>
+                        {% endif %}
+                        {% unless block.settings.title == blank %}
+                        <h3>{{ block.settings.title | replace: '^', '<br>' }}</h3>
+                        {% endunless %}
+                        {% unless block.settings.content == blank %}
+                        <p>{{ block.settings.content }}</p>
+                        {% endunless %}
+                    </div>
+                {% else %}
+                  <div class="shop-card{% if section.settings.mobile_carousel %} mobile-carousel{% endif %}" style="background-image: url('{{ block.settings.image | image_url: width: 296}}');">
+                    <h3 style="color: {{ block.settings.color }};">{{ block.settings.title }}</h3>
+                    <a href="{{ block.settings.button_link }}" class="btn btn--secondary" style="background: transparent; border: 1px solid {{ block.settings.color }}; color: {{ block.settings.color }};">{{ block.settings.button_text }}</a>
+                  </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="shop-card--mobile">
+        </div>
+    </div>
+</div>
+
+
+{% javascript %}
+$(document).ready(function(){
+  if ($(window).width() < 768) {
+    if( $('.shop-card.mobile-carousel').length ){
+      $('.shop-card.mobile-carousel').appendTo('.no-customer .benefits-card--container .shop-card--mobile');
+    }
+
+    $('.benefits-card--wrapper.mobile-carousel').slick({
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            infinite: false,
+            autoplay: false,
+            arrows: false,
+            slidesToShow: 1.2,
+            slidesToScroll: 1,
+            dots: true
+          }
+        }
+      ]
+    });
+  }
+});
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "HL Benefit Cards",
+  "class": "section-image-with-text-overlay",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "custom_classes",
+      "label": "Custom Classes"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "text_alignment",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "default",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "columns",
+      "label": "Desktop Columns",
+      "default": "4",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ]
+    },
+    {
+        "type": "color",
+        "id": "card_bkg",
+        "label": "Card Background Color",
+        "default": "#FFFFFF"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_carousel",
+      "label": "Show Carousel on Mobile",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit-card",
+      "name": "Benefit Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "30% OFF^All Orders"
+        },
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content",
+          "default": "Enjoy the best savings available and right to your door!"
+        },
+        {
+            "type": "header",
+            "content": "Icon Settings"
+        },
+        {
+        "type": "select",
+        "id": "icon",
+        "label": "Icon",
+        "default": "none",
+        "options": [
+                {
+                "value": "none",
+                "label": "No Icon"
+                },
+                {
+                "value": "per",
+                "label": "Percentage"
+                },
+                {
+                "value": "truck",
+                "label": "Fast Truck"
+                },
+                {
+                "value": "pig",
+                "label": "Piggy Bank"
+                },
+                {
+                "value": "ribbon",
+                "label": "Reward Ribbon"
+                },
+                {
+                "value": "present",
+                "label": "Wrapped Present"
+                },
+                {
+                "value": "cash-back",
+                "label": "Cash Back"
+                },
+                {
+                "value": "hand",
+                "label": "Hand"
+                }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "icon_bkg",
+            "label": "Icon Background Color",
+            "default": "#E57E3B",
+            "visible_if": "{{ block.settings.icon != 'none' }}" 
+        },
+        {
+            "type": "select",
+            "id": "icon_color",
+            "label": "Icon Color",
+            "default": "light",
+            "options": [
+                {
+                "value": "light",
+                "label": "Light"
+                },
+                {
+                "value": "dark",
+                "label": "dark"
+                }
+            ],
+            "visible_if": "{{ block.settings.icon != 'none' }}" 
+        },
+        {
+            "type": "header",
+            "content": "Label Settings",
+            "visible_if": "{{ section.settings.icon == 'none' }}"
+        },
+        {
+            "type": "text",
+            "id": "label_text",
+            "label": "Label Text"
+        },
+        {
+            "type": "color",
+            "id": "label_bkg",
+            "label": "Label Background Color",
+            "default": "#FFD700",
+            "visible_if": "{{ section.settings.label_text == blank }}"
+        },
+        {
+            "type": "color",
+            "id": "label_color",
+            "label": "Label Font Color",
+            "default": "#010101",
+            "visible_if": "{{ section.settings.label_text == blank }}"
+        }
+      ]
+    },
+    {
+      "type": "shop-card",
+      "name": "Shop Card",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Shop and Subscribe Today"
+        },
+        {
+            "type":"text",
+            "id": "button_text",
+            "label": "Button Text",
+            "default": "Shop Now"
+        },
+        {
+            "type":"url",
+            "id": "button_link",
+            "label": "Button Link"
+        },
+        {
+            "type":"color",
+            "id": "color",
+            "label": "Heading and Button Color",
+            "default": "#FFFFFF"
+        },
+        {
+            "type":"image_picker",
+            "id": "image",
+            "label": "Background Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Benefit Cards",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "benefit-card"
+        },
+        {
+          "type": "shop-card"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

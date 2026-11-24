@@ -1,0 +1,245 @@
+{%- liquid 
+    assign count = blocks.size
+    assign flex_size = 100 | divided_by: count
+-%}
+{% style %}
+#{{ section.id }} {
+    background-color: {{ section.settings.bkg }};
+    border: none;
+}
+#{{ section.id }} .tabs--wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 56px;
+    padding: 18px 0 0 0; /* 70px 0 70px;*/
+    padding-right: var(--container-pad-x);
+    padding-left: var(--container-pad-x);
+}
+#{{ section.id }} .tabs--wrapper .collection-tab {
+    flex: 1 1 {{ flex_size }};
+    position: relative;
+    align-content: center;
+    background-color: {{ section.settings.tab_bkg}};
+    border-radius: {{ section.settings.border_radius }}px {{ section.settings.border_radius }}px 0 0;
+    cursor: pointer;
+}
+#{{ section.id }} .tabs--wrapper .collection-tab.active {
+    background-color: {{ section.settings.active_tab_bkg }};
+    bottom: -1px;
+}
+#{{ section.id }} .tabs--wrapper .collection-tab .tab-icon {
+    position: absolute;
+    left: 23px;
+    top: 13px;
+}
+#{{ section.id }} .tabs--wrapper .collection-tab.active .tab-icon svg.image-svg {
+    mix-blend-mode: difference;
+}
+#{{ section.id }} .tabs--wrapper .collection-tab.active .tab-icon svg g path {
+    fill: {{ section.settings.active_tab_txt}};
+}
+#{{ section.id }} .tabs--wrapper .collection-tab .tab-title {
+    font-family: var(--heading-font-family-bold);
+    -webkit-font-smoothing: antialiased;
+    color: {{ section.settings.tab_txt}};
+    font-size: 29px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center;
+    padding: 23px 0;
+    width: 100%;
+    white-space: nowrap;
+    margin: 0;
+}
+#{{ section.id }} .tabs--wrapper .collection-tab.active .tab-title {
+    color: {{ section.settings.active_tab_txt}};
+}
+#{{ section.id }} .collections--wrapper { background-color: white; }
+#{{ section.id }} .no-spaced-row-above { margin-top: 0; }
+#{{ section.id }} .page-collection { display: none; }
+#{{ section.id }} .page-collection.active { 
+  display: block; 
+  padding-bottom: 4rem;
+}
+#{{ section.id }} .tabs--wrapper .collection-tab.active { bottom: -2px; }
+
+@media only screen and (min-width: 768px) and (max-width: 999px) {
+  #{{ section.id }} .page-collection.active { 
+    display: block; 
+    padding-top: 1px;
+  }
+  #{{ section.id }} .tabs--wrapper { gap: 6px; }
+}
+@media only screen and (max-width: 767px) {
+  #{{ section.id }} { margin-top: -1px; }
+  #{{ section.id }} .page-collection.active { 
+    display: block; 
+    padding-top: 1px;
+  }
+  #{{ section.id }} .tabs--wrapper { 
+    gap: 6px; 
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+  #{{ section.id }} .tabs--wrapper .collection-tab .tab-icon {
+    left: 8px;
+    top: 8px;
+  }
+  #{{ section.id }} .tabs--wrapper .collection-tab .tab-icon svg { 
+    height: 25px; 
+    width: auto;
+  }
+  #{{ section.id }} .tabs--wrapper .collection-tab .tab-title { 
+    font-size: 20px; 
+    padding: 10px 0;
+  }
+}
+{% endstyle %}
+
+<section id="{{ section.id }}" class="">
+  <div class="tabs--wrapper container{% if settings.use_fullwidth_layout %} container--no-max{% endif %}">
+      {% for block in section.blocks %}
+      <div class="collection-tab{% if forloop.first %} active{% endif %}" data-id="{{block.settings.icon }}">
+          <div class="tab-icon">
+              {% render 'solution-icons', icon: block.settings.icon %}
+          </div>
+          <h3 class="tab-title">{{ block.settings.title | replace: '^/', '<span class="hl-desktop-ib">' | replace: '/^', '</span>'}}</h3>
+      </div>
+      {% endfor %}
+  </div>
+  <div class="collections--wrapper">
+      {%- comment -%}
+      Variables for wl-collection-grid
+      # id - the data-id from the tab element
+      # ppp - the number of products to show per page
+      # ppr - the number of products to show per row on desktop
+      # collection - the collection being passed
+      # active - only first collection
+      {%- endcomment -%}
+      {% for block in section.blocks %}
+      {% liquid 
+          assign active = false
+          if forloop.first 
+              assign active = true
+          endif
+      %}
+      {% render 'wl-collection-grid', active: active, id: block.settings.icon, ppp: '24', ppr: '4', collection: block.settings.collection %}
+      {% endfor %}
+  </div>
+</section>
+
+{% javascript %}
+$(document).ready(function(){
+    $('.collection-tab').on('click', function(){
+        let id = $(this).data('id');
+        $('.collection-tab').removeClass('active');
+        $(this).addClass('active');
+        $('.page-collection.tabbed').removeClass('active');
+        $('[data-section-id="'+id+'"]').addClass('active');
+    });
+});
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "HL Tabbed Collections",
+  "disabled_on": {
+    "groups": [
+      "aside"
+    ]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bkg",
+      "label": "Section Background Color",
+      "default": "#595378"
+    },
+    {
+      "type": "color",
+      "id": "active_tab_bkg",
+      "label": "Active Tab Background Color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "active_tab_txt",
+      "label": "Active Tab Font/Icon Color",
+      "default": "#002531"
+    },
+    {
+      "type": "color",
+      "id": "tab_bkg",
+      "label": "Inactive Tab Background Color",
+      "default": "#726d8c"
+    },
+    {
+      "type": "color",
+      "id": "tab_txt",
+      "label": "Inactive Tab Font-Icon Color",
+      "default": "#FFFFFF"
+    },
+    {
+        "type": "range",
+        "id": "border_radius",
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "unit": "px",
+        "label": "Border Radius",
+        "default": 8
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab Heading",
+          "default": "Stress"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Select Tab Icon",
+          "options": [
+            {
+                "value": "stress",
+                "label": "Stress",
+            },
+            {
+                "value": "sleep",
+                "label": "Sleep",
+            },
+            {
+                "value": "focus",
+                "label": "Focus",
+            }
+          ],
+          "default": "stress"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Select Collection"
+        },
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HL Tabbed Collections",
+      "category": "Custom",
+      "blocks": [
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
