@@ -1,0 +1,59 @@
+{% comment %}
+/***********************
+variables 
+# id - the data-id from the tab element
+# ppp - the number of products to show per page
+# ppr - the number of products to show per row on desktop
+# collection - the collection being passed
+*************************/
+{% endcomment %}
+<div class="page-collection tabbed{% if active %} active{% endif %}" data-section-id="{{ id }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+{% paginate collection.products by ppp %}
+  <div class="container{% if settings.use_fullwidth_layout %} container--no-max{% endif %} no-spaced-row-above">
+
+    <filter-container class="filter-container filter-container--side" data-ajax-filtering="{{ settings.ajax_products }}" data-filter-section-id="{{ id }}">
+
+      <div class="filters-adjacent collection-listing" data-ajax-container>
+        {% if collection.products.size == 0 %}
+          <h5 class="align-centre fully-spaced-row">{{ 'sections.collection.empty' | t }}</h5>
+        {% else %}
+          <div class="product-grid product-grid--per-row-{{ ppr }} product-grid--per-row-mob-2">
+            {%- liquid
+              if settings.prod_thumb_shape == 'portrait-23'
+                assign chosen_aspect_ratio = 0.67
+              elsif settings.prod_thumb_shape == 'portrait-45'
+                assign chosen_aspect_ratio = 0.8
+              elsif settings.prod_thumb_shape == 'square'
+                assign chosen_aspect_ratio = 1.0
+              elsif settings.prod_thumb_shape == 'landscape-54'
+                assign chosen_aspect_ratio = 1.25
+              elsif settings.prod_thumb_shape == 'landscape-32'
+                assign chosen_aspect_ratio = 1.50
+              elsif settings.prod_thumb_shape == 'tallest'
+                assign chosen_aspect_ratio = 99
+                for product in collection.products
+                  if product.featured_media.preview_image.aspect_ratio < chosen_aspect_ratio
+                    assign chosen_aspect_ratio = product.featured_media.preview_image.aspect_ratio
+                  endif
+                endfor
+              else
+                assign chosen_aspect_ratio = 0
+                for product in collection.products
+                  if product.featured_media.preview_image.aspect_ratio > chosen_aspect_ratio
+                    assign chosen_aspect_ratio = product.featured_media.preview_image.aspect_ratio
+                  endif
+                endfor
+              endif
+
+              for product in collection.products
+                assign prioritised_loading = true
+                render 'product-block', product: product, custom_aspect_ratio: chosen_aspect_ratio, animate: true, prioritised_loading: prioritised_loading
+              endfor
+            -%}
+          </div>
+        {% endif %}
+      </div>
+    </filter-container>
+  </div>
+  {% endpaginate %}
+</div>

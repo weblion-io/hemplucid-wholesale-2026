@@ -1,0 +1,10 @@
+{% comment %}
+Pass in a tag and generate a category link
+- category
+- active: defines whether category is underlined
+{% endcomment %}
+{% liquid
+  assign categoryTitle = category | remove: 'category_' | replace: '-', ' ' | replace: '_', ' ' | capitalize | replace: 'Cbd', 'CBD'
+%}
+
+<p><a href="/blogs/blog/tagged/{{ category }}" title="Wellness Education - {{  categoryTitle}}" class="{% if active %}active{% endif %}">{{ categoryTitle }}</a></p>

@@ -1,0 +1,59 @@
+{%- liquid
+  assign organization_id = shop.url | append: '/#organization'
+  assign website_id = shop.url | append: '/#website'
+  assign social_settings = 'social_facebook_url,social_youtube_url,social_instagram_url,social_whatsapp_url,social_tiktok_url,social_snapchat_url,social_pinterest_url,social_twitter_url,social_linkedin_url,social_wechat_url,social_vimeo_url,social_tumblr_url,social_twitch_url,social_spotify_url,social_discord_url,social_mastodon_url,social_threads_url,social_custom_url' | split: ','
+-%}
+{%- capture same_as_json -%}
+  {%- for setting_key in social_settings -%}
+    {%- if settings[setting_key] != blank -%}
+      {%- assign social_url = settings[setting_key] | split: '?' | first -%}
+      {{- social_url | json }},
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- comment -%} Online-only business: no street address, just the country it trades from {%- endcomment -%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OnlineStore",
+    "@id": {{ organization_id | json }},
+    "name": {{ shop.name | json }},
+    "url": {{ shop.url | json }},
+    {%- if shop.description != blank %}
+    "description": {{ shop.description | json }},
+    {%- endif %}
+    {%- if section.settings.logo %}
+    "logo": {{ section.settings.logo | image_url: width: section.settings.logo.width | prepend: 'https:' | json }},
+    {%- endif %}
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": {{ shop.address.country_code | default: 'US' | json }}
+    },
+    "sameAs": [
+      {{ same_as_json | remove_last: ',' }}
+    ]
+  }
+</script>
+
+{%- if request.page_type == 'index' -%}
+  {%- assign potential_action_target = shop.url | append: routes.search_url | append: '?q={search_term_string}' -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": {{ website_id | json }},
+      "name": {{ shop.name | json }},
+      "url": {{ shop.url | json }},
+      "publisher": { "@id": {{ organization_id | json }} },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": {{ potential_action_target | json }}
+        },
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+{%- endif -%}

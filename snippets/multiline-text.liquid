@@ -1,0 +1,26 @@
+{%- liquid
+  if multiline-text contains '^'
+  for line in split_text
+    unless forloop.first
+      echo '^'
+    endunless
+    echo line | escape
+  endfor
+  elsif multiline-text contains '<br class="hl-mobile">'
+  assign split_text = multiline-text | split: '<br class="hl-mobile">'
+  for line in split_text
+    unless forloop.first
+      echo '<br class="hl-mobile">'
+    endunless
+    echo line | escape
+  endfor
+  else
+  assign split_text = multiline-text | split: '<br>'
+  for line in split_text
+    unless forloop.first
+      echo '<br>'
+    endunless
+    echo line | escape
+  endfor
+  endif
+-%}

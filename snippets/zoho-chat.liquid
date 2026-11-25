@@ -1,0 +1,56 @@
+{%- comment -%}
+<!-- <script type="text/javascript" id="zsiqchat">var $zoho=$zoho || {};$zoho.salesiq = $zoho.salesiq || {widgetcode: "3c22e980ada2f456871df1b6df01d3266bd59284d0841c08e4ffbf14062170b8", values:{},ready:function(){}};var d=document;s=d.createElement("script");s.type="text/javascript";s.id="zsiqscript";s.defer=true;s.src="https://salesiq.zoho.com/widget";t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t);</script> -->
+//From SalesIQ Dashboard, navigate to Settings > Brands > Select the brand > Installation > Website > Copy the code and paste here for this sample code to work.
+{%- endcomment -%}
+<script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=3c22e980ada2f456871df1b6df01d3266bd59284d0841c08e4ffbf14062170b8" defer></script>
+<script>
+$zoho.salesiq.ready = function() {
+ $zoho.salesiq.set("home.widgets", [
+  {
+   type : "announcement",
+   data : {
+    body : {
+     text : "By using this chat, you consent & acknowledge that we & our service providers will keep a transcript of this chat."
+    }
+   }
+  }
+ ]);
+}
+</script>
+<style>
+  .grecaptcha-badge {
+    display: none !important;
+  }
+  
+  .zsiq_custommain img {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  
+  .zsiq_custommain {
+      margin: 0 10px 0 0;
+      width: 60px !important;
+      height: 60px !important;
+  }
+  
+  #zsiq_float img:hover {
+    filter: opacity(70%);
+  }
+
+  .content_mdl.textC::after {
+    content: "By using this chat, you consent & acknowledge that we & our service providers will keep a transcript of this chat.";
+  }
+  
+  @media only screen and (max-width: 767px) {
+    /*.zsiq_custommain {
+      margin: 0;
+      height: 60px !important;
+      width: 57px !important;
+    }  
+    
+    .zsiq_custommain #zsiq_float img {
+      max-width: 60px;
+      max-height: 62px;
+    }*/
+  }
+</style>

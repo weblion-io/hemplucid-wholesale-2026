@@ -1,0 +1,38 @@
+{%- comment -%}
+  Converts HTML to plain text for use in JSON-LD: keeps a space between block
+  elements, strips tags, decodes common entities and collapses whitespace.
+
+  Parameters:
+  - html {String} - HTML to convert.
+
+  Usage:
+  {%- capture text -%}{% render 'structured-data-text', html: article.content %}{%- endcapture -%}
+  {{ text | json }}
+{%- endcomment -%}
+{{- html
+  | replace: '</p>', ' </p>'
+  | replace: '<br>', ' '
+  | replace: '<br/>', ' '
+  | replace: '<br />', ' '
+  | replace: '</li>', ' </li>'
+  | replace: '</h', ' </h'
+  | replace: '</div>', ' </div>'
+  | replace: '</td>', ' </td>'
+  | strip_html
+  | replace: '&nbsp;', ' '
+  | replace: '&quot;', '"'
+  | replace: '&#39;', "'"
+  | replace: '&rsquo;', '’'
+  | replace: '&lsquo;', '‘'
+  | replace: '&rdquo;', '”'
+  | replace: '&ldquo;', '“'
+  | replace: '&mdash;', '—'
+  | replace: '&ndash;', '–'
+  | replace: '&hellip;', '…'
+  | replace: '&lt;', '<'
+  | replace: '&gt;', '>'
+  | replace: '&amp;', '&'
+  | split: ' '
+  | join: ' '
+  | strip
+-}}

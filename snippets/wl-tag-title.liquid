@@ -1,0 +1,9 @@
+{%- comment -%}
+Outputs readable tag names, matching the blog category sidebar
+(e.g. category_cbd-101 -> CBD 101). Multiple tags are joined with ", ".
+- tags: array of tags
+{%- endcomment -%}
+{%- for tag in tags -%}
+  {{- tag | remove: 'category_' | replace: '-', ' ' | replace: '_', ' ' | capitalize | replace: 'Cbd', 'CBD' -}}
+  {%- unless forloop.last %}, {% endunless -%}
+{%- endfor -%}

@@ -1,0 +1,96 @@
+
+{% style %}
+.cart-item__column.cart-item__description {
+  max-width: 85%;
+}
+.product-details-sub { 
+  position: relative;
+  border-radius: 12px;
+  padding: 7px;
+  border: 1px solid #010101;
+  margin-top: 8px;
+}
+.product-details-sub .cart-subscription-top {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+.product-details-sub .cart-subscription-top .subscribe-checkbox-drawer {
+  margin-right: auto;
+  margin-left: 0;
+  flex: 1 1 100%;
+}
+.product-details-sub .cart-subscription-top .cart_tooltip {
+  margin-right: 0;
+  margin-left: auto;
+}
+.product-details-sub .cart-subscription-top .cart_subscriptionTooltip {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  pointer-events: none;
+  background: #efefef;
+  padding: 12px;
+  top: 32px;
+  left: 0;
+  border-radius: 12px;
+}
+.product-details-sub .cart-subscription-top .cart_subscriptionTooltip.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.product-details-sub .cart-subscription-bottom {
+  display: none;
+}
+.product-details-sub .cart-subscription-bottom.active {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  display: block;
+}
+.product-details-sub .cart-subscription-bottom select {
+  padding:5px 32px 5px 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; 
+  box-sizing: border-box; 
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+  appearance: auto;
+}
+{% endstyle %}
+
+
+{% liquid
+  assign app_id = '5859381'
+  assign sellingPlanGroups = item.product.selling_plan_groups | where: 'app_id', app_id
+  assign selectedVariableAllocations = item.product.variants[0].selling_plan_allocations | where: 'selling_plan_group_id', sellingPlanGroups.first.id
+  assign tooltip ='Products are automatically delivered on your schedule, at a discount over our one-time purchase pricing.Receive a 30% discount on your initial order, then a 30% discount on each recurring order. No obligation, modify or cancel your subscription anytime.'
+  assign selectedPlan = ''
+  if item.selling_plan_allocation
+    assign selectedPlan = item.selling_plan_allocation.selling_plan.id
+  endif
+%}
+
+<div class="product-details-sub" data-cart-sub="" data-cart-var="{{ item.variant_id }}">
+  <div class="cart-subscription-top otp" data-cart-var="{{ item.variant_id }}">
+    <input type="checkbox" id="sub-{{ item.variant_id }}"{% if item.selling_plan_allocation %} checked{% endif %}>
+    <div class="subscribe-checkbox-drawer">
+     Subscribe and Save
+    </div>
+    <a title="Subscribe and Save" class="cart_tooltip">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17" fill="none">
+    <path d="M9 0.578339C4.5 0.578339 0.84375 4.23459 0.84375 8.73459C0.84375 13.2346 4.5 16.8908 9 16.8908C13.5 16.8908 17.1562 13.2346 17.1562 8.73459C17.1562 4.23459 13.5 0.578339 9 0.578339ZM9 1.42209C13.0359 1.42209 16.3125 4.69865 16.3125 8.73459C16.3125 12.7705 13.0359 16.0471 9 16.0471C4.96406 16.0471 1.6875 12.7705 1.6875 8.73459C1.6875 4.69865 4.96406 1.42209 9 1.42209ZM9 5.07834C8.76094 5.07834 8.57812 5.26115 8.57812 5.50021V6.20334C8.57812 6.4424 8.76094 6.62521 9 6.62521C9.23906 6.62521 9.42188 6.4424 9.42188 6.20334V5.50021C9.42188 5.26115 9.23906 5.07834 9 5.07834ZM9 7.89084C8.76094 7.89084 8.57812 8.07365 8.57812 8.31271V11.969C8.57812 12.208 8.76094 12.3908 9 12.3908C9.23906 12.3908 9.42188 12.208 9.42188 11.969V8.31271C9.42188 8.07365 9.23906 7.89084 9 7.89084Z" fill="#354245"></path>
+    </svg>
+    </a>
+   <span class="cart_subscriptionTooltip">{{ tooltip }}</span>
+  </div>
+  <div class="cart-subscription-bottom{% if item.selling_plan_allocation %} active{% endif %}" data-cart-var="{{ item.variant_id }}">
+    <select class="cart-subscription_select">
+      {% for allocation in selectedVariableAllocations %} 
+        <option value="{{ allocation.selling_plan.id }}"{% if allocation.selling_plan.id == selectedPlan %} selected{% endif %}>{{ allocation.selling_plan.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+</div>

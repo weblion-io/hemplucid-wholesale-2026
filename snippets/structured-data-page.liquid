@@ -1,0 +1,103 @@
+{%- comment -%}
+  Page-level structured data rendered from the layout:
+  - BreadcrumbList on product, collection, collection list, blog, article and page templates
+  - AboutPage / ContactPage / WebPage on page templates
+
+  Collection and blog listings are output by their sections (they need the paginated items).
+
+  Usage:
+  {% render 'structured-data-page' %}
+{%- endcomment -%}
+{%- liquid
+  assign organization_id = shop.url | append: '/#organization'
+  assign website_id = shop.url | append: '/#website'
+  assign breadcrumb_id = canonical_url | append: '#breadcrumb'
+  assign position = 1
+-%}
+{%- if current_tags -%}
+  {%- capture tag_title -%}{% render 'wl-tag-title', tags: current_tags %}{%- endcapture -%}
+{%- endif -%}
+
+{%- capture crumb_items -%}
+  {"@type": "ListItem", "position": 1, "name": {{ 'general.breadcrumbs.home' | t | json }}, "item": {{ shop.url | json }}}
+  {%- case request.page_type -%}
+    {%- when 'product' -%}
+      {%- if collection -%}
+        {%- assign position = position | plus: 1 -%}
+        , {"@type": "ListItem", "position": {{ position }}, "name": {{ collection.title | json }}, "item": {{ shop.url | append: collection.url | json }}}
+      {%- endif -%}
+      {%- assign position = position | plus: 1 -%}
+      , {"@type": "ListItem", "position": {{ position }}, "name": {{ product.title | json }}, "item": {{ shop.url | append: product.url | json }}}
+
+    {%- when 'collection' -%}
+      {%- if collection.handle -%}
+        {%- assign position = position | plus: 1 -%}
+        , {"@type": "ListItem", "position": {{ position }}, "name": {{ collection.title | json }}, "item": {{ shop.url | append: collection.url | json }}}
+        {%- if current_tags -%}
+          {%- assign position = position | plus: 1 -%}
+          , {"@type": "ListItem", "position": {{ position }}, "name": {{ tag_title | json }}, "item": {{ canonical_url | json }}}
+        {%- endif -%}
+      {%- endif -%}
+
+    {%- when 'list-collections' -%}
+      {%- assign position = position | plus: 1 -%}
+      , {"@type": "ListItem", "position": {{ position }}, "name": {{ 'general.breadcrumbs.collections' | t | json }}, "item": {{ shop.url | append: routes.collections_url | json }}}
+
+    {%- when 'blog' -%}
+      {%- assign position = position | plus: 1 -%}
+      , {"@type": "ListItem", "position": {{ position }}, "name": {{ blog.title | json }}, "item": {{ shop.url | append: blog.url | json }}}
+      {%- if current_tags -%}
+        {%- assign position = position | plus: 1 -%}
+        , {"@type": "ListItem", "position": {{ position }}, "name": {{ tag_title | json }}, "item": {{ canonical_url | json }}}
+      {%- endif -%}
+
+    {%- when 'article' -%}
+      {%- assign position = position | plus: 1 -%}
+      , {"@type": "ListItem", "position": {{ position }}, "name": {{ blog.title | json }}, "item": {{ shop.url | append: blog.url | json }}}
+      {%- assign position = position | plus: 1 -%}
+      , {"@type": "ListItem", "position": {{ position }}, "name": {{ article.title | json }}, "item": {{ shop.url | append: article.url | json }}}
+
+    {%- when 'page' -%}
+      {%- assign position = position | plus: 1 -%}
+      , {"@type": "ListItem", "position": {{ position }}, "name": {{ page.title | json }}, "item": {{ shop.url | append: page.url | json }}}
+  {%- endcase -%}
+{%- endcapture -%}
+
+{%- if position > 1 -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "@id": {{ breadcrumb_id | json }},
+      "itemListElement": [
+        {{ crumb_items }}
+      ]
+    }
+  </script>
+{%- endif -%}
+
+{%- if request.page_type == 'page' -%}
+  {%- liquid
+    assign page_schema_type = 'WebPage'
+    if page.template_suffix == 'about-us' or page.template_suffix == 'story' or page.handle contains 'about'
+      assign page_schema_type = 'AboutPage'
+    elsif page.template_suffix == 'contact' or page.handle contains 'contact'
+      assign page_schema_type = 'ContactPage'
+    endif
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": {{ page_schema_type | json }},
+      "@id": {{ canonical_url | append: '#webpage' | json }},
+      "url": {{ canonical_url | json }},
+      "name": {{ page.title | json }},
+      {%- if page_description != blank %}
+      "description": {{ page_description | json }},
+      {%- endif %}
+      "isPartOf": { "@type": "WebSite", "@id": {{ website_id | json }}, "name": {{ shop.name | json }}, "url": {{ shop.url | json }} },
+      "publisher": { "@id": {{ organization_id | json }} },
+      "breadcrumb": { "@id": {{ breadcrumb_id | json }} }
+    }
+  </script>
+{%- endif -%}
